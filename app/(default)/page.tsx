@@ -1,5 +1,6 @@
 import Features from "@/app/(default)/components/features";
 import Pricing from "@/app/(default)/components/pricing";
+import About from "@/app/(default)/components/about";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         </section>
 
         <section id="#about">
-
+          <About />
         </section>
       </div>
     </main>
