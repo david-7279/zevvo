@@ -1,6 +1,6 @@
 import React from "react"
 
-import CardDecorator from "@/app/(default)/components/card-decorator"
+import CardFeature from "@/app/(default)/components/card-feature"
 import { Card } from "@/components/ui/card"
 import { Settings2Icon, SparklesIcon, ZapIcon } from "lucide-react"
 
@@ -38,7 +38,7 @@ const Features = () => {
         className="@min-4xl:max-w-full @min-4xl:grid-cols-3 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16"
       >
         {featureItem.map((item, index) => (
-          <CardDecorator
+          <CardFeature
             key={index}
             icon={item.icon}
             title={item.title}

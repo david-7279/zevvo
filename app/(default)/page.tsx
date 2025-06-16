@@ -1,23 +1,26 @@
 import Features from "@/app/(default)/components/features";
+import Pricing from "@/app/(default)/components/pricing";
 
 export default function Home() {
   return (
-    <main className="@container mx-auto max-w-5xl px-4 space-y-24 mt-40">
-      <section id="#features">
-        <Features />
-      </section>
+    <main className="@container mx-auto max-w-5xl px-4 mt-40">
+      <div className="space-y-52">
+        <section id="#features">
+          <Features />
+        </section>
 
-      <section id="#solutions">
+        <section id="#solutions">
 
-      </section>
+        </section>
 
-      <section id="#pricing">
+        <section id="#pricing">
+          <Pricing />
+        </section>
 
-      </section>
+        <section id="#about">
 
-      <section id="#about">
-
-      </section>
+        </section>
+      </div>
     </main>
   );
 }

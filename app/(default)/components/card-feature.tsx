@@ -7,7 +7,7 @@ interface Props {
   description: string;
 }
 
-const CardDecorator: React.FC<Props> = ({ icon: Icon, title, description }) => {
+const CardFeature: React.FC<Props> = ({ icon: Icon, title, description }) => {
   return (
     <div className="group shadow-zinc-950/5">
       <CardHeader className="pb-3">
@@ -30,4 +30,4 @@ const CardDecorator: React.FC<Props> = ({ icon: Icon, title, description }) => {
   )
 }
 
-export default CardDecorator
+export default CardFeature
