@@ -25,7 +25,7 @@ import {
 } from "@/components/ui/select";
 
 // Types
-type CompanyValue = {
+type SolutionValue = {
   id: string;
   name: string;
   description: string;
@@ -41,11 +41,10 @@ type CompanyValue = {
   image?: string;
 };
 
-// Company values data
-const companyValues: CompanyValue[] = [
+const solutionValue: SolutionValue[] = [
   {
-    id: "innovation",
-    name: "Innovation",
+    id: "dashboard",
+    name: "Dasboard",
     description:
       "We constantly push boundaries and challenge the status quo, fostering a culture where creative thinking and experimentation are encouraged at all levels of the organization.",
     icon: Lightbulb,
@@ -59,8 +58,23 @@ const companyValues: CompanyValue[] = [
     image: "",
   },
   {
-    id: "integrity",
-    name: "Integrity",
+    id: "reports",
+    name: "Relatórios",
+    description:
+      "We are committed to creating a positive environmental and social impact. Our business decisions consider long-term sustainability and our responsibility to future generations.",
+    icon: Globe,
+    color: "text-green-500",
+    principles: [
+      "Minimize environmental impact in operations and products",
+      "Support community initiatives and social causes",
+      "Consider long-term sustainability in all business decisions",
+      "Measure and report on environmental and social performance",
+    ],
+    image: "",
+  },
+  {
+    id: "products",
+    name: "Produtos",
     description:
       "We believe in transparency, honesty, and ethical conduct in everything we do. Trust is the foundation of our relationships with customers, partners, and each other.",
     icon: ShieldCheck,
@@ -74,8 +88,8 @@ const companyValues: CompanyValue[] = [
     image: "",
   },
   {
-    id: "collaboration",
-    name: "Collaboration",
+    id: "clients",
+    name: "Clientes",
     description:
       "We achieve more together than alone. By combining diverse perspectives and skills, we create solutions that are stronger, more innovative, and more effective than any individual could produce.",
     icon: Users,
@@ -89,8 +103,8 @@ const companyValues: CompanyValue[] = [
     image: "",
   },
   {
-    id: "customer-focus",
-    name: "Customer Focus",
+    id: "invoice",
+    name: "Faturas",
     description:
       "Our customers are at the center of everything we do. We&apos;re committed to understanding their needs, exceeding their expectations, and building lasting relationships based on mutual success.",
     icon: Heart,
@@ -101,11 +115,11 @@ const companyValues: CompanyValue[] = [
       "Proactively gather and implement customer feedback",
       "Measure success through customer outcomes",
     ],
-    image:"",
+    image: "",
   },
   {
-    id: "excellence",
-    name: "Excellence",
+    id: "payments",
+    name: "Pagamentos",
     description:
       "We strive for excellence in everything we do, from the quality of our products to our customer service. We set high standards and continuously work to exceed them through learning and improvement.",
     icon: AreaChart,
@@ -118,29 +132,13 @@ const companyValues: CompanyValue[] = [
     ],
     image: "",
   },
-  {
-    id: "sustainability",
-    name: "Sustainability",
-    description:
-      "We are committed to creating a positive environmental and social impact. Our business decisions consider long-term sustainability and our responsibility to future generations.",
-    icon: Globe,
-    color: "text-green-500",
-    principles: [
-      "Minimize environmental impact in operations and products",
-      "Support community initiatives and social causes",
-      "Consider long-term sustainability in all business decisions",
-      "Measure and report on environmental and social performance",
-    ],
-    image: "",
-  },
 ];
 
 const Solutions = () => {
-  const [activeValue, setActiveValue] = useState<string>(companyValues[0].id);
+  const [activeValue, setActiveValue] = useState<string>(solutionValue[0].id);
 
   // Get active value object
-  const currentValue =
-    companyValues.find((value) => value.id === activeValue) || companyValues[0];
+  const currentValue = solutionValue.find((value) => value.id === activeValue) || solutionValue[0];
   return (
     <section className="py-24">
       <div className="container mx-auto px-4 md:px-6 2xl:max-w-[1400px]">
@@ -169,7 +167,7 @@ const Solutions = () => {
                   <SelectValue placeholder="Select a value" />
                 </SelectTrigger>
                 <SelectContent>
-                  {companyValues.map((value) => (
+                  {solutionValue.map((value) => (
                     <SelectItem key={value.id} value={value.id}>
                       <div className="flex items-center gap-2">
                         <value.icon className={cn("h-4 w-4", value.color)} />
@@ -183,7 +181,7 @@ const Solutions = () => {
 
             {/* Tabs for medium screens and above */}
             <TabsList className="hidden h-auto bg-transparent p-1 md:flex">
-              {companyValues.map((value) => (
+              {solutionValue.map((value) => (
                 <TabsTrigger
                   key={value.id}
                   value={value.id}

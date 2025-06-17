@@ -6,7 +6,7 @@ import About from "@/app/(default)/components/about";
 export default function Home() {
   return (
     <main className="@container mx-auto max-w-5xl px-4 mt-40">
-      <div className="space-y-52">
+      <div className="space-y-72">
         <section id="#features">
           <Features />
         </section>
