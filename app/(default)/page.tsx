@@ -1,5 +1,6 @@
 import Hero from "@/app/(default)/components/hero";
 import Features from "@/app/(default)/components/features";
+import Pricing from "@/app/(default)/components/pricing";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         </section>
 
         <section id="#pricing">
+          <Pricing />
         </section>
 
         <section id="#faq">
