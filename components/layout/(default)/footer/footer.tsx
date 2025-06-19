@@ -17,7 +17,7 @@ const Footer = () => {
       <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4 border-muted-foreground border-b">
         <p>@{year} Business Hub, Todos os direitos reservados</p>
 
-        <div className="flex flex-row gap-3">
+        <div className="flex flex-row gap-4">
           {footerLinks.map((item) => (
             <MapLinks
               key={item.link}
