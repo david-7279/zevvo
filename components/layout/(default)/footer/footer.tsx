@@ -34,7 +34,7 @@ const Footer = () => {
       <div className="flex justify-between items-center gap-1">
         <p className="text-sm text-muted-foreground">@{year}, Todos os direitos reservados</p>
 
-        <Link href={Path.root} className="group flex flex-row gap-1 items-center">
+        <Link href={Path.terms} className="group flex flex-row gap-1 items-center">
           <p className="relative text-sm text-muted-foreground transition-all duration-500
             after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
             group-hover:after:w-full"

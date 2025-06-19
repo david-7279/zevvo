@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -36,7 +37,12 @@ const formSchema = z.object({
 });
 
 const RegisterForm = () => {
+  const [isClient, setIsClient] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const form = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
@@ -48,23 +54,26 @@ const RegisterForm = () => {
   });
 
   async function onSubmit(data: z.infer<typeof formSchema>) {
-    if (isLoading) return;
+    if (isLoading || !isClient) return;
     setIsLoading(true);
 
     try {
-      // Toast Event
       toast("Conta criada com sucesso", {
-        description: `Bem vindo(a) ${data.username}`,
+        description: `Bem-vindo(a) ${data.username}`,
       });
       setTimeout(() => {
         form.reset();
-      }, 600)
+      }, 600);
       console.log("Conta criada com sucesso: ", data);
     } catch (error) {
       console.log(`Error creating account: ${error}`);
     } finally {
       setIsLoading(false);
     }
+  }
+
+  if (!isClient) {
+    return <div className="h-[300px] w-[350px] animate-pulse bg-gray-200 rounded-lg" />; // Placeholder durante SSR
   }
 
   return (
@@ -134,12 +143,12 @@ const RegisterForm = () => {
           )}
         />
 
-        <Button type="submit" className="mt-4 w-full">
+        <Button type="submit" className="mt-4 w-full" disabled={isLoading}>
           Criar Conta
         </Button>
-      </form >
-    </Form >
-  )
-}
+      </form>
+    </Form>
+  );
+};
 
-export default RegisterForm
+export default RegisterForm;
