@@ -9,15 +9,15 @@ export default function Home() {
       <div className="space-y-24">
         <Hero />
 
-        <section id="#features">
+        <section id="features">
           <Features />
         </section>
 
-        <section id="#pricing">
+        <section id="pricing">
           <Pricing />
         </section>
 
-        <section id="#faq">
+        <section id="faq">
           <Faq />
         </section>
       </div>
