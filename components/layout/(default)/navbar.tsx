@@ -1,54 +1,43 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
 import { Path } from "@/lib/paths";
 import { Button } from "@/components/ui/button";
 
 import { cn } from '@/lib/utils'
-import { ArrowUpRightIcon, MenuIcon, XIcon } from "lucide-react";
+import { ArrowUpRightIcon } from "lucide-react";
+
+import Logo from "@/components/layout/(default)/logo";
 
 const menuItems = [
-    { name: "Funcionalidades", href: "#" },
-    { name: "Preços", href: "#" },
-    { name: "FAQ", href: "#" },
+  { name: "Funcionalidades", href: "#" },
+  { name: "Preços", href: "#" },
+  { name: "FAQ", href: "#" },
 ]
 
 const Navbar = () => {
   const [menuState, setMenuState] = useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
 
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50)
-        }
-        window.addEventListener('scroll', handleScroll)
-        return () => window.removeEventListener('scroll', handleScroll)
-    }, [])
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <header>
       <nav data-state={menuState && 'active'} className="fixed w-full top-5 px-2">
         <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
-            
+
             {/* LOGO */}
             <div className="flex w-full justify-between lg:w-auto">
-              <Link
-                href={Path.root}
-                aria-label="home"
-                className="flex items-center space-x-2">
-                <h2>Business Hub</h2>
-              </Link>
-
-              <Button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
-                <MenuIcon className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <XIcon className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
-              </Button>
+              <Logo />
             </div>
 
             {/* MENU ITEM */}
