@@ -8,7 +8,7 @@ const menuItems = [
 
 const Menu = () => {
   return (
-    <div className="hidden md:flex flex-row gap-5 size-fit ">
+    <div className="hidden lg:flex flex-row gap-5 size-fit">
       {menuItems.map((item, index) => (
         <Link key={index} href={item.link} className="group">
           <p className="relative text-sm text-muted-foreground transition-all duration-500

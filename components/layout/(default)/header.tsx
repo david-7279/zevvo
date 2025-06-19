@@ -1,5 +1,3 @@
-import React from "react";
-
 import NavWrapper from "@/components/layout/(default)/nav-wrapper";
 import Logo from "@/components/layout/(default)/logo";
 import Menu from "@/components/layout/(default)/menu";
