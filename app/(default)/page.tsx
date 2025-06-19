@@ -1,6 +1,7 @@
 import Hero from "@/app/(default)/components/hero";
 import Features from "@/app/(default)/components/features";
 import Pricing from "@/app/(default)/components/pricing";
+import Faq from "@/app/(default)/components/faq";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         </section>
 
         <section id="#faq">
+          <Faq />
         </section>
       </div>
     </main>
