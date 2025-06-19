@@ -1,4 +1,3 @@
-import { Check, MoveRight, PackageIcon, PhoneCall } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -7,24 +6,22 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Check, CircleDollarSignIcon, MoveRight, PhoneCall } from "lucide-react";
+
+import Heading from "@/app/(default)/components/heading";
 
 const Pricing = () => {
   return (
     <div className="w-full py-20 lg:py-40">
       <div className="container mx-auto">
         <div className="flex text-center justify-center items-center gap-4 flex-col">
-          <Button variant="outline" size="sm" className="rounded-2xl">
-            <PackageIcon />
-            <p className="text-sm text-foreground">Preços</p>
-          </Button>
-          <div className="flex gap-2 flex-col">
-            <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
-              Prices that make sense!
-            </h2>
-            <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
-              Managing a small business today is already tough.
-            </p>
-          </div>
+          <Heading 
+            icon={CircleDollarSignIcon}
+            title="Preços"
+            heading="Preços que fazem sentido!"
+            paragraph="Atualmente, gerir um pequeno negócio já é difícil"
+          />
+
           <div className="grid pt-20 text-left grid-cols-1 lg:grid-cols-3 w-full gap-8">
             <Card className="w-full rounded-md">
               <CardHeader>

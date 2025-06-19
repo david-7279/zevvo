@@ -10,14 +10,14 @@ interface Props {
 
 const Heading:React.FC<Props> = ({ icon: Icon, title, heading, paragraph }) => {
   return (
-    <div>
+    <div className="space-y-5 text-center">
       <Button variant="outline" size="sm" className="rounded-2xl">
         <Icon />
         <p className="text-sm text-foreground">{title}</p>
       </Button>
       <div className="flex gap-2 flex-col">
         <h2 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">{heading}</h2>
-        <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">{paragraph}</p>
+        <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl">{paragraph}</p>
       </div>
     </div>
   )

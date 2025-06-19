@@ -1,11 +1,12 @@
-import { Check, PackageIcon, PhoneCall } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { MessageCircleQuestionIcon } from "lucide-react";
+
+import Heading from "@/app/(default)/components/heading";
 
 const Faq = () => {
   return (
@@ -13,26 +14,12 @@ const Faq = () => {
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           <div className="flex text-center justify-center items-center gap-4 flex-col">
-            <Button variant="outline" size="sm" className="rounded-2xl">
-              <PackageIcon />
-              <p className="text-sm text-foreground">Perguntas Frequentes</p>
-            </Button>
-            <div className="flex gap-2 flex-col">
-              <h4 className="text-3xl md:text-5xl tracking-tighter max-w-xl text-center font-regular">
-                This is the start of something new
-              </h4>
-              <p className="text-lg leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center">
-                Managing a small business today is already tough. Avoid further
-                complications by ditching outdated, tedious trade methods. Our
-                goal is to streamline SMB trade, making it easier and faster than
-                ever.
-              </p>
-            </div>
-            <div>
-              <Button className="gap-4" variant="outline">
-                Any questions? Reach out <PhoneCall className="w-4 h-4" />
-              </Button>
-            </div>
+            <Heading
+              icon={MessageCircleQuestionIcon}
+              title="Perguntas Frequentes"
+              heading="Este é o início de algo novo!"
+              paragraph="Descrição sobre as perguntas frequentes"
+            />
           </div>
 
           <div className="max-w-3xl w-full mx-auto">
