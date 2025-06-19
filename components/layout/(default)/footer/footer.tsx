@@ -17,7 +17,7 @@ const Footer = () => {
     <div className="mx-auto mt-2 max-w-6xl px-6 lg:px-12 space-y-5 mb-5">
       <div className="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4 border-muted-foreground/20 border-b">
         <Link href={Path.root} className="flex flex-row gap-2 items-center">
-          <p className="text-base text-foreground/70">Business Hub</p>
+          <p className="text-base text-foreground/70">Zevvo</p>
         </Link>
 
         <div className="flex flex-row gap-4">

@@ -18,14 +18,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Business Hub - Gestão Simples para Negócios Locais",
-  description: "Simplifique a gestão de clientes, faturas e relatórios com o Business Hub. Experimente nosso SaaS gratuito por 7 dias!",
-  keywords: "gestão de negócios, SaaS, negócios locais, faturas, relatórios, Business Hub",
+  title: "Zevvo - Gestão Simples para Negócios Locais",
+  description: "Simplifique a gestão de clientes, faturas e relatórios com o Zevvo. Experimente nosso SaaS gratuito por 7 dias!",
+  keywords: "gestão de negócios, SaaS, negócios locais, faturas, relatórios, Zevvo",
   openGraph: {
-    title: "Business Hub - Transforme Seu Negócio Local",
-    description: "Gerencie seu negócio local com facilidade usando o Business Hub. Experimente grátis por 7 dias!",
+    title: "Zevvo - Transforme Seu Negócio Local",
+    description: "Gerencie seu negócio local com facilidade usando o Zevvo. Experimente grátis por 7 dias!",
     url: "https://bussinesshub.vercel.app",
-    siteName: "Business Hub",
+    siteName: "Zevvo",
     locale: "pt_PT",
     type: "website",
   },

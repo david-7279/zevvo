@@ -8,7 +8,7 @@ const Logo = () => {
     <div className="flex w-full justify-between lg:w-auto">
       <Link href={Path.root} className="flex flex-row gap-2 items-center">
         <PackageIcon />
-        <p className="text-lg text-foreground/70">Business Hub</p>
+        <p className="text-lg text-foreground/70">Zevvo</p>
       </Link>
     </div>
   )
