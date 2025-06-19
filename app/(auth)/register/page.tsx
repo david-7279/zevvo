@@ -1,7 +1,9 @@
 import Link from "next/link";
+import { Path } from "@/lib/paths";
+
 import RegisterForm from "@/components/forms/(default)/auth/form-register";
-import { Card, CardContent } from '@/components/ui/card'
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { Card, CardContent } from '@/components/ui/card'
 import { PackageIcon } from "lucide-react";
 
 const Register = () => {
@@ -23,12 +25,17 @@ const Register = () => {
           </Card>
 
           <div className="mt-5 space-y-5">
-            <p className="text-sm text-center">
-              Já tem uma conta?
-              <Link href="#" className="ml-1 underline text-muted-foreground">
-                Iniciar Sessão
+            <div className="flex justify-center items-center gap-1">
+              <p className="text-muted-foreground text-sm">Já tem uma conta?</p>
+              <Link href={Path.login} className="group">
+                <p className="relative text-sm text-foreground transition-all duration-500
+                  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
+                  group-hover:after:w-full"
+                >
+                  Iniciar Sessão
+                </p>
               </Link>
-            </p>
+            </div>
           </div>
         </div>
         <div className="bg-muted hidden lg:block rounded-lg" />
