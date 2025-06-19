@@ -21,9 +21,7 @@ const Hero = () => {
         if (!blob || !fblob) return;
 
         const rec = fblob.getBoundingClientRect();
-
         blob.style.opacity = "1";
-
         blob.animate(
           [
             {
@@ -38,7 +36,6 @@ const Hero = () => {
         );
       });
     };
-
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
@@ -66,7 +63,7 @@ const Hero = () => {
               </h1>
               <p className="leading-7 [&:not(:first-child)]:mt-6 text-muted-foreground">
                 Gerencie clientes, faturas e relatórios com uma plataforma fácil
-                de usar. Comece com um teste gratuito de 7 dias e leve seu
+                de usar. <br />Comece com um teste gratuito de 7 dias e leve seu
                 negócio ao próximo nível!
               </p>
             </div>
