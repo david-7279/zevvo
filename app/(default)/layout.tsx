@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { ThemeProvider } from "@/components/providers/theme-provider"
 import Header from "@/components/layout/(default)/header/header";
+import Footer from "@/components/layout/(default)/footer/footer";
 
 import "../globals.css";
 
@@ -39,6 +40,7 @@ export default function RootLayout({
         >
           <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
