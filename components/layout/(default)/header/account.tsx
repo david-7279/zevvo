@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { Path } from "@/lib/paths";
 
-import AccountBtn from "@/components/layout/(default)/account-btn";
+import AccountBtn from "@/components/layout/(default)/header/account-btn";
 import { cn } from "@/lib/utils";
 
 const accountBtn: {

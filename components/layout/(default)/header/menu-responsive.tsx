@@ -13,7 +13,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import Logo from "@/components/layout/(default)/logo"
+import Logo from "@/components/layout/(default)/header/logo"
 
 const menuItems = [
   { label: "Home", link: Path.root },
