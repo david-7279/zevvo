@@ -8,6 +8,8 @@ import { BorderBeam } from "@/components/magicui/border-beam";
 import { Card, CardContent } from '@/components/ui/card'
 import { PackageIcon } from "lucide-react";
 
+import SiderContent from "@/app/(auth)/components/sider-content";
+
 const Register = () => {
   return (
     <div className="h-screen flex items-center justify-center">
@@ -40,7 +42,7 @@ const Register = () => {
             </div>
           </div>
         </div>
-        <div className="bg-muted hidden lg:block rounded-lg" />
+        <SiderContent />
       </div>
     </div>
   );
