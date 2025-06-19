@@ -6,7 +6,7 @@ import Menu from "@/components/layout/(default)/menu";
 import Account from "@/components/layout/(default)/account";
 import { cn } from "@/lib/utils"
 
-const Navbar = () => {
+const Header = () => {
   const [isScrolled, setIsScrolled] = React.useState(false)
 
   useEffect(() => {
@@ -31,4 +31,4 @@ const Navbar = () => {
     </header>
   );
 };
-export default Navbar;
+export default Header;
