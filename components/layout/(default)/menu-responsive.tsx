@@ -1,8 +1,8 @@
 "use client"
 
-import { Path } from '@/lib/paths'
-import Link from 'next/link'
-import React, { useState } from 'react'
+import { Path } from "@/lib/paths"
+import Link from "next/link"
+import React, { useState } from "react"
 
 import {
   Sheet,
@@ -13,15 +13,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import Logo from '@/components/layout/(default)/logo'
-import { XIcon } from 'lucide-react'
+import Logo from "@/components/layout/(default)/logo"
 
 const menuItems = [
-  { link: Path.root, label: "Home" },
-  { link: Path.root, label: "Funcionalidades" },
-  { link: Path.root, label: "Preços" },
-  { link: Path.root, label: "FAQ" },
-  { link: Path.root, label: "Começar" },
+  { label: "Home", link: Path.root },
+  { label: "Funcionalidades", link: `${Path.root}#features` },
+  { label: "Preços", link: `${Path.root}#pricing` },
+  { label: "FAQ", link: `${Path.root}#faq` },
+  { label: "Começar", link: Path.root },
 ]
 
 const authItems = [

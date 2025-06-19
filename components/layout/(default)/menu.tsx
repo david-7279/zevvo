@@ -1,9 +1,10 @@
+import { Path } from "@/lib/paths"
 import Link from "next/link"
 
 const menuItems = [
-  { label: "Funcionalidades", link: "#" },
-  { label: "Preços", link: "#" },
-  { label: "FAQ", link: "#" },
+  { label: "Funcionalidades", link: `${Path.root}#features` },
+  { label: "Preços", link: `${Path.root}#pricing` },
+  { label: "FAQ", link: `${Path.root}#faq` },
 ]
 
 const Menu = () => {
