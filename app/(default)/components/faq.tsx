@@ -72,13 +72,14 @@ const Faq = () => {
             </Accordion>
           </div>
 
-          <div className="flex justify-center items-center gap-1">
-            <p className="text-muted-foreground text-sm">Ainda tem dúvidas? Envie-nos um e-mail para</p>
+          <div className="flex justify-center items-center gap-1 max-w-full flex-wrap sm:text-xs">
+            <p className="text-muted-foreground text-sm whitespace-normal break-words">
+              Ainda tem dúvidas? Envie-nos um e-mail para
+            </p>
             <Link href={"mailto:david.dev7279@outlook.com"} className="group">
               <p className="relative text-sm text-foreground transition-all duration-500
-                  after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
-                  group-hover:after:w-full"
-              >
+                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
+                group-hover:after:w-full break-all">
                 david.dev7279@outlook.com
               </p>
             </Link>
