@@ -24,7 +24,7 @@ const menuItems = [
 ]
 
 const authItems = [
-  { label: "Email", link: "mailto:zevvo@gmail.com" },
+  { label: "Email", link: "mailto:zevvohelp@outlook.com" },
 ]
 
 const ResponsiveMenu = () => {

@@ -80,7 +80,7 @@ const Faq = () => {
               <p className="relative text-sm text-foreground transition-all duration-500
                 after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
                 group-hover:after:w-full break-all">
-                zevvo@gmail.com
+                zevvohelp@outlook.com
               </p>
             </Link>
           </div>
