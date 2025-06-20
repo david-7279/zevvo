@@ -1,8 +1,8 @@
 "use client"
 
+import React, { useState } from "react"
 import { Path } from "@/lib/paths"
 import Link from "next/link"
-import React, { useState } from "react"
 
 import {
   Sheet,
@@ -24,8 +24,7 @@ const menuItems = [
 ]
 
 const authItems = [
-  { link: Path.login, label: "Iniciar" },
-  { link: Path.register, label: "Registar" },
+  { label: "Email", link: "mailto:zevvo@gmail.com" },
 ]
 
 const ResponsiveMenu = () => {
