@@ -70,7 +70,7 @@ const Hero = () => {
           <div className="flex items-center justify-center text-center space-x-5 px-4 py-4 sm:px-2">
             <Link href={Path.login}>
               <ShimmerButton className="bg-foreground rounded-3xl w-full sm:w-auto max-w-xs mx-auto">
-                <span className="whitespace-pre-wrap text-background text-center text-sm font-medium leading-none">
+                <span className="whitespace-pre-wrap text-white text-center text-sm font-medium leading-none">
                   Começar Agora
                 </span>
               </ShimmerButton>
