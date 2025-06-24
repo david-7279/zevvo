@@ -10,7 +10,6 @@ const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   return (
-
     <Button
       variant="ghost"
       className="rounded-2xl"
