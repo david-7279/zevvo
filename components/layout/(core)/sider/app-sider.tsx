@@ -35,58 +35,59 @@ const siderData = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
+  
   overview: [
     {
       label: "Dashboard",
-      url: "#",
+      url: Path.dashboard,
       icon: ChartLineIcon,
     },
     {
       label: "Relatórios",
-      url: "#",
+      url: Path.reports,
       icon: BookTextIcon,
-    },
-  ],
-
-  navMain: [
-    {
-      label: "Produtos",
-      url: "#",
-      icon: BoxesIcon,
-    },
-    {
-      label: "Clientes",
-      url: "#",
-      icon: UsersIcon,
-    },
-    {
-      label: "Pagamentos",
-      url: "#",
-      icon: CircleDollarSignIcon,
-    },
-    {
-      label: "Faturas",
-      url: "#",
-      icon: ScrollTextIcon,
     },
   ],
 
   features: [
     {
+      label: "Produtos",
+      url: Path.products,
+      icon: BoxesIcon,
+    },
+    {
+      label: "Clientes",
+      url: Path.clients,
+      icon: UsersIcon,
+    },
+    {
+      label: "Pagamentos",
+      url: Path.payments,
+      icon: CircleDollarSignIcon,
+    },
+    {
+      label: "Faturas",
+      url: Path.invoices,
+      icon: ScrollTextIcon,
+    },
+  ],
+
+  system: [
+    {
       label: "Atualizações",
-      url: "#",
+      url: Path.changelog,
       icon: FileSymlinkIcon,
     },
     {
       label: "Definições",
-      url: "#",
+      url: Path.settings,
       icon: CogIcon,
     },
   ],
   navFooter: [
     {
       label: "Suporte",
-      url: "#",
+      url: Path.support,
       icon: LifeBuoyIcon
     }
   ]
@@ -117,8 +118,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
       <SidebarContent>
         <NavMain title="Visão Geral" items={siderData.overview} />
-        <NavMain title="Funcionalidades" items={siderData.navMain} />
-        <NavMain title="Sistema" items={siderData.features} />
+        <NavMain title="Funcionalidades" items={siderData.features} />
+        <NavMain title="Sistema" items={siderData.system} />
         <NavMain items={siderData.navFooter} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
