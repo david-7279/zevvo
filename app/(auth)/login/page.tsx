@@ -17,15 +17,14 @@ const Login = () => {
       <div className="w-full h-full grid lg:grid-cols-2">
 
         {/* LEFT PANEL */}
-        <div className=" w-full flex flex-col">
-          <div className="text-left p-10 items-end hidden lg:block">
+        <div className="w-full flex flex-col justify-center items-center relative">
+          <div className="text-left p-10 items-end hidden lg:block absolute top-0 left-0">
             <Link href={Path.root}>
               <Button variant="link" className="rounded-2xl">Zevvo</Button>
             </Link>
           </div>
 
-
-          <div className="max-w-sm m-auto w-full flex flex-col items-center space-y-5 px-4 mt-20">
+          <div className="max-w-sm w-full flex flex-col items-center space-y-5 px-4">
             <div className="items-start text-left w-full">
               <PackageIcon />
               <p className="mt-2 text-xl font-bold tracking-tight">Iniciar sessão no Zevvo</p>
@@ -56,7 +55,9 @@ const Login = () => {
         </div>
 
         {/* RIGHT PANEL */}
-        <SiderContent />
+        <div className="inline-flex items-center py-3 px-6">
+          <SiderContent />
+        </div>
       </div>
     </div>
   );
