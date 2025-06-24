@@ -7,6 +7,10 @@ import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
 
@@ -18,9 +22,12 @@ import {
   CogIcon,
   FileSymlinkIcon,
   LifeBuoyIcon,
+  PackageIcon,
   ScrollTextIcon,
   UsersIcon,
 } from "lucide-react"
+import { Path } from "@/lib/paths"
+import Link from "next/link"
 
 const siderData = {
   user: {
@@ -28,64 +35,89 @@ const siderData = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  navMain: [
+  overview: [
     {
-      title: "Dashboard",
+      label: "Dashboard",
       url: "#",
       icon: ChartLineIcon,
     },
     {
-      title: "Relatórios",
+      label: "Relatórios",
       url: "#",
       icon: BookTextIcon,
     },
+  ],
+
+  navMain: [
     {
-      title: "Produtos",
+      label: "Produtos",
       url: "#",
       icon: BoxesIcon,
     },
     {
-      title: "Clientes",
+      label: "Clientes",
       url: "#",
       icon: UsersIcon,
     },
     {
-      title: "Pagamentos",
+      label: "Pagamentos",
       url: "#",
       icon: CircleDollarSignIcon,
     },
     {
-      title: "Faturas",
+      label: "Faturas",
       url: "#",
       icon: ScrollTextIcon,
     },
   ],
-  
+
   features: [
     {
-      title: "Atualizações",
+      label: "Atualizações",
       url: "#",
       icon: FileSymlinkIcon,
     },
     {
-      title: "Definições",
+      label: "Definições",
       url: "#",
       icon: CogIcon,
     },
-    {
-      title: "Suporte",
-      url: "#",
-      icon: LifeBuoyIcon,
-    },
   ],
+  navFooter: [
+    {
+      label: "Suporte",
+      url: "#",
+      icon: LifeBuoyIcon
+    }
+  ]
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar variant="inset" collapsible="icon" {...props}>
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" className="hover:rounded-2xl" asChild>
+              <Link href={Path.root}>
+                <div className="flex aspect-square size-7 items-center justify-center rounded-lg">
+                  <PackageIcon size={16} />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-semibold">Zevvo</span>
+                  <span className="truncate text-xs">Gestão de Negócio</span>
+                </div>
+              </Link>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
+
       <SidebarContent>
-        <NavMain items={siderData.navMain} />
-        <NavMain items={siderData.features} />
+        <NavMain title="Visão Geral" items={siderData.overview} />
+        <NavMain title="Funcionalidades" items={siderData.navMain} />
+        <NavMain title="Sistema" items={siderData.features} />
+        <NavMain items={siderData.navFooter} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={siderData.user} />
