@@ -2,7 +2,6 @@
 
 import * as React from "react"
 import { NavMain } from "@/components/layout/(core)/sider/nav-main"
-import { NavProjects } from "@/components/layout/(core)/sider/nav-projects"
 import { NavUser } from "@/components/layout/(core)/sider/nav-user"
 import {
   Sidebar,
@@ -12,144 +11,71 @@ import {
 } from "@/components/ui/sidebar"
 
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  BookTextIcon,
+  BoxesIcon,
+  ChartLineIcon,
+  CircleDollarSignIcon,
+  CogIcon,
+  FileSymlinkIcon,
+  LifeBuoyIcon,
+  ScrollTextIcon,
+  UsersIcon,
 } from "lucide-react"
 
-// This is sample data.
-const data = {
+const siderData = {
   user: {
     name: "shadcn",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
   navMain: [
     {
-      title: "Playground",
+      title: "Dashboard",
       url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
+      icon: ChartLineIcon,
     },
     {
-      title: "Models",
+      title: "Relatórios",
       url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
+      icon: BookTextIcon,
     },
     {
-      title: "Documentation",
+      title: "Produtos",
       url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
+      icon: BoxesIcon,
     },
     {
-      title: "Settings",
+      title: "Clientes",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: UsersIcon,
+    },
+    {
+      title: "Pagamentos",
+      url: "#",
+      icon: CircleDollarSignIcon,
+    },
+    {
+      title: "Faturas",
+      url: "#",
+      icon: ScrollTextIcon,
     },
   ],
-  projects: [
+  
+  features: [
     {
-      name: "Design Engineering",
+      title: "Atualizações",
       url: "#",
-      icon: Frame,
+      icon: FileSymlinkIcon,
     },
     {
-      name: "Sales & Marketing",
+      title: "Definições",
       url: "#",
-      icon: PieChart,
+      icon: CogIcon,
     },
     {
-      name: "Travel",
+      title: "Suporte",
       url: "#",
-      icon: Map,
+      icon: LifeBuoyIcon,
     },
   ],
 }
@@ -158,11 +84,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        <NavMain items={siderData.navMain} />
+        <NavMain items={siderData.features} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={siderData.user} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
