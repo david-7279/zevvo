@@ -1,13 +1,13 @@
 import React from "react"
 
+import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import DashboardHeaderCard from "@/app/(core)/_components/dashboard-header-card"
 import DashboardFooterCard from "@/app/(core)/_components/dashboard-footer-card"
-import CoreWrapper from "@/app/(core)/_components/core-wrapper"
+import DashboardSalesChart from "@/app/(core)/_components/dashboard-sales-chart"
 
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Filter, MoreHorizontal } from "lucide-react"
+import { MoreHorizontal } from "lucide-react"
 
 const Dashboard = () => {
   return (
@@ -23,36 +23,7 @@ const Dashboard = () => {
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Vendas Chart */}
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <div className="h-4 w-4 rounded bg-muted" />
-              <span className="font-medium">Vendas</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Select defaultValue="semanal">
-                <SelectTrigger className="w-24 h-8">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="semanal">Semanal</SelectItem>
-                  <SelectItem value="mensal">Mensal</SelectItem>
-                  <SelectItem value="anual">Anual</SelectItem>
-                </SelectContent>
-              </Select>
-              <Button variant="outline" size="sm">
-                <Filter className="h-4 w-4 mr-1" />
-                Filtrar
-              </Button>
-              <Button variant="ghost" size="sm">
-                <MoreHorizontal className="h-4 w-4" />
-              </Button>
-            </div>
-          </CardHeader>
-          <CardContent className="flex items-center justify-center h-64">
-            <div className="text-6xl font-bold text-muted-foreground">CHART</div>
-          </CardContent>
-        </Card>
+        <DashboardSalesChart />
 
         {/* Stock Chart */}
         <Card>
