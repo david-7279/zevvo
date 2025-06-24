@@ -2,17 +2,27 @@ export const Path = {
   // DEAFAULT
   root: "/",
   terms: "/terms",
+
+  // AUTH
   login: "/login",
   register: "/register",
 
-  // HUB
+  // CORE
+  dashboard: "/dashboard",
+  reports: "/reports",
+
   products: "/products",
   productsId: "/products/:id",
 
   clients: "/clients",
   clientsId: "/clients/:id",
 
-  profile: "/profile",
+  payments: "/payments",
+  invoices: "/invoices",
+
+  changelog: "/changelog",
   settings: "/settings",
-  support: "/support"
+  support: "/support",
+
+  profile: "/profile",
 };
