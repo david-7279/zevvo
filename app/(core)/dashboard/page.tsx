@@ -1,14 +1,17 @@
-import React from 'react'
+import React from "react"
+
+import DashboardHeaderCard from "@/app/(core)/_components/dashboard-header-card"
+import DashboardFooterCard from "@/app/(core)/_components/dashboard-footer-card"
+import CoreWrapper from "@/app/(core)/_components/core-wrapper"
+
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Filter, MoreHorizontal } from "lucide-react"
-import DashboardHeaderCard from '../_components/dashboard-header-card'
-import DashboardFooterCard from '../_components/dashboard-footer-card'
 
 const Dashboard = () => {
   return (
-    <div className="space-y-5">
+    <CoreWrapper>
       {/* Dashboard Title */}
       <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Dashboard</h3>
 
@@ -72,7 +75,7 @@ const Dashboard = () => {
       <div className="flex flex-row flex-wrap gap-10" >
         <DashboardFooterCard />
       </div>
-    </div>
+    </CoreWrapper>
   )
 }
 
