@@ -1,6 +1,18 @@
 "use client"
 
 import * as React from "react"
+import { NavMain } from "@/components/layout/(core)/sider/nav-main"
+import { NavProjects } from "@/components/layout/(core)/sider/nav-projects"
+import { NavUser } from "@/components/layout/(core)/sider/nav-user"
+import AppSiderLogo from "@/components/layout/(core)/sider/app-sider-logo"
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarHeader,
+  SidebarRail,
+} from "@/components/ui/sidebar"
+
 import {
   AudioWaveform,
   BookOpen,
@@ -13,17 +25,6 @@ import {
   Settings2,
   SquareTerminal,
 } from "lucide-react"
-
-import { NavMain } from "@/components/layout/(core)/sider/nav-main"
-import { NavProjects } from "@/components/layout/(core)/sider/nav-projects"
-import { NavUser } from "@/components/layout/(core)/sider/nav-user"
-import {
-  Sidebar,
-  SidebarContent,
-  SidebarFooter,
-  SidebarHeader,
-  SidebarRail,
-} from "@/components/ui/sidebar"
 
 // This is sample data.
 const data = {
@@ -158,9 +159,6 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <h2>Zevvo</h2>
-      </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
