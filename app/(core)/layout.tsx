@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/sonner";
 import "../globals.css";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/layout/(core)/sider/app-sider";
+import AppSiderHeader from "@/components/layout/(core)/sider/app-sider-header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,10 @@ export default function CoreLayout({
             <SidebarInset>
               <Toaster />
 
-              {children}
+              <AppSiderHeader />
+              <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
+                {children}
+              </div>
             </SidebarInset>
           </SidebarProvider>
         </ThemeProvider>
