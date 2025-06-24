@@ -35,7 +35,7 @@ const siderData = {
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
-  
+
   overview: [
     {
       label: "Dashboard",
@@ -100,7 +100,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" className="hover:rounded-2xl" asChild>
-              <Link href={Path.root}>
+              <Link href={Path.dashboard}>
                 <div className="flex items-center gap-2">
                   <div className="flex aspect-square size-7 items-center justify-center rounded-lg">
                     <PackageIcon size={16} />
