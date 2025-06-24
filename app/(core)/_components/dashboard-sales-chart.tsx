@@ -11,9 +11,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 import { Button } from "@/components/ui/button"
-import { TrendingUp, Filter, CircleDollarSignIcon, CalendarRangeIcon } from "lucide-react"
-
-export const description = "A bar chart"
+import { TrendingUp, CircleDollarSignIcon, CalendarRangeIcon, FilterIcon } from "lucide-react"
 
 const chartDataMontly = [
   { month: "Janeiro", sales: 186 },
@@ -69,7 +67,7 @@ const DashboardSalesChart = () => {
             </SelectContent>
           </Select>
           <Button variant="outline" className="h-9 rounded-xl">
-            <Filter className="size-4 mr-1" />
+            <FilterIcon className="size-4 mr-1" />
             Filtrar
           </Button>
         </div>
@@ -88,7 +86,7 @@ const DashboardSalesChart = () => {
             />
             <ChartTooltip
               cursor={false}
-              content={<ChartTooltipContent hideLabel />}
+              content={<ChartTooltipContent indicator="line" />}
             />
             <Bar dataKey="sales" fill="var(--color-sales)" radius={8} />
           </BarChart>
