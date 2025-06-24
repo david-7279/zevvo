@@ -4,12 +4,10 @@ import * as React from "react"
 import { NavMain } from "@/components/layout/(core)/sider/nav-main"
 import { NavProjects } from "@/components/layout/(core)/sider/nav-projects"
 import { NavUser } from "@/components/layout/(core)/sider/nav-user"
-import AppSiderLogo from "@/components/layout/(core)/sider/app-sider-logo"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
-  SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
 
