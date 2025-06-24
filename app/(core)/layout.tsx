@@ -2,6 +2,8 @@ import { ThemeProvider } from "@/components/providers/theme-provider"
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import "../globals.css";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/layout/(core)/sider/app-sider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +31,14 @@ export default function CoreLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Toaster />
-          {children}
+          <SidebarProvider>
+            <AppSidebar />
+            <SidebarInset>
+              <Toaster />
+
+              {children}
+            </SidebarInset>
+          </SidebarProvider>
         </ThemeProvider>
       </body>
     </html>
