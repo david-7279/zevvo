@@ -1,17 +1,11 @@
 "use client"
 import React from 'react'
 
-import { CircleDollarSignIcon, FilterIcon, TrendingUp, TrendingUpIcon } from "lucide-react"
+import { CalendarRangeIcon, CircleDollarSignIcon, FilterIcon, TrendingUpIcon } from "lucide-react"
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   ChartConfig,
   ChartContainer,
@@ -60,6 +54,20 @@ const DashboardStocksChart = () => {
         </Button>
 
         <div className="flex items-center gap-2">
+          <Select defaultValue="semanal">
+            <SelectTrigger className="relative w-full rounded-xl ps-9">
+              <div className="text-muted-foreground/80 pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 group-has-[select[disabled]]:opacity-50">
+                <CalendarRangeIcon size={16} aria-hidden="true" />
+              </div>
+              <SelectValue placeholder="Select time" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="semanal">Semanal</SelectItem>
+              <SelectItem value="mensal">Mensal</SelectItem>
+              <SelectItem value="anual">Anual</SelectItem>
+            </SelectContent>
+          </Select>
+
           <Button variant="outline" className="h-9 rounded-xl">
             <FilterIcon className="size-4 mr-1" />
             Filtrar
