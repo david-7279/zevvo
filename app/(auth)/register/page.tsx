@@ -55,7 +55,9 @@ const Register = () => {
         </div>
 
         {/* RIGHT PANEL */}
-        <SiderContent />
+        <div className="inline-flex items-center py-3 px-6">
+          <SiderContent />
+        </div>
       </div>
     </div>
   );

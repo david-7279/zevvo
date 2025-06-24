@@ -1,5 +1,5 @@
-import Image from "next/image"
 import React from "react"
+import Image from "next/image"
 
 import siderImage from "@/public/sider-content.png"
 import { Card, CardContent } from "@/components/ui/card"
