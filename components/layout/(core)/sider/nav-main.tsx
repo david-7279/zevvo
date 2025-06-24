@@ -19,7 +19,7 @@ export function NavMain({
   items: {
     label: string
     url: string
-    icon?: LucideIcon
+    icon: LucideIcon
     isActive?: boolean
   }[]
 } & React.ComponentPropsWithoutRef<typeof SidebarGroup>) {
@@ -28,13 +28,13 @@ export function NavMain({
       <SidebarGroupLabel>{title}</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
-          <SidebarMenuItem>
-            <Link href={item.url}>
-              <SidebarMenuButton size="sm" tooltip={item.label} className="hover:!rounded-2xl">
-                {item.icon && <item.icon />}
+          <SidebarMenuItem key={item.label}>
+            <SidebarMenuButton size="sm" asChild tooltip={item.label} className="hover:!rounded-2xl">
+              <Link href={item.url}>
+                <item.icon />
                 <span>{item.label}</span>
-              </SidebarMenuButton>
-            </Link>
+              </Link>
+            </SidebarMenuButton>
           </SidebarMenuItem>
         ))}
       </SidebarMenu>

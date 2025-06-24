@@ -34,6 +34,7 @@ export default function CoreLayout({
         >
           <SidebarProvider>
             <AppSidebar />
+            
             <SidebarInset>
               <Toaster />
 
