@@ -2,12 +2,13 @@ import React from 'react'
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Filter, MoreHorizontal, User, ArrowRight } from "lucide-react"
+import { Filter, MoreHorizontal } from "lucide-react"
 import DashboardHeaderCard from '../_components/dashboard-header-card'
+import DashboardFooterCard from '../_components/dashboard-footer-card'
 
 const Dashboard = () => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Dashboard Title */}
       <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Dashboard</h3>
 
@@ -68,46 +69,8 @@ const Dashboard = () => {
       </div >
 
       {/* Bottom Cards Row */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6" >
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-start space-x-4">
-              <div className="p-2 bg-muted rounded-lg">
-                <User className="h-6 w-6" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg mb-2">Gestão de clientes</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Organize as informações dos clientes e acompanhe o histórico de compromissos num único local.
-                </p>
-                <Button variant="ghost" className="p-0 h-auto font-medium">
-                  Descobrir Mais
-                  <ArrowRight className="h-4 w-4 ml-1" />
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-start space-x-4">
-              <div className="p-2 bg-muted rounded-lg">
-                <User className="h-6 w-6" />
-              </div>
-              <div className="flex-1">
-                <h3 className="font-semibold text-lg mb-2">Gestão de clientes</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Organize as informações dos clientes e acompanhe o histórico de compromissos num único local.
-                </p>
-                <Button variant="ghost" className="p-0 h-auto font-medium">
-                  Descobrir Mais
-                  <ArrowRight className="h-4 w-4 ml-1" />
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <div className="flex flex-row flex-wrap gap-10" >
+        <DashboardFooterCard />
       </div>
     </div>
   )
