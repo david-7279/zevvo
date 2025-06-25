@@ -20,8 +20,8 @@ const ChangelogAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
     <aside className="w-80 shrink-0 hidden lg:block">
       <div className="sticky top-6">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">Changelog</h1>
-          <p className="text-muted-foreground">Get the latest updates and improvements to our platform.</p>
+          <h1 className="text-3xl font-bold mb-2">Atualizações</h1>
+          <p className="text-muted-foreground">Receba as últimas actualizações e melhorias da nossa plataforma</p>
         </div>
 
         <div className="mb-6">
