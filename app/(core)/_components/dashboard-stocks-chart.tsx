@@ -67,14 +67,9 @@ const DashboardStocksChart = () => {
               <SelectItem value="anual">Anual</SelectItem>
             </SelectContent>
           </Select>
-
-          <Button variant="outline" className="h-9 rounded-xl">
-            <FilterIcon className="size-4 mr-1" />
-            Filtrar
-          </Button>
         </div>
-
       </CardHeader>
+
       <CardContent>
         <ChartContainer config={chartConfig}>
           <LineChart
