@@ -24,7 +24,7 @@ const Dashboard = () => {
       </div >
 
       {/* Bottom Cards Row */}
-      <div className="flex flex-row flex-wrap gap-10" >
+      <div className="flex flex-row flex-wrap gap-5 md:gap-10" >
         <DashboardFooterCard />
       </div>
     </CoreWrapper>

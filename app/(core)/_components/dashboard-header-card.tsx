@@ -35,7 +35,7 @@ const DashboardHeaderCard = () => {
       {dashboardHeaderCardsData.map((data, index) => {
         const Icon = data.icon
         return (
-          <Card key={index} className="max-w-[480px] w-full gap-4.5">
+          <Card key={index} className="w-full md:w-full lg:max-w-[480px] gap-4.5">
             <CardHeader className="flex flex-row items-center justify-between">
               <Badge className="text-card-foreground rounded-xl py-1 bg-card border-border">
                 <div className="flex items-center space-x-2">
@@ -44,15 +44,15 @@ const DashboardHeaderCard = () => {
                 </div>
               </Badge>
 
-                <Badge
+              <Badge
                 className={`text-xs inline-flex items-center border-0 
                   ${data.trend === "up"
-                  ? "text-green-600 bg-green-50 border-green-200 dark:text-green-400 dark:bg-green-950"
-                  : "text-red-600 bg-red-50 border-red-200 dark:text-red-400 dark:bg-red-950"}`}
-                >
+                    ? "text-green-600 bg-green-50 border-green-200 dark:text-green-400 dark:bg-green-950"
+                    : "text-red-600 bg-red-50 border-red-200 dark:text-red-400 dark:bg-red-950"}`}
+              >
                 <TrendingUpIcon className="h-3 w-3 mr-1" />
                 {data.percentage}
-                </Badge>
+              </Badge>
             </CardHeader>
             <CardContent>
               <div className="text-lg font-semibold">{data.value}</div>
