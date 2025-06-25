@@ -2,8 +2,8 @@
 
 import React, { useState } from "react"
 
-import ChangelogAside from "@/app/(core)/changelog/_components/aside";
-import ChangelogContent from "@/app/(core)/changelog/_components/content";
+import ChangelogAside from "@/app/(core)/(system)/changelog/_components/aside";
+import ChangelogContent from "@/app/(core)/(system)/changelog/_components/content";
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
 
 const changelogData = [
