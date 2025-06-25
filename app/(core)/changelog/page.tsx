@@ -1,72 +1,108 @@
-import React from 'react'
+"use client"
 
-import CoreWrapper from "@/app/(core)/_components/core-wrapper"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+import React, { useState } from 'react'
+import ChangelogAside from './_components/aside';
+import ChangelogContent from './_components/content';
 
-const changelogTabs = [
+const changelogData = [
   {
-    id: "2",
-    name: "Melhoramento da Dashboard",
+    id: "enhanced-analytics",
+    title: "Enhanced Analytics Dashboard",
     version: "1.3.0",
-    date: "15 Junho 2025"
+    date: "15 November 2024",
+    description:
+      "We've completely redesigned our analytics dashboard to provide deeper insights and improved visualizations of your data.",
+    features: [
+      "Interactive data visualizations with real-time updates",
+      "Customizable dashboard widgets",
+      "Export analytics in multiple formats (CSV, PDF, Excel)",
+      "New reporting templates for common use cases",
+      "Improved data filtering and segmentation options",
+    ],
+    improvements: [
+      "Faster loading times for large datasets",
+      "Better mobile responsiveness",
+      "Enhanced color schemes for better accessibility",
+    ],
+    fixes: [
+      "Fixed issue with date range picker",
+      "Resolved chart rendering problems on Safari",
+      "Fixed export functionality for large reports",
+    ],
   },
   {
-    id: "1",
-    name: "Melhoramento da Tabela dos Produtos",
-    version: "1.3.0",
-    date: "15 Junho 2025"
+    id: "mobile-app-launch",
+    title: "Mobile App Launch",
+    version: "1.2.5",
+    date: "7 October 2024",
+    description:
+      "Our brand new mobile application is now available for iOS and Android devices, bringing the full power of our platform to your mobile device.",
+    features: [
+      "Native iOS and Android applications",
+      "Offline mode for core functionality",
+      "Push notifications for important updates",
+      "Biometric authentication support",
+      "Optimized mobile interface",
+    ],
+    improvements: ["Streamlined onboarding process", "Improved performance on older devices"],
+    fixes: ["Fixed login issues on some Android devices", "Resolved notification delivery problems"],
   },
   {
-    id: "0",
-    name: "Melhoramento do Stock",
-    version: "1.3.0",
-    date: "15 Junho 2025"
+    id: "api-improvements",
+    title: "API Performance Improvements",
+    version: "1.2.0",
+    date: "15 September 2024",
+    description:
+      "Major improvements to our API infrastructure resulting in faster response times and better reliability.",
+    features: [
+      "New GraphQL endpoint for flexible data queries",
+      "Webhook support for real-time integrations",
+      "Enhanced API documentation with interactive examples",
+      "Rate limiting improvements",
+    ],
+    improvements: [
+      "50% faster average response times",
+      "Better error handling and messaging",
+      "Improved API key management",
+    ],
+    fixes: [
+      "Fixed timeout issues with large data requests",
+      "Resolved authentication edge cases",
+      "Fixed pagination inconsistencies",
+    ],
   },
-];
+]
+
 
 const Changelog = () => {
+  const [activeId, setActiveId] = useState(changelogData[0].id)
+  const activeItem = changelogData.find((item) => item.id === activeId) || changelogData[0]
+
   return (
-    <CoreWrapper>
-      {/* Changelog Title */}
-      <div className="mb-16">
-        <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Atualizações</h3>
-        <p className="text-muted-foreground text-sm">Receba as últimas actualizações e melhorias da nossa plataforma</p>
-        <Separator />
-      </div>
+    <div className="min-h-screen bg-background">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex gap-8">
+          <ChangelogAside items={changelogData} activeId={activeId} onItemClick={setActiveId} />
 
+          <main className="flex-1 min-w-0">
+            <div className="lg:hidden mb-8">
+              <h1 className="text-3xl font-bold mb-2">Atualizações</h1>
+              <p className="text-muted-foreground">Receba as últimas actualizações e melhorias da nossa plataforma</p>
+            </div>
 
-      <Tabs orientation="vertical" defaultValue={changelogTabs[0].id} className="w-full flex flex-row items-start gap-4 justify-start">
-        <TabsList className="flex flex-col shrink-0">
-          {changelogTabs.map((tab) => (
-            <TabsTrigger
-              key={tab.id}
-              value={tab.id}
-              className="border-l-2 border-transparent justify-start rounded-none data-[state=active]:shadow-none data-[state=active]:border-primary data-[state=active]:bg-primary/5 py-1.5"
-            >
-              <Card className="gap-1 py-4 data-[state=active]:border-primary data-[state=active]:border data-[state=active]:bg-accent-foreground">
-                <CardHeader><p className="text-sm text-foreground font-semibold">{tab.name}</p></CardHeader>
-                <CardContent>
-                  <div className="inline-flex gap-2 items-center">
-                    <small className="text-sm text-muted-foreground">Version {tab.version}</small>
-                    <li className="text-muted-foreground" />
-                    <small className="text-sm text-muted-foreground">{tab.date}</small>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsTrigger>
-          ))}
-        </TabsList>
-
-        <div className="flex items-start justify-start w-full border rounded-md font-medium text-muted-foreground">
-          {changelogTabs.map((tab) => (
-            <TabsContent key={tab.id} value={tab.id}>
-              {tab.name} Content
-            </TabsContent>))}
+            <ChangelogContent
+              title={activeItem.title}
+              version={activeItem.version}
+              date={activeItem.date}
+              description={activeItem.description}
+              features={activeItem.features}
+              improvements={activeItem.improvements}
+              fixes={activeItem.fixes}
+            />
+          </main>
         </div>
-      </Tabs>
-    </CoreWrapper>
+      </div>
+    </div>
   )
 }
 
