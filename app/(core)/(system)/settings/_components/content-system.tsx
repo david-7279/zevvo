@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Globe, Shield, Database, Clock } from "lucide-react"
+import { Globe, Shield, Database } from "lucide-react"
 
 const SystemContent = () => {
   return (
