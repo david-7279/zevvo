@@ -51,7 +51,7 @@ const ChangelogAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
                   <div className="flex items-center gap-3 text-xs text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <TagIcon className="h-3 w-3" />
-                      <span>Version {item.version}</span>
+                      <span>Versão {item.version}</span>
                     </div>
                     <div className="flex items-center gap-1">
                       <CalendarIcon className="h-3 w-3" />
