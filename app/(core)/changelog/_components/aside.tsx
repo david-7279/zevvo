@@ -19,8 +19,8 @@ interface Props {
 
 const ChangelogAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
   return (
-    <aside className="w-80 shrink-0 hidden lg:block">
-      <div className="sticky top-6">
+    <aside className="w-full lg:w-80 shrink-0">
+      <div className="lg:sticky lg:top-6">
         <div className="mb-8 space-y-5">
           <div className="space-y-2">
             <h1 className="text-2xl font-semibold">Atualizações</h1>

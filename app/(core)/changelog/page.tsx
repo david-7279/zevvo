@@ -83,19 +83,13 @@ const changelogData = [
 const Changelog = () => {
   const [activeId, setActiveId] = useState(changelogData[0].id)
   const activeItem = changelogData.find((item) => item.id === activeId) || changelogData[0]
-
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <div className="flex gap-8">
+        <div className="flex flex-col lg:flex-row gap-8">
           <ChangelogAside items={changelogData} activeId={activeId} onItemClick={setActiveId} />
 
           <main className="flex-1 min-w-0">
-            <div className="lg:hidden mb-8">
-              <h1 className="text-xl font-se mb-2">Atualizações</h1>
-              <p className="text-muted-foreground">Receba as últimas actualizações e melhorias da nossa plataforma</p>
-            </div>
-
             <ChangelogContent
               title={activeItem.title}
               version={activeItem.version}
