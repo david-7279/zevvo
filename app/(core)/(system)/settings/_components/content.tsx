@@ -1,6 +1,6 @@
 import React from 'react'
 import SystemContent from './system-content'
-import AccountContent from './account-content'
+import AccountContent from "@/app/(core)/(system)/settings/_components/content-account"
 import BillingContent from './billing-content'
 
 interface Props {

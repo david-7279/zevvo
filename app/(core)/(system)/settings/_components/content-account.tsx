@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { User, Mail, Phone, MapPin, Key } from "lucide-react"
+import { User, MapPin, Key } from "lucide-react"
 
 const AccountContent = () => {
   return (
@@ -87,7 +87,7 @@ const AccountContent = () => {
             <Label htmlFor="address">Morada</Label>
             <Input id="address" placeholder="Rua das Flores, 123" />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="space-y-2">
               <Label htmlFor="city">Cidade</Label>
@@ -126,9 +126,9 @@ const AccountContent = () => {
             </div>
             <Button variant="outline" size="sm">Alterar</Button>
           </div>
-          
+
           <Separator />
-          
+
           <div className="flex items-center justify-between">
             <div className="space-y-1">
               <p className="text-sm font-medium">Eliminar Conta</p>

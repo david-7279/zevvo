@@ -41,12 +41,12 @@ const ChangelogAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
                   variant="ghost"
                   onClick={() => onItemClick(item.id)}
                   className={`
-          min-w-[16rem] h-16 text-left items-start justify-start rounded-lg border transition-all hover:bg-accent 
-          ${activeId === item.id
+                  min-w-[16rem] h-16 text-left items-start justify-start rounded-lg border transition-all hover:bg-accent 
+                  ${activeId === item.id
                       ? "bg-accent border-primary shadow-sm"
                       : "border-border hover:border-primary/50"
                     }
-        `}
+                `}
                 >
                   <div className="space-y-2">
                     <h3 className="font-medium text-sm leading-tight">{item.title}</h3>
