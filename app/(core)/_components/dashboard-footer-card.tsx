@@ -26,8 +26,8 @@ const DashboardFooterCard = () => {
       {dashboardFooterCardsData.map((data, index) => {
         const Icon = data.icon
         return (
-          <Link href={data.link} key={index} className="group">
-            <Card className="w-full md:w-full lg:max-w-xl gap-7 hover:border-foreground transition-colors duration-300">
+          <Link href={data.link} key={index} className="w-full md:w-full lg:w-lg group">
+            <Card className="w-full md:w-full lg:w-lg gap-7 hover:border-foreground transition-colors duration-300">
               <CardHeader className="flex flex-row items-center justify-between">
                 <Button variant="ghost" className="w-13 h-13 rounded-xl bg-accent border-0">
                   <Icon className="size-6 text-muted-foreground" />
