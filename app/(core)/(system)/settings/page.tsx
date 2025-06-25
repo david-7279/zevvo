@@ -6,21 +6,25 @@ const settingsData = [
   {
     id: "system",
     title: "Plataforma",
-    icon: PackageIcon
+    icon: PackageIcon,
+    content: "system-content", // CALLS AN COMPONENT FOR THAT
   },
   {
     id: "account",
     title: "Conta",
-    icon: UserIcon
+    icon: UserIcon,
+    content: "account-content", // CALLS AN COMPONENT FOR THAT
   },
   {
     id: "biling",
     title: "Plano",
-    icon: WalletIcon
+    icon: WalletIcon,
+    content: "biling-content", // CALLS AN COMPONENT FOR THAT
   },
 ]
 
 import SettingsAside from "@/app/(core)/(system)/settings/_components/aside";
+import SettingsContent from "@/app/(core)/(system)/settings/_components/content";
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
 import { PackageIcon, UserIcon, WalletIcon } from "lucide-react";
 
@@ -34,7 +38,7 @@ const Settings = () => {
           <SettingsAside items={settingsData} activeId={activeId} onItemClick={setActiveId} />
 
           <main className="flex-1 min-w-0">
-
+            <SettingsContent activeId={activeId} />
           </main>
         </div>
       </div>
