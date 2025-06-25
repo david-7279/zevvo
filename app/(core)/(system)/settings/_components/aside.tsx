@@ -31,7 +31,7 @@ const SettingsAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
         </div>
         <div className="mb-6">
           <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Opções de Definições</h2>
-          {/* Row for first 3 items on small screens */}
+
           <div className="flex flex-row gap-2 mb-4 lg:hidden">
             {items.slice(0, 3).map((item) => (
               <Button
@@ -39,12 +39,12 @@ const SettingsAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
                 variant="ghost"
                 onClick={() => onItemClick(item.id)}
                 className={`
-          flex-1 h-16 text-left items-center justify-start rounded-lg border transition-all hover:bg-accent
-          ${activeId === item.id
+                flex-1 h-16 text-left items-center justify-start rounded-lg border transition-all hover:bg-accent
+                ${activeId === item.id
                     ? "bg-accent border-primary shadow-sm"
                     : "border-border hover:border-primary/50"
                   }
-        `}
+                `}
               >
                 <div className="flex items-center gap-3">
                   {item.icon && <item.icon className="h-5 w-5" />}

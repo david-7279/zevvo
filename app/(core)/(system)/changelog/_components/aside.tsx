@@ -30,8 +30,44 @@ const ChangelogAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
         </div>
 
         <div className="mb-6">
-          <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Nesta página</h2>
-          <div className="space-y-2">
+          <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Lista de Atualizações</h2>
+
+          {/* RESPONSIVE */}
+          <div className="overflow-x-auto whitespace-nowrap mb-4 lg:hidden">
+            <div className="flex flex-row gap-2">
+              {items.map((item) => (
+                <Button
+                  key={item.id}
+                  variant="ghost"
+                  onClick={() => onItemClick(item.id)}
+                  className={`
+          min-w-[16rem] h-16 text-left items-start justify-start rounded-lg border transition-all hover:bg-accent 
+          ${activeId === item.id
+                      ? "bg-accent border-primary shadow-sm"
+                      : "border-border hover:border-primary/50"
+                    }
+        `}
+                >
+                  <div className="space-y-2">
+                    <h3 className="font-medium text-sm leading-tight">{item.title}</h3>
+                    <div className="flex items-center gap-3 text-xs text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <TagIcon className="h-3 w-3" />
+                        <span>Versão {item.version}</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <CalendarIcon className="h-3 w-3" />
+                        <span>{item.date}</span>
+                      </div>
+                    </div>
+                  </div>
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {/* DESKTOP */}
+          <div className="space-y-2 hidden lg:block">
             {items.map((item) => (
               <Button
                 key={item.id}
@@ -62,6 +98,7 @@ const ChangelogAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
               </Button>
             ))}
           </div>
+
         </div>
       </div>
     </aside>
