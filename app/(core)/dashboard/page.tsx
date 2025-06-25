@@ -3,8 +3,8 @@ import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import DashboardHeaderCard from "@/app/(core)/_components/dashboard-header-card"
 import DashboardFooterCard from "@/app/(core)/_components/dashboard-footer-card"
-import DashboardSalesChart from "@/app/(core)/_components/dashboard-sales-chart"
-import DashboardStocksChart from "@/app/(core)/_components/dashboard-stocks-chart"
+import DashboardSalesChart from "@/app/(core)/_components/charts/dashboard-sales-chart"
+import DashboardStocksChart from "@/app/(core)/_components/charts/dashboard-stocks-chart"
 
 const Dashboard = () => {
   return (
