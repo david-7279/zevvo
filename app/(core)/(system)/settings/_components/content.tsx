@@ -14,7 +14,7 @@ const SettingsContent: React.FC<Props> = ({ activeId }) => {
         return <SystemContent />
       case 'account':
         return <AccountContent />
-      case 'biling': // Note: keeping the typo as it matches the data
+      case 'biling':
         return <BillingContent />
       default:
         return <SystemContent />
