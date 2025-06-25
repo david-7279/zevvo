@@ -1,7 +1,7 @@
 import React from 'react'
 import SystemContent from './system-content'
 import AccountContent from "@/app/(core)/(system)/settings/_components/content-account"
-import BillingContent from './billing-content'
+import BillingContent from "@/app/(core)/(system)/settings/_components/content-billing"
 
 interface Props {
   activeId: string
