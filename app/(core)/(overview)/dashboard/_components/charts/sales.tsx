@@ -11,7 +11,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 import { Button } from "@/components/ui/button"
-import { TrendingUp, CircleDollarSignIcon, CalendarRangeIcon, FilterIcon } from "lucide-react"
+import { TrendingUp, CircleDollarSignIcon, CalendarRangeIcon } from "lucide-react"
 
 const chartDataMontly = [
   { month: "Janeiro", sales: 186 },

@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 
-import { CalendarRangeIcon, CircleDollarSignIcon, FilterIcon, TrendingUpIcon } from "lucide-react"
+import { CalendarRangeIcon, CircleDollarSignIcon, TrendingUpIcon } from "lucide-react"
 import { CartesianGrid, Line, LineChart, XAxis } from "recharts"
 
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"

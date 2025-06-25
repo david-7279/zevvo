@@ -3,7 +3,7 @@ import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import DashboardHeaderCard from "@/app/(core)/(overview)/dashboard/_components/header-card"
 import DashboardFooterCard from "@/app/(core)/(overview)/dashboard/_components/footer-card"
-import DashboardSalesChart from "@/app/(core)/_components/charts/dashboard-sales-chart"
+import DashboardSalesChart from "@/app/(core)/(overview)/dashboard/_components/charts/sales"
 import DashboardStocksChart from "@/app/(core)/(overview)/dashboard/_components/charts/stocks"
 
 const Dashboard = () => {
