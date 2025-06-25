@@ -23,27 +23,50 @@ const SettingsAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
         <div className="mb-8 space-y-5">
           <div className="space-y-2">
             <h1 className="text-2xl font-semibold">Definições</h1>
-            <small className="text-muted-foreground text-sm">Receba as últimas actualizações e melhorias da nossa plataforma</small>
+            <small className="text-muted-foreground text-sm">
+              Personalize as suas preferências, atualize informações da conta nesta página.
+            </small>
           </div>
           <Separator />
         </div>
-
         <div className="mb-6">
-          <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Nesta página</h2>
-          <div className="space-y-2">
+          <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Opções de Definições</h2>
+          {/* Row for first 3 items on small screens */}
+          <div className="flex flex-row gap-2 mb-4 lg:hidden">
+            {items.slice(0, 3).map((item) => (
+              <Button
+                key={item.id}
+                variant="ghost"
+                onClick={() => onItemClick(item.id)}
+                className={`
+          flex-1 h-16 text-left items-center justify-start rounded-lg border transition-all hover:bg-accent
+          ${activeId === item.id
+                    ? "bg-accent border-primary shadow-sm"
+                    : "border-border hover:border-primary/50"
+                  }
+        `}
+              >
+                <div className="flex items-center gap-3">
+                  {item.icon && <item.icon className="h-5 w-5" />}
+                  <span className="font-medium text-sm">{item.title}</span>
+                </div>
+              </Button>
+            ))}
+          </div>
+          {/* Column for all items on large screens */}
+          <div className="space-y-2 hidden lg:block">
             {items.map((item) => (
               <Button
                 key={item.id}
                 variant="ghost"
                 onClick={() => onItemClick(item.id)}
-                className=
-                {`
-                  w-full h-16 text-left items-start justify-start rounded-lg border transition-all hover:bg-accent 
-                  ${activeId === item.id
+                className={`
+          w-full h-16 text-left items-center justify-start rounded-lg border transition-all hover:bg-accent
+          ${activeId === item.id
                     ? "bg-accent border-primary shadow-sm"
                     : "border-border hover:border-primary/50"
                   }
-                  `}
+        `}
               >
                 <div className="flex items-center gap-3">
                   {item.icon && <item.icon className="h-5 w-5" />}
