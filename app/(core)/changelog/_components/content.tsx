@@ -28,7 +28,7 @@ const ChangelogContent: React.FC<Props> = ({ title, version, date, description, 
             <span>{date}</span>
           </div>
         </div>
-        <h1 className="text-3xl font-semibold">{title}</h1>
+        <h1 className="text-2xl font-semibold">{title}</h1>
         <p className="text-base text-muted-foreground leading-relaxed">{description}</p>
       </div>
 

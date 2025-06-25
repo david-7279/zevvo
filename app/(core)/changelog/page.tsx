@@ -7,68 +7,74 @@ import ChangelogContent from './_components/content';
 const changelogData = [
   {
     id: "enhanced-analytics",
-    title: "Enhanced Analytics Dashboard",
+    title: "Painel de Análises Melhorado",
     version: "1.3.0",
-    date: "15 November 2024",
+    date: "15 de agosto de 2025",
     description:
-      "We've completely redesigned our analytics dashboard to provide deeper insights and improved visualizations of your data.",
+      "Redesenhámos completamente o nosso painel de análises para fornecer insights mais profundos e visualizações de dados melhoradas.",
     features: [
-      "Interactive data visualizations with real-time updates",
-      "Customizable dashboard widgets",
-      "Export analytics in multiple formats (CSV, PDF, Excel)",
-      "New reporting templates for common use cases",
-      "Improved data filtering and segmentation options",
+      "Visualizações de dados interativas com atualizações em tempo real",
+      "Widgets do painel personalizáveis",
+      "Exportação de análises em vários formatos (CSV, PDF, Excel)",
+      "Novos modelos de relatórios para casos de uso comuns",
+      "Opções melhoradas de filtragem e segmentação de dados",
     ],
     improvements: [
-      "Faster loading times for large datasets",
-      "Better mobile responsiveness",
-      "Enhanced color schemes for better accessibility",
+      "Tempos de carregamento mais rápidos para grandes volumes de dados",
+      "Melhor responsividade em dispositivos móveis",
+      "Esquemas de cores melhorados para melhor acessibilidade",
     ],
     fixes: [
-      "Fixed issue with date range picker",
-      "Resolved chart rendering problems on Safari",
-      "Fixed export functionality for large reports",
+      "Corrigido problema com o seletor de intervalo de datas",
+      "Resolvidos problemas de renderização de gráficos no Safari",
+      "Corrigida a funcionalidade de exportação para relatórios grandes",
     ],
   },
   {
     id: "mobile-app-launch",
-    title: "Mobile App Launch",
+    title: "Lançamento da Aplicação Móvel",
     version: "1.2.5",
-    date: "7 October 2024",
+    date: "7 de julho de 2025",
     description:
-      "Our brand new mobile application is now available for iOS and Android devices, bringing the full power of our platform to your mobile device.",
+      "A nossa nova aplicação móvel está agora disponível para dispositivos iOS e Android, trazendo todo o poder da nossa plataforma para o seu telemóvel.",
     features: [
-      "Native iOS and Android applications",
-      "Offline mode for core functionality",
-      "Push notifications for important updates",
-      "Biometric authentication support",
-      "Optimized mobile interface",
+      "Aplicações nativas para iOS e Android",
+      "Modo offline para funcionalidades principais",
+      "Notificações push para atualizações importantes",
+      "Suporte para autenticação biométrica",
+      "Interface móvel otimizada",
     ],
-    improvements: ["Streamlined onboarding process", "Improved performance on older devices"],
-    fixes: ["Fixed login issues on some Android devices", "Resolved notification delivery problems"],
+    improvements: [
+      "Processo de onboarding simplificado",
+      "Desempenho melhorado em dispositivos mais antigos"
+    ],
+    fixes: [
+      "Corrigidos problemas de login em alguns dispositivos Android",
+      "Resolvidos problemas de entrega de notificações"
+    ],
   },
   {
     id: "api-improvements",
-    title: "API Performance Improvements",
+    title: "Melhorias de Desempenho da API",
     version: "1.2.0",
-    date: "15 September 2024",
+    date: "15 de junho de 2025",
     description:
-      "Major improvements to our API infrastructure resulting in faster response times and better reliability.",
+      "Grandes melhorias na nossa infraestrutura de API resultando em tempos de resposta mais rápidos e maior fiabilidade.",
     features: [
-      "New GraphQL endpoint for flexible data queries",
-      "Webhook support for real-time integrations",
-      "Enhanced API documentation with interactive examples",
-      "Rate limiting improvements",
+      "Novo endpoint GraphQL para consultas de dados flexíveis",
+      "Suporte a webhooks para integrações em tempo real",
+      "Documentação de API melhorada com exemplos interativos",
+      "Melhorias no controlo de limites de requisições",
     ],
     improvements: [
-      "50% faster average response times",
-      "Better error handling and messaging",
-      "Improved API key management",
+      "Tempos de resposta médios 50% mais rápidos",
+      "Melhor gestão e comunicação de erros",
+      "Gestão de chaves de API melhorada",
     ],
     fixes: [
-      "Fixed timeout issues with large data requests",
-      "Resolved authentication edge cases",
-      "Fixed pagination inconsistencies",
+      "Corrigidos problemas de timeout com pedidos de grandes volumes de dados",
+      "Resolvidos casos limite de autenticação",
+      "Corrigidas inconsistências na paginação",
     ],
   },
 ]
@@ -86,7 +92,7 @@ const Changelog = () => {
 
           <main className="flex-1 min-w-0">
             <div className="lg:hidden mb-8">
-              <h1 className="text-3xl font-bold mb-2">Atualizações</h1>
+              <h1 className="text-xl font-se mb-2">Atualizações</h1>
               <p className="text-muted-foreground">Receba as últimas actualizações e melhorias da nossa plataforma</p>
             </div>
 
