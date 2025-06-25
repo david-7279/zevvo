@@ -1,8 +1,10 @@
 "use client"
 
-import React, { useState } from 'react'
-import ChangelogAside from './_components/aside';
-import ChangelogContent from './_components/content';
+import React, { useState } from "react"
+
+import ChangelogAside from "@/app/(core)/changelog/_components/aside";
+import ChangelogContent from "@/app/(core)/changelog/_components/content";
+import CoreWrapper from "@/app/(core)/_components/core-wrapper";
 
 const changelogData = [
   {
@@ -79,12 +81,11 @@ const changelogData = [
   },
 ]
 
-
 const Changelog = () => {
   const [activeId, setActiveId] = useState(changelogData[0].id)
   const activeItem = changelogData.find((item) => item.id === activeId) || changelogData[0]
   return (
-    <div className="min-h-screen bg-background">
+    <CoreWrapper>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <ChangelogAside items={changelogData} activeId={activeId} onItemClick={setActiveId} />
@@ -102,7 +103,7 @@ const Changelog = () => {
           </main>
         </div>
       </div>
-    </div>
+    </CoreWrapper>
   )
 }
 
