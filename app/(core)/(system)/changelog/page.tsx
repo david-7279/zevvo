@@ -84,6 +84,7 @@ const changelogData = [
 const Changelog = () => {
   const [activeId, setActiveId] = useState(changelogData[0].id)
   const activeItem = changelogData.find((item) => item.id === activeId) || changelogData[0]
+
   return (
     <CoreWrapper>
       <div className="container mx-auto px-4 py-8">

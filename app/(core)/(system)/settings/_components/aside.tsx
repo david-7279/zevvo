@@ -1,13 +1,12 @@
 import React from "react"
-import { CalendarIcon, TagIcon } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
+import { LucideIcon } from "lucide-react"
 
 interface SettingsItem {
   id: string
   title: string
-  version: string
-  date: string
+  icon?: LucideIcon
   isActive?: boolean
 }
 
@@ -46,18 +45,9 @@ const SettingsAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
                   }
                   `}
               >
-                <div className="space-y-2">
-                  <h3 className="font-medium text-sm leading-tight">{item.title}</h3>
-                  <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <TagIcon className="h-3 w-3" />
-                      <span>Versão {item.version}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <CalendarIcon className="h-3 w-3" />
-                      <span>{item.date}</span>
-                    </div>
-                  </div>
+                <div className="flex items-center gap-3">
+                  {item.icon && <item.icon className="h-5 w-5" />}
+                  <span className="font-medium text-sm">{item.title}</span>
                 </div>
               </Button>
             ))}
