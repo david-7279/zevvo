@@ -31,79 +31,29 @@ const AccountContent = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* Profile Picture */}
-          <div className="flex items-center gap-4">
-            <Avatar className="h-16 w-16">
-              <AvatarImage src="/placeholder-avatar.jpg" />
-              <AvatarFallback>JD</AvatarFallback>
-            </Avatar>
-            <div className="space-y-2">
-              <Button variant="outline" size="sm">Alterar Foto</Button>
-              <p className="text-xs text-muted-foreground">JPG, PNG. Máximo 2MB</p>
-            </div>
-          </div>
-
-          <Separator />
-
           {/* Form Fields */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="firstName">Primeiro Nome</Label>
-              <Input id="firstName" placeholder="João" />
+              <Input id="firstName" placeholder="Nome" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="lastName">Último Nome</Label>
-              <Input id="lastName" placeholder="Silva" />
+              <Input id="lastName" placeholder="Apelido" />
             </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="joao@exemplo.com" />
+            <Input id="email" type="email" placeholder="zevvo@exemplo.com" />
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="phone">Telefone</Label>
-            <Input id="phone" placeholder="+351 912 345 678" />
+            <Input id="phone" placeholder="910 200 300" />
           </div>
 
           <Button>Guardar Alterações</Button>
-        </CardContent>
-      </Card>
-
-      {/* Contact Information */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <MapPin className="h-5 w-5" />
-            Informações de Contacto
-          </CardTitle>
-          <CardDescription>
-            Endereço e informações de contacto
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-2">
-            <Label htmlFor="address">Morada</Label>
-            <Input id="address" placeholder="Rua das Flores, 123" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="space-y-2">
-              <Label htmlFor="city">Cidade</Label>
-              <Input id="city" placeholder="Lisboa" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="postalCode">Código Postal</Label>
-              <Input id="postalCode" placeholder="1000-001" />
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="country">País</Label>
-              <Input id="country" placeholder="Portugal" />
-            </div>
-          </div>
-
-          <Button>Atualizar Endereço</Button>
         </CardContent>
       </Card>
 
