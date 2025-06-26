@@ -24,7 +24,7 @@ const SupportAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
           <div className="space-y-2">
             <h1 className="text-2xl font-semibold">Suporte</h1>
             <small className="text-muted-foreground text-sm">
-              Caso precise de ajuda, entre em contato com nossa equipe.
+              Caso precise de ajuda, entre em contato com nossa equipa.
             </small>
           </div>
           <Separator />
