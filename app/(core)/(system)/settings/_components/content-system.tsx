@@ -57,20 +57,12 @@ const SystemContent = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <div className="space-y-1">
               <p className="text-sm font-medium">Autenticação de Dois Fatores</p>
               <p className="text-xs text-muted-foreground">Proteção adicional para sua conta</p>
             </div>
             <Button variant="outline" size="sm">Ativar</Button>
-          </div>
-          <Separator />
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
-              <p className="text-sm font-medium">Sessões Ativas</p>
-              <p className="text-xs text-muted-foreground">Gerir dispositivos conectados</p>
-            </div>
-            <Button variant="outline" size="sm">Ver Sessões</Button>
           </div>
         </CardContent>
       </Card>
@@ -87,10 +79,10 @@ const SystemContent = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <div className="space-y-1">
               <p className="text-sm font-medium">Backup Automático</p>
-              <p className="text-xs text-muted-foreground">Backup diário dos seus dados</p>
+              <p className="text-xs text-muted-foreground">Backup semanal dos seus dados</p>
             </div>
             <Badge variant="secondary">Ativado</Badge>
           </div>
