@@ -32,7 +32,8 @@ const SettingsAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
         <div className="mb-6">
           <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Opções de Definições</h2>
 
-          <div className="flex flex-row gap-2 mb-4 lg:hidden">
+          {/* RESPONSIVE */}
+          <div className="flex flex-row flex-wrap gap-5 mb-4 lg:hidden">
             {items.slice(0, 3).map((item) => (
               <Button
                 key={item.id}
@@ -53,7 +54,8 @@ const SettingsAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
               </Button>
             ))}
           </div>
-          {/* Column for all items on large screens */}
+
+          {/* DESKTOP */}
           <div className="space-y-2 hidden lg:block">
             {items.map((item) => (
               <Button
