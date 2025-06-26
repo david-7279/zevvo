@@ -1,6 +1,6 @@
 import React from "react"
 import HelpContent from "@/app/(core)/(system)/support/_components/content-help"
-// import ChatContent from "@/app/(core)/(system)/support/_components/content-chat"
+import ChatContent from "@/app/(core)/(system)/support/_components/content-chat"
 
 interface Props {
   activeId: string
@@ -12,7 +12,7 @@ const SupportContent: React.FC<Props> = ({ activeId }) => {
       case "system":
         return <HelpContent />
       case "account":
-        return "<ChatContent />"
+        return <ChatContent />
       default:
         return <HelpContent />
     }
