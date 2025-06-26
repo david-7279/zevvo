@@ -1,22 +1,33 @@
 import React from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { UserIcon } from "lucide-react"
+import { ArrowRightIcon, ArrowUpRightIcon, UserIcon } from "lucide-react"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Path } from "@/lib/paths"
+import Link from "next/link"
 
 const faqs = [
   {
-    question: "How do I reset my password?",
-    answer: "Go to your account settings and click on 'Reset Password'. Follow the instructions sent to your email.",
+    question: "Como consigo alterar a minha palavra-passe?",
+    answer: "Vai à sua definições de conta, na parte de 'Segurança da Conta' e clica em 'Alterar'.",
+    link: Path.settings,
+    more: "Ir para as definições"
   },
   {
-    question: "How can I contact support?",
-    answer: "You can use the contact form below or email us at support@example.com.",
+    question: "Como consigo contactar o suporte?",
+    answer: "Pode entrar em contacto pelo formulário em baixo, ou via e-mail para zevvohelp@outlook.com.",
+    link: 'mailto:zevvohelp@outlook.com',
+    more: "Enviar email"
   },
-  // Add more FAQs as needed
+  {
+    question: "Como consigo alterar as definições da plataform?",
+    answer: "Para alterar as definções da nossa plataforma, vá à página de definições da plataforma, nessa secção consegue alterar o tema, tamanho da letra e a linguagem.",
+    link: Path.settings,
+    more: "Ir para as definições"
+  },
 ]
 
 const HelpContent = () => {
@@ -42,7 +53,33 @@ const HelpContent = () => {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* ISSUES */}
+          {/* FAQ */}
+          <div className="flex flex-row flex-wrap gap-3 w-full">
+            {faqs.map((faq, index) => (
+              <Link href={faq.link} key={index} className="group">
+                <Card className="w-md shadow-none gap-2">
+                  <CardHeader>
+                    <CardTitle className="text-base">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                  <CardFooter className="inline-flex items-center gap-2">
+                    {faq.link && (
+                      <>
+                        <p className="relative text-sm text-muted-foreground text-center transition-all duration-500
+          after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
+          group-hover:after:w-full">
+                          {faq.more}
+                        </p>
+                        <ArrowRightIcon className="mt-0.5 text-muted-foreground size-3.5 transition-all duration-500 group-hover:translate-x-1 group-hover:text-foreground" />
+                      </>
+                    )}
+                  </CardFooter>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </CardContent>
       </Card>
 
