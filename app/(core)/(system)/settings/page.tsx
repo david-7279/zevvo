@@ -7,19 +7,16 @@ const settingsData = [
     id: "system",
     title: "Plataforma",
     icon: PackageIcon,
-    content: "system-content", // CALLS AN COMPONENT FOR THAT
   },
   {
     id: "account",
     title: "Conta",
     icon: UserIcon,
-    content: "account-content", // CALLS AN COMPONENT FOR THAT
   },
   {
     id: "biling",
     title: "Plano",
     icon: WalletIcon,
-    content: "biling-content", // CALLS AN COMPONENT FOR THAT
   },
 ]
 
