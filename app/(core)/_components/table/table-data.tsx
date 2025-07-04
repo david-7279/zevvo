@@ -1,0 +1,161 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
+import {
+  type ColumnDef,
+  type ColumnFiltersState,
+  flexRender,
+  getCoreRowModel,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  type SortingState,
+  useReactTable,
+} from "@tanstack/react-table"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+interface Props {
+  columns: ColumnDef<any>[];
+  collectionType: string;
+  data: any[];
+  idSelector: (row: any) => string | number;
+  onUpdated?: () => void;
+  onDeleted?: () => void;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDeleted }: Props) => {
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [globalFilter, setGlobalFilter] = useState("");
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [rowSelection, setRowSelection] = useState({});
+
+  const table = useReactTable({
+    data,
+    columns,
+    onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    getCoreRowModel: getCoreRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    onRowSelectionChange: setRowSelection,
+    onGlobalFilterChange: setGlobalFilter,
+    state: {
+      sorting,
+      columnFilters,
+      rowSelection,
+      globalFilter,
+    },
+  });
+
+  console.log("Data: ", data);
+
+
+
+  return (
+    <div className="w-full space-y-5">
+      <div className="flex items-center">
+        <Input
+          placeholder={`Pesquisa por um ${collectionType} específico...`}
+          value={globalFilter}
+          onChange={e => setGlobalFilter(e.target.value)}
+          className="max-w-sm"
+        />
+      </div>
+
+      <div className="grid w-full [&>div]:h-[60vh]">
+        <Table>
+          <TableHeader>
+            {table.getHeaderGroups().map((headerGroup) => (
+              <TableRow key={headerGroup.id} className="bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors">
+                {headerGroup.headers.map((header) => {
+                  return (
+                    <TableHead key={header.id}>
+                      {header.isPlaceholder
+                        ? null
+                        : flexRender(
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
+                    </TableHead>
+                  );
+                })}
+              </TableRow>
+            ))}
+          </TableHeader>
+
+
+          <TableBody className="overflow-hidden">
+            {table.getRowModel().rows?.length ? (
+              table.getRowModel().rows.map((row) => (
+                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+                  {row.getVisibleCells().map((cell) => {
+                    // Only make non-action cells clickable
+                    const isActionCell = cell.column.id === "actions";
+                    return (
+                      <TableCell
+                        key={cell.id}
+                        onClick={
+                          !isActionCell
+                            ? () => { }
+                            : undefined
+                        }
+                        className={!isActionCell ? "cursor-pointer" : ""}
+                      >
+                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              ))
+            ) : (
+              <TableRow>
+                <TableCell colSpan={columns.length} className="text-center h-24">
+                  Sem resultados
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+
+
+        </Table>
+      </div>
+
+      <div className="flex items-center justify-end space-x-2 py-4">
+        <div className="flex-1 flex flex-row gap-1 text-sm text-muted-foreground">
+          <p className="text-foreground">Visualizando{" "} {table.getRowModel().rows.length}</p>
+          <p>de {" "} {table.getFilteredRowModel().rows.length} {collectionType}(s)</p>
+        </div>
+        <div className="space-x-2">
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            Anterior
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Próxima
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default DataTable
