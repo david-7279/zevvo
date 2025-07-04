@@ -1,5 +1,5 @@
 import type { ColumnDef } from "@tanstack/react-table";
-import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-heder";
+import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-header";
 import DataTableColumnRow from "@/app/(core)/_components/table/table-row";
 
 interface ReportData {
