@@ -1,6 +1,6 @@
 import type { ColumnDef } from "@tanstack/react-table";
-import { DataTableColumnHeader } from "@/app/(core)/(overview)/reports/_components/table-column-header";
-import DataTableColumnRow from "@/app/(core)/(overview)/reports/_components/table-column-row";
+import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-heder";
+import DataTableColumnRow from "@/app/(core)/_components/table/table-row";
 
 interface ReportData {
   clientName: string
