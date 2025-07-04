@@ -42,42 +42,42 @@ const HelpContent = () => {
       </div>
 
       {/* Questions */}
-      <Card>
+      <Card className="w-full">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <UserIcon className="h-5 w-5" />
             Dúvidas Gerais
           </CardTitle>
-          <CardDescription>
-            Informasse de algumas dúvidas, que pode ser a resposta que procura.
-          </CardDescription>
+          <CardDescription>Informasse de algumas dúvidas, que pode ser a resposta que procura.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          {/* FAQ */}
-          <div className="flex flex-row flex-wrap gap-3 w-full">
+          {/* Improved Responsive FAQ Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             {faqs.map((faq, index) => (
-              <Link href={faq.link} key={index} className="group">
-                <Card className="w-md shadow-none gap-2">
-                  <CardHeader>
-                    <CardTitle className="text-base">{faq.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-muted-foreground">{faq.answer}</p>
-                  </CardContent>
-                  <CardFooter className="inline-flex items-center gap-2">
-                    {faq.link && (
-                      <>
-                        <p className="relative text-sm text-muted-foreground text-center transition-all duration-500
-          after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
-          group-hover:after:w-full">
+                <Link href={faq.link} key={index} className="group hover:cursor-pointer">
+                  <Card className="w-full shadow-none h-full flex flex-col justify-between transition-all duration-200 hover:shadow-md hover:border-primary/20">
+                    <div className="flex-1">
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-base leading-tight">{faq.question}</CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+                      </CardContent>
+                    </div>
+                    <CardFooter className="pt-3">
+                      <div className="inline-flex items-center gap-2">
+                        <p
+                            className="relative text-sm text-muted-foreground transition-all duration-300
+                        after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-300
+                        group-hover:after:w-full group-hover:text-foreground"
+                        >
                           {faq.more}
                         </p>
-                        <ArrowRightIcon className="mt-0.5 text-muted-foreground size-3.5 transition-all duration-500 group-hover:translate-x-1 group-hover:text-foreground" />
-                      </>
-                    )}
-                  </CardFooter>
-                </Card>
-              </Link>
+                        <ArrowRightIcon className="text-muted-foreground size-3.5 transition-all duration-300 group-hover:translate-x-1 group-hover:text-foreground" />
+                      </div>
+                    </CardFooter>
+                  </Card>
+                </Link>
             ))}
           </div>
         </CardContent>
