@@ -1,8 +1,9 @@
 import React from "react"
 
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
-import OverviewHeaderCardComponent, { OverviewHeaderCard } from "@/app/(core)/(overview)/_components/header-card"
+import OverviewHeaderCardComponent from "@/app/(core)/(overview)/_components/header-card"
 import { BoxesIcon, DollarSignIcon, UsersIcon } from "lucide-react"
+import DataTableReport from "@/app/(core)/(overview)/reports/_components/table-report"
 
 const customData = [
   {
@@ -43,6 +44,9 @@ const Reports = () => {
       </div >
 
       {/* Data Table */}
+      <div>
+        <DataTableReport />
+      </div>
     </CoreWrapper>
   )
 }
