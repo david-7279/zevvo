@@ -1,6 +1,8 @@
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-header";
 import DataTableColumnRow from "@/app/(core)/_components/table/table-row";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 
 interface ReportData {
   clientName: string
@@ -32,13 +34,38 @@ export const columnsReport: ColumnDef<ReportData>[] = [
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Stock" tooltip="Estado do stock" />,
+    accessorKey: 'status',
+    cell: ({ row }) => {
+      const status = row.getValue('status') as string
+
+      const styles = {
+        'Em estoque':
+          'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
+        'Sem estoque':
+          'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+        'Limitado':
+          'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
+      }[status]
+
+      return (
+        <Badge className={(cn('rounded-full border-none focus-visible:outline-none'), styles)}>
+          {row.getValue('status')}
+        </Badge>
+      )
+    },
+    enableSorting: false,
+    meta: {
+      filterVariant: 'select'
+    }
+  },
+  {
     accessorKey: "timeStamp",
     id: "Time Stamp",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Data" tooltip="Data da compra" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Data" tooltip="Data da transação" />,
     accessorFn: (row) => row.timeStamp,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
-  // action for delete and edit
   {
     accessorKey: "action",
     id: "Action",
