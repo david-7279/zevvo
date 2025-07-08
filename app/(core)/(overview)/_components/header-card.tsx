@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUpIcon, DollarSignIcon, BoxesIcon, UsersIcon } from "lucide-react"
+import { TrendingUpIcon } from "lucide-react"
 
 interface HeaderCardData {
     title: string

@@ -1,9 +1,13 @@
+"use client"
+
 import React from "react"
 
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import OverviewHeaderCardComponent from "@/app/(core)/(overview)/_components/header-card"
 import { BoxesIcon, DollarSignIcon, UsersIcon } from "lucide-react"
-import DataTableReport from "@/app/(core)/(overview)/reports/_components/table-report"
+
+import DataTable from "@/app/(core)/_components/table/table-data"
+import { columnsReport } from "@/app/(core)/_components/table/table-columns"
 
 const customData = [
   {
@@ -32,20 +36,44 @@ const customData = [
   },
 ]
 
+const customReport = [
+  {
+    id: 1,
+    clientName: "David Vieira",
+    productName: "Água 1.5L",
+    price: 0.90,
+    status: "Em estoque",
+    timeStamp: "08-12-2025 13:42:51"
+  },
+  {
+    id: 2,
+    clientName: "David Soares",
+    productName: "Sumo de Laranja 0.5L",
+    price: 0.70,
+    status: "Em estoque",
+    timeStamp: "08-12-2025 13:42:57"
+  }
+]
+
 const Reports = () => {
   return (
     <CoreWrapper>
       {/* Report Title */}
       <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Relatórios</h3>
 
-      {/* Header Cards Row */}
-      <div className="flex flex-row flex-wrap justify-between gap-5">
-        <OverviewHeaderCardComponent data={customData} />
-      </div >
+      <div className="space-y-16">
+        {/* Header Cards Row */}
+        <div className="flex flex-row flex-wrap justify-between gap-5">
+          <OverviewHeaderCardComponent data={customData} />
+        </div >
 
-      {/* Data Table */}
-      <div>
-        <DataTableReport />
+        {/* Data Table */}
+        <DataTable
+          data={customReport}
+          columns={columnsReport}
+          collectionType="relatório"
+          idSelector={row => row.id}
+        />
       </div>
     </CoreWrapper>
   )

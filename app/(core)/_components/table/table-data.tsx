@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import {
@@ -59,8 +61,6 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
 
   console.log("Data: ", data);
 
-
-
   return (
     <div className="w-full space-y-5">
       <div className="flex items-center">
@@ -72,7 +72,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
         />
       </div>
 
-      <div className="grid w-full [&>div]:h-[60vh]">
+      <div className="grid w-full [&>div]:h-[40vh]">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

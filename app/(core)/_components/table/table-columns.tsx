@@ -1,3 +1,5 @@
+"use client"
+
 import type { ColumnDef } from "@tanstack/react-table";
 import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-header";
 import DataTableColumnRow from "@/app/(core)/_components/table/table-row";
@@ -5,13 +7,22 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 interface ReportData {
+  id: number
   clientName: string
   productName: string
   price: number
+  status: string
   timeStamp: string
 }
 
 export const columnsReport: ColumnDef<ReportData>[] = [
+  {
+    accessorKey: "id",
+    id: "Identifier",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Identificador" tooltip="Valor único" />,
+    accessorFn: row => row.id,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} />,
+  },
   {
     accessorKey: "clientName",
     id: "Client",
