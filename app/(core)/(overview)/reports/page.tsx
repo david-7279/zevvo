@@ -42,7 +42,7 @@ const customReport = [
     clientName: "David Vieira",
     productName: "Água 1.5L",
     price: 0.90,
-    status: "Em estoque",
+    stock: "Em estoque",
     timeStamp: "08-12-2025 13:42:51"
   },
   {
@@ -50,7 +50,7 @@ const customReport = [
     clientName: "David Soares",
     productName: "Sumo de Laranja 0.5L",
     price: 0.70,
-    status: "Em estoque",
+    stock: "Em estoque",
     timeStamp: "08-12-2025 13:42:57"
   }
 ]

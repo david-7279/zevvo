@@ -11,7 +11,7 @@ interface ReportData {
   clientName: string
   productName: string
   price: number
-  status: string
+  stock: string
   timeStamp: string
 }
 
@@ -42,13 +42,15 @@ export const columnsReport: ColumnDef<ReportData>[] = [
     id: "Price",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Preço" tooltip="Preço do produto" />,
     accessorFn: (row) => row.price,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="" />,
   },
   {
+    accessorKey: 'stock',
+    id: "Stock",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Stock" tooltip="Estado do stock" />,
-    accessorKey: 'status',
+    accessorFn: (row) => row.stock,
     cell: ({ row }) => {
-      const status = row.getValue('status') as string
+      const stock = row.getValue('Stock') as string
 
       const styles = {
         'Em estoque':
@@ -57,15 +59,15 @@ export const columnsReport: ColumnDef<ReportData>[] = [
           'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
         'Limitado':
           'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
-      }[status]
+      }[stock]
 
       return (
         <Badge className={(cn('rounded-full border-none focus-visible:outline-none'), styles)}>
-          {row.getValue('status')}
+          {row.getValue('Stock')}
         </Badge>
       )
     },
-    enableSorting: false,
+    enableSorting: true,
     meta: {
       filterVariant: 'select'
     }
@@ -82,7 +84,7 @@ export const columnsReport: ColumnDef<ReportData>[] = [
     id: "Action",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Ação" tooltip="Ação do produto" />,
     // accessorFn: (row) => row.action,
-    cell: ({ row }) => {
+    cell: () => {
       // const book = row.original.book;
       return (
         <div className="flex gap-2">
