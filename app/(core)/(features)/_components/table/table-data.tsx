@@ -23,7 +23,7 @@ import {
 } from "@/components/ui/table"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FilterIcon } from "lucide-react";
+import { FilterIcon, SearchIcon, UserIcon } from "lucide-react";
 
 interface Props {
   columns: ColumnDef<any>[];
@@ -74,13 +74,20 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
             Adicionar {collectionType}
           </Button>
           <div className="flex items-center w-full lg:w-auto">
-            <Input
-              placeholder={`Pesquisa por um ${collectionType} específico...`}
-              value={globalFilter}
-              onChange={e => setGlobalFilter(e.target.value)}
-              size={35}
-              className="w-full lg:w-[300px]"
-            />
+            <div className='relative'>
+              <div className='text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50'>
+                <SearchIcon className='size-4' />
+                <span className='sr-only'>User</span>
+              </div>
+              <Input
+                placeholder={`Pesquisa por um ${collectionType} específico...`}
+                value={globalFilter}
+                onChange={e => setGlobalFilter(e.target.value)}
+                size={35}
+                className="w-full lg:w-[300px] peer ps-9"
+              />
+            </div>
+
           </div>
         </div>
         <div className="flex items-end justify-end text-right w-full lg:w-auto lg:justify-end">
@@ -95,7 +102,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors">
+              <TableRow key={headerGroup.id} className="bg-muted/30 data-[state=selected]:bg-muted border-b transition-colors h-12">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
@@ -112,23 +119,21 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
             ))}
           </TableHeader>
 
-
           <TableBody className="overflow-hidden">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+                <TableRow
+                  key={row.id}
+                  data-state={row.getIsSelected() && "selected"}
+                  className="h-15"
+                >
                   {row.getVisibleCells().map((cell) => {
                     // Only make non-action cells clickable
-                    const isActionCell = cell.column.id === "actions";
                     return (
                       <TableCell
                         key={cell.id}
-                        onClick={
-                          !isActionCell
-                            ? () => { }
-                            : undefined
-                        }
-                        className={!isActionCell ? "cursor-pointer" : ""}
+                        onClick={() => { }}
+                        className=""
                       >
                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
                       </TableCell>

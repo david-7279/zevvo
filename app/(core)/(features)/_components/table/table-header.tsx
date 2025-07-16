@@ -27,7 +27,7 @@ export function DataTableColumnHeader<TData, TValue>({
   }
 
   return (
-    <div className={cn("flex items-center p-0 m-0 ", className)}>
+    <div className={cn("flex items-center p-0 m-0 text-muted-foreground", className)}>
       <Button
         variant="ghost"
         className="has-[>svg]:px-0"

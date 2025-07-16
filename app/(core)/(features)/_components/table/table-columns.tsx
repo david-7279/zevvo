@@ -6,6 +6,10 @@ import DataTableColumnRow from "@/app/(core)/(features)/_components/table/table-
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 import { DataTableColumnHeaderNoSort } from "@/app/(core)/(features)/_components/table/table-header-no-sort";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { EditIcon, EyeIcon, MoreHorizontalIcon, Trash2Icon, XIcon } from "lucide-react";
+import Link from "next/link";
 
 interface ProductData {
   id: number
@@ -83,18 +87,41 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "action",
     id: "Action",
-    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} title="Ação" tooltip="Ação do produto" />,
-    // accessorFn: (row) => row.action,
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ação do produto" />,
     cell: () => {
-      // const book = row.original.book;
       return (
-        <div className="flex gap-2">
-          {/* 
-          <ActionUpdateBook book={book} onBookUpdated={onBookUpdated} />
-          <ActionDeleteBook book={book} onBookDeleted={onBookDeleted} /> 
-          */}
+        <div className="flex justify-center items-center w-full h-full ">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0 cursor-pointer">
+                <MoreHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem className="gap-2" asChild>
+                <Link href={`/products/`}>
+                  <EyeIcon className="h-4 w-4" />
+                  Ver Produto
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="gap-2" asChild>
+                <Link href={`/products//edit`}>
+                  <EditIcon className="h-4 w-4" />
+                  Editar
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem className="gap-2 text-red-600">
+                <Trash2Icon className="h-4 w-4 text-red-600" />
+                Eliminar
+              </DropdownMenuItem>
+              <DropdownMenuItem className="gap-2">
+                <XIcon className="h-4 w-4" />
+                Cancelar
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       );
-    },
+    }
   }
 ]
