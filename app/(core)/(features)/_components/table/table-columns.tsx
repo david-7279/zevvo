@@ -5,11 +5,9 @@ import { DataTableColumnHeader } from "@/app/(core)/(features)/_components/table
 import DataTableColumnRow from "@/app/(core)/(features)/_components/table/table-row";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import DataTableColumnRowImage from "@/app/(core)/(features)/_components/table/table-row-image";
 import { DataTableColumnHeaderNoSort } from "@/app/(core)/(features)/_components/table/table-header-no-sort";
 
 interface ProductData {
-  image: string
   id: number
   name: string
   price: number
@@ -19,13 +17,6 @@ interface ProductData {
 }
 
 export const columnsProduct: ColumnDef<ProductData>[] = [
-  {
-    accessorKey: "image",
-    id: "Image",
-    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} title="Imagem" tooltip="Imagem do produto" />,
-    accessorFn: row => row.image,
-    cell: ({ getValue }) => <DataTableColumnRowImage src="" alt={getValue.name} width={24} height={24} />,
-  },
   {
     accessorKey: "id",
     id: "Identifier",

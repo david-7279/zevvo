@@ -13,7 +13,6 @@ const initialProducts = [
     type: "Eletrónicos",
     stock: 45,
     stockStatus: "Em Stock",
-    image: "/placeholder.svg?height=40&width=40",
     description: "O mais avançado smartphone da nossa gama, com câmara profissional de 108MP.",
   },
   {
@@ -23,7 +22,6 @@ const initialProducts = [
     type: "Computadores",
     stock: 12,
     stockStatus: "Stock Baixo",
-    image: "/placeholder.svg?height=40&width=40",
     description: "Laptop gaming de alta performance com placa gráfica dedicada.",
   },
   {
@@ -33,7 +31,6 @@ const initialProducts = [
     type: "Áudio",
     stock: 0,
     stockStatus: "Sem Stock",
-    image: "/placeholder.svg?height=40&width=40",
     description: "Headphones sem fios com cancelamento de ruído ativo.",
   },
   {
@@ -43,7 +40,6 @@ const initialProducts = [
     type: "Eletrónicos",
     stock: 28,
     stockStatus: "Em Stock",
-    image: "/placeholder.svg?height=40&width=40",
     description: "Tablet com ecrã de 10 polegadas e alta resolução.",
   },
   {
@@ -53,7 +49,6 @@ const initialProducts = [
     type: "Wearables",
     stock: 67,
     stockStatus: "Em Stock",
-    image: "/placeholder.svg?height=40&width=40",
     description: "Smartwatch desportivo com GPS e monitor cardíaco.",
   },
 ]
@@ -65,7 +60,7 @@ const ProductContent = () => {
       <DataTable
         data={initialProducts}
         columns={columnsProduct}
-        collectionType="produtos"
+        collectionType="produto"
         idSelector={row => row.id}
       />
 

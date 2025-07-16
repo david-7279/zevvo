@@ -64,22 +64,31 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
 
   return (
     <div className="w-full space-y-5">
-      <div className="flex flex-row flex-wrap justify-between gap-4">
-        <div>
-          <Button>Adicionar {collectionType}</Button>
-          <div className="flex items-center">
+      <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-3 w-full lg:flex-row lg:w-auto lg:items-center">
+          <Button
+            variant="default"
+            size="default"
+            className="w-full lg:w-auto"
+          >
+            Adicionar {collectionType}
+          </Button>
+          <div className="flex items-center w-full lg:w-auto">
             <Input
               placeholder={`Pesquisa por um ${collectionType} específico...`}
               value={globalFilter}
               onChange={e => setGlobalFilter(e.target.value)}
-              className="max-w-sm"
+              size={35}
+              className="w-full lg:w-[300px]"
             />
           </div>
         </div>
-        <Button>
-          <FilterIcon />
-          Filtrar
-        </Button>
+        <div className="flex items-end justify-end text-right w-full lg:w-auto lg:justify-end">
+          <Button variant="outline" className="w-full lg:w-auto">
+            <FilterIcon className="mr-2 h-4 w-4" />
+            Filtrar
+          </Button>
+        </div>
       </div>
 
       <div className="grid w-full [&>div]:h-[40vh]">
