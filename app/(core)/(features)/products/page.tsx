@@ -1,7 +1,8 @@
 import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import FeatureHeaderCardComponent from "../_components/header-card"
-import { BoxesIcon, DollarSignIcon, PackageIcon, TriangleAlertIcon, UsersIcon } from "lucide-react"
+import { DollarSignIcon, PackageIcon, TriangleAlertIcon, UsersIcon } from "lucide-react"
+import ProductContent from "@/app/(core)/(features)/products/products-content"
 
 const customData = [
   {
@@ -47,6 +48,8 @@ const Products = () => {
         <div className="flex flex-row flex-wrap gap-5">
           <FeatureHeaderCardComponent data={customData} />
         </div >
+
+        <ProductContent />
       </div>
     </CoreWrapper>
   )

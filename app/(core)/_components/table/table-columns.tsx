@@ -18,11 +18,11 @@ interface ReportData {
 interface ProductData {
   image: string
   id: number
-  productName: string
+  name: string
   price: number
   type: string
   stock: string
-  status: string
+  stockStatus: string
 }
 
 export const columnsReport: ColumnDef<ReportData>[] = [
@@ -110,7 +110,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "image",
     id: "Image",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Imagem" tooltip="Valor único do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Imagem" tooltip="Imagem do produto" />,
     accessorFn: row => row.image,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} />,
   },
@@ -122,10 +122,10 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} />,
   },
   {
-    accessorKey: "productName",
+    accessorKey: "name",
     id: "Name",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome do produto" />,
-    accessorFn: (row) => row.productName,
+    accessorFn: (row) => row.name,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
@@ -140,29 +140,29 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     id: "Type",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Tipo" tooltip="Tipo do produto" />,
     accessorFn: (row) => row.type,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="" />,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
     accessorKey: "stock",
     id: "Stock",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Stock" tooltip="Qunatidade do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Stock" tooltip="Quantidade do produto" />,
     accessorFn: (row) => row.stock,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="" />,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
-    accessorKey: 'status',
+    accessorKey: 'stockStatus',
     id: "Status",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Status" tooltip="Estado do produto" />,
-    accessorFn: (row) => row.status,
+    accessorFn: (row) => row.stockStatus,
     cell: ({ row }) => {
       const status = row.getValue('Status') as string
 
       const styles = {
-        'Em estoque':
+        'Em Stock':
           'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
-        'Sem estoque':
+        'Sem Stock':
           'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
-        'Limitado':
+        'Stock Baixo':
           'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
       }[status]
 
