@@ -6,8 +6,8 @@ import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import OverviewHeaderCardComponent from "@/app/(core)/(overview)/_components/header-card"
 import { BoxesIcon, DollarSignIcon, UsersIcon } from "lucide-react"
 
-import DataTable from "@/app/(core)/_components/table/table-data"
-import { columnsReport } from "@/app/(core)/_components/table/table-columns"
+import DataTable from "@/app/(core)/(features)/_components/table/table-data"
+import { columnsReport } from "@/app/(core)/(features)/_components/table/table-columns"
 
 const customData = [
   {

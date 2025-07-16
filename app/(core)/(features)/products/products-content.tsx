@@ -1,8 +1,8 @@
 "use client"
 
 import React from 'react'
-import DataTable from "@/app/(core)/_components/table/table-data"
-import { columnsProduct } from "@/app/(core)/_components/table/table-columns"
+import DataTable from "@/app/(core)/(features)/_components/table/table-data"
+import { columnsProduct } from "@/app/(core)/(features)/_components/table/table-columns"
 
 
 const initialProducts = [

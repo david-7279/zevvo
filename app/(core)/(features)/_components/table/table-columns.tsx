@@ -1,12 +1,12 @@
 "use client"
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-header";
-import DataTableColumnRow from "@/app/(core)/_components/table/table-row";
+import { DataTableColumnHeader } from "@/app/(core)/(features)/_components/table/table-header";
+import DataTableColumnRow from "@/app/(core)/(features)/_components/table/table-row";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import DataTableColumnRowImage from "@/app/(core)/_components/table/table-row-image";
-import { DataTableColumnHeaderNoSort } from "@/app/(core)/_components/table/table-header-no-sort";
+import DataTableColumnRowImage from "@/app/(core)/(features)/_components/table/table-row-image";
+import { DataTableColumnHeaderNoSort } from "@/app/(core)/(features)/_components/table/table-header-no-sort";
 
 interface ReportData {
   id: number

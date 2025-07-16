@@ -16,6 +16,7 @@ const DataTableColumnRowImage: React.FC<Props> = ({ src, alt, width, height }) =
         alt={alt}
         width={width}
         height={height}
+        className="h-10 w-10 rounded-md bg-accent object-cover"
       />
     </div>
   )
