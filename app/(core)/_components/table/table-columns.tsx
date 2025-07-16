@@ -5,6 +5,8 @@ import { DataTableColumnHeader } from "@/app/(core)/_components/table/table-head
 import DataTableColumnRow from "@/app/(core)/_components/table/table-row";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import DataTableColumnRowImage from "@/app/(core)/_components/table/table-row-image";
+import { DataTableColumnHeaderNoSort } from "@/app/(core)/_components/table/table-header-no-sort";
 
 interface ReportData {
   id: number
@@ -110,9 +112,9 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "image",
     id: "Image",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Imagem" tooltip="Imagem do produto" />,
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} title="Imagem" tooltip="Imagem do produto" />,
     accessorFn: row => row.image,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} />,
+    cell: ({ getValue }) => <DataTableColumnRowImage src="" alt={getValue.name} width={24} height={24} />,
   },
   {
     accessorKey: "id",
@@ -180,7 +182,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "action",
     id: "Action",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Ação" tooltip="Ação do produto" />,
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} title="Ação" tooltip="Ação do produto" />,
     // accessorFn: (row) => row.action,
     cell: () => {
       // const book = row.original.book;
