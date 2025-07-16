@@ -26,7 +26,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     id: "Identifier",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Identificador" tooltip="Valor único do produto" />,
     accessorFn: row => row.id,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} />,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
   },
   {
     accessorKey: "name",
@@ -40,7 +40,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     id: "Price",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Preço" tooltip="Preço do produto" />,
     accessorFn: (row) => row.price,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="" />,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
   },
   {
     accessorKey: "type",
@@ -88,7 +88,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     accessorKey: "action",
     id: "Action",
     header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ação do produto" />,
-    cell: () => {
+    cell: (row) => {
       return (
         <div className="flex justify-center items-center w-full h-full ">
           <DropdownMenu>
@@ -99,13 +99,13 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem className="gap-2" asChild>
-                <Link href={`/products/`}>
+                <Link href={`/products/${row.row.original.id}`}>
                   <EyeIcon className="h-4 w-4" />
                   Ver Produto
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="gap-2" asChild>
-                <Link href={`/products//edit`}>
+                <Link href={`/products/${row.row.original.id}/edit`}>
                   <EditIcon className="h-4 w-4" />
                   Editar
                 </Link>

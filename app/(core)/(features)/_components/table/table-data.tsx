@@ -128,7 +128,6 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
                   className="h-15"
                 >
                   {row.getVisibleCells().map((cell) => {
-                    // Only make non-action cells clickable
                     return (
                       <TableCell
                         key={cell.id}
