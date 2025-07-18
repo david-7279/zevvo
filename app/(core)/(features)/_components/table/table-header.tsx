@@ -34,7 +34,7 @@ export function DataTableColumnHeader<TData, TValue>({
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger asChild>
             <span>{title}</span>
           </TooltipTrigger>
           <TooltipContent>

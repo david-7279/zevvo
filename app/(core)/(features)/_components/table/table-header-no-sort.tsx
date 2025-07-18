@@ -33,7 +33,7 @@ export function DataTableColumnHeaderNoSort<TData, TValue>({
         className="has-[>svg]:px-0"
       >
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger asChild>
             <span>{title}</span>
           </TooltipTrigger>
           <TooltipContent>
