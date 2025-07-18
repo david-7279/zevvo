@@ -127,13 +127,12 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
                 Filtrar
               </Button>
             </SheetTrigger>
-            <SheetContent>
+            <SheetContent className="w-80 sm:w-96">
               <SheetHeader>
                 <SheetTitle>Filtros Avançados</SheetTitle>
                 <SheetDescription>Refine a sua pesquisa com filtros detalhados</SheetDescription>
+                {filtersContent}
               </SheetHeader>
-              {/* Filters Content */}
-              {filtersContent}
               <SheetFooter>
                 <Button type='submit'>Aplicar Filtros</Button>
                 <SheetClose asChild>
