@@ -1,11 +1,11 @@
 import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
+import NewProductForm from "@/app/(core)/(features)/_components/forms/add-new-product"
 
 const NewProduct = () => {
   return (
     <CoreWrapper>
-      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Novo Produto</h3>
-
+      <NewProductForm />
     </CoreWrapper>
   )
 }

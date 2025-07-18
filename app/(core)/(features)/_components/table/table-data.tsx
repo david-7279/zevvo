@@ -41,9 +41,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FilterIcon, SearchIcon } from "lucide-react";
 import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
+import Link from "next/link";
 
 interface Props {
   columns: ColumnDef<any>[];
+  addNewLink: string;
   collectionType: string;
   data: any[];
   idSelector: (row: any) => string | number;
@@ -53,7 +55,7 @@ interface Props {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDeleted, filtersContent }: Props) => {
+const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDeleted, filtersContent, addNewLink }: Props) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [globalFilter, setGlobalFilter] = useState("");
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -95,13 +97,15 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
     <div className="w-full space-y-5">
       <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-col gap-3 w-full lg:flex-row lg:w-auto lg:items-center">
-          <Button
-            variant="default"
-            size="default"
-            className="w-full lg:w-auto"
-          >
-            Adicionar {collectionType}
-          </Button>
+          <Link href={`/${addNewLink}/new`}>
+            <Button
+              variant="default"
+              size="default"
+              className="w-full lg:w-auto"
+            >
+              Adicionar {collectionType}
+            </Button>
+          </Link>
           <div className="flex items-center w-full lg:w-auto">
             <div className="relative">
               <div className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">

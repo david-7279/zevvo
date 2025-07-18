@@ -71,6 +71,7 @@ const ProductContent = () => {
         data={initialProducts}
         columns={columnsProduct}
         collectionType="produto"
+        addNewLink="products"
         idSelector={row => row.id}
         filtersContent={<ProductFilters />}
       />
