@@ -1,9 +1,18 @@
-import React from 'react'
+import CoreWrapper from "@/app/(core)/_components/core-wrapper"
+import ProductDetails from "./product-details"
 
-const Product = () => {
+interface ProductPageProps {
+  params: {
+    id: string
+  }
+}
+
+const ProductPage = ({ params }: ProductPageProps) => {
   return (
-    <div>Product</div>
+    <CoreWrapper>
+      <ProductDetails productId={params.id} />
+    </CoreWrapper>
   )
 }
 
-export default Product
+export default ProductPage
