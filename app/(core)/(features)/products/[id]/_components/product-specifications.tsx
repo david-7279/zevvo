@@ -2,7 +2,7 @@ import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { DollarSignIcon, PackageIcon, ScanBarcodeIcon } from "lucide-react"
+import { PackageIcon, ScanBarcodeIcon } from "lucide-react"
 
 const ProductSpecifications = () => {
   return (
