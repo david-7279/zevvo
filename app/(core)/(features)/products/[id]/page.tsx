@@ -4,23 +4,23 @@ import { useState } from "react"
 import ProductAside from "@/app/(core)/(features)/products/[id]/_components/aside";
 import ProductContent from "@/app/(core)/(features)/products/[id]/_components/content";
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
-import { PackageIcon, UserIcon, WalletIcon } from "lucide-react";
+import { TrendingUpDownIcon, TagIcon, InfoIcon } from "lucide-react";
 
 const productData = [
   {
     id: "details",
     title: "Detalhes",
-    icon: PackageIcon,
+    icon: InfoIcon,
   },
   {
     id: "specifications",
     title: "Especificações",
-    icon: UserIcon,
+    icon: TagIcon,
   },
   {
     id: "stock",
     title: "Stock",
-    icon: WalletIcon,
+    icon: TrendingUpDownIcon,
   },
 ]
 
