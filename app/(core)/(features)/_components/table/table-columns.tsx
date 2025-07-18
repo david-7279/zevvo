@@ -33,7 +33,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "name",
     id: "Name",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome, marca e sku do produto" />,
     accessorFn: (row) => row.name,
     cell: ({ row }) => (
       <div className="space-y-1">
@@ -46,7 +46,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "price",
     id: "Price",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Preço" tooltip="Preço do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Preço" tooltip="Preço de venda do produto" />,
     accessorFn: (row) => row.price,
     cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
   },
@@ -60,14 +60,14 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "stock",
     id: "Stock",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Stock" tooltip="Quantidade do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Stock" tooltip="Unidades em stock do produto" />,
     accessorFn: (row) => row.stock,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
     accessorKey: 'stockStatus',
     id: "Status",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Status" tooltip="Estado do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Status" tooltip="Estado do stock do produto" />,
     accessorFn: (row) => row.stockStatus,
     cell: ({ row }) => {
       const status = row.getValue('Status') as string
@@ -95,7 +95,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "action",
     id: "Action",
-    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ação do produto" />,
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações do produto" />,
     cell: (row) => {
       return (
         <div className="flex justify-center items-center w-full h-full ">

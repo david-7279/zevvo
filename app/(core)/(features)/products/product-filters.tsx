@@ -7,6 +7,8 @@ const ProductFilters = () => {
   const [priceRange, setPriceRange] = useState([0, 2000])
   return (
     <div className="space-y-6 mt-6">
+
+      {/* Price Range Filter */}
       <div className="space-y-3" >
         <div className="flex items-center justify-between">
           <h4 className="text-sm font-medium text-gray-900">Intervalo de Preços</h4>
@@ -26,7 +28,15 @@ const ProductFilters = () => {
           <span>€0</span>
           <span>€2000</span>
         </div>
-      </ div >
+      </div>
+
+      <Separator />
+
+      {/* Brand Filter */}
+      <div className="space-y-3">
+        <h4 className="text-sm font-medium text-gray-900">Marcas</h4>
+      </div>
+
       <Separator />
 
       {/* Categories Filter */}
