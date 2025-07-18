@@ -6,12 +6,6 @@ import ProductContent from "@/app/(core)/(features)/products/[id]/_components/co
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
 import { PackageIcon, UserIcon, WalletIcon } from "lucide-react";
 
-interface ProductPageProps {
-  params: {
-    id: string
-  }
-}
-
 const productData = [
   {
     id: "details",
@@ -30,7 +24,7 @@ const productData = [
   },
 ]
 
-const ProductPage = ({ params }: ProductPageProps) => {
+const ProductPage = () => {
   const [activeId, setActiveId] = useState(productData[0].id)
 
   return (
