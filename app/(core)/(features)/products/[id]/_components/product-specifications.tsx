@@ -2,7 +2,7 @@ import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { PackageIcon, ScanBarcodeIcon } from "lucide-react"
+import { PackageIcon, NotepadTextDashedIcon } from "lucide-react"
 
 const ProductSpecifications = () => {
   return (
@@ -51,7 +51,7 @@ const ProductSpecifications = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ScanBarcodeIcon className="h-5 w-5" />
+            <NotepadTextDashedIcon className="h-5 w-5" />
             Especificações Técnicas
           </CardTitle>
           <CardDescription>

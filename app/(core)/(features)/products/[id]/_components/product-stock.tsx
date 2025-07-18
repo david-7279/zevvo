@@ -2,7 +2,7 @@ import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { EditIcon, PackageIcon, ScanBarcodeIcon } from "lucide-react"
+import { EditIcon, HistoryIcon, PackageIcon, PackagePlusIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const ProductStock = () => {
@@ -52,7 +52,7 @@ const ProductStock = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ScanBarcodeIcon className="h-5 w-5" />
+            <PackagePlusIcon className="h-5 w-5" />
             Gestão de Stock
           </CardTitle>
           <CardDescription>
@@ -78,7 +78,7 @@ const ProductStock = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ScanBarcodeIcon className="h-5 w-5" />
+            <HistoryIcon className="h-5 w-5" />
             Histórico de Stock
           </CardTitle>
           <CardDescription>
