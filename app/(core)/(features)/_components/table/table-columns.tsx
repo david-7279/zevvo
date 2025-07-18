@@ -14,6 +14,8 @@ import { ProductRowActions } from "@/app/(core)/(features)/_components/table/pro
 interface ProductData {
   id: number
   name: string
+  brand: string
+  sku: string
   price: number
   type: string
   stock: string
@@ -24,7 +26,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "id",
     id: "Identifier",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Identificador" tooltip="Valor único do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="ID" tooltip="Identificador único do produto" />,
     accessorFn: row => row.id,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
   },
@@ -33,7 +35,13 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     id: "Name",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome do produto" />,
     accessorFn: (row) => row.name,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
+    cell: ({ row }) => (
+      <div className="space-y-1">
+        <div className="font-medium text-gray-900">{row.original.name}</div>
+        <div className="text-xs text-muted-foreground">{row.original.brand}</div>
+        <div className="text-xs text-muted-foreground font-mono">SKU: {row.original.sku}</div>
+      </div>
+    ),
   },
   {
     accessorKey: "price",

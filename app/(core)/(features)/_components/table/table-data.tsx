@@ -48,6 +48,16 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
   const [sorting, setSorting] = useState<SortingState>([]);
   const [rowSelection, setRowSelection] = useState({});
 
+  const customGlobalFilter = (row: any, columnId: string, filterValue: string) => {
+    const { name, brand, sku } = row.original;
+    const search = filterValue.toLowerCase();
+    return (
+      (name && name.toLowerCase().includes(search)) ||
+      (brand && brand.toLowerCase().includes(search)) ||
+      (sku && sku.toLowerCase().includes(search))
+    );
+  }
+
   const table = useReactTable({
     data,
     columns,
@@ -59,6 +69,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
     getFilteredRowModel: getFilteredRowModel(),
     onRowSelectionChange: setRowSelection,
     onGlobalFilterChange: setGlobalFilter,
+    globalFilterFn: customGlobalFilter,
     state: {
       sorting,
       columnFilters,
@@ -81,10 +92,10 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
             Adicionar {collectionType}
           </Button>
           <div className="flex items-center w-full lg:w-auto">
-            <div className='relative'>
-              <div className='text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50'>
-                <SearchIcon className='size-4' />
-                <span className='sr-only'>User</span>
+            <div className="relative">
+              <div className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
+                <SearchIcon className="size-4" />
+                <span className="sr-only">User</span>
               </div>
               <Input
                 placeholder={`Pesquisa por um ${collectionType} específico...`}
@@ -107,21 +118,26 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
 
       <div className="grid w-full [&>div]:h-[40vh]">
         <Table>
-          <TableHeader>
+          <TableHeader className="sticky top-0 z-20 bg-background">
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="bg-muted/30 data-[state=selected]:bg-muted border-b transition-colors h-12 sticky top-0">
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                          header.column.columnDef.header,
-                          header.getContext()
-                        )}
-                    </TableHead>
-                  );
-                })}
+              <TableRow
+                key={headerGroup.id}
+                className="bg-muted/30 data-[state=selected]:bg-muted border-b transition-colors h-12"
+                style={{ position: "sticky", top: 0, zIndex: 20, background: "inherit" }}
+              >
+                {headerGroup.headers.map((header) => (
+                  <TableHead
+                    key={header.id}
+                    className="bg-background sticky top-0 z-20"
+                  >
+                    {header.isPlaceholder
+                      ? null
+                      : flexRender(
+                        header.column.columnDef.header,
+                        header.getContext()
+                      )}
+                  </TableHead>
+                ))}
               </TableRow>
             ))}
           </TableHeader>
@@ -133,7 +149,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
                   <ContextMenuTrigger asChild>
                     <TableRow
                       data-state={row.getIsSelected() && "selected"}
-                      className="h-15"
+                      className="h-23"
                     >
                       {row.getVisibleCells().map((cell) => (
                         <TableCell key={cell.id}>

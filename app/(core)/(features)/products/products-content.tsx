@@ -9,6 +9,8 @@ const initialProducts = [
   {
     id: "PRD001",
     name: "Smartphone Pro Max",
+    brand: "Apple",
+    sku: "1234567890",
     price: "899.99",
     type: "Eletrónicos",
     stock: 45,
@@ -18,6 +20,8 @@ const initialProducts = [
   {
     id: "PRD002",
     name: "Laptop Gaming",
+    brand: "Dell",
+    sku: "1234567890",
     price: "1,299.99",
     type: "Computadores",
     stock: 12,
@@ -27,6 +31,8 @@ const initialProducts = [
   {
     id: "PRD003",
     name: "Headphones Wireless",
+    brand: "Sony",
+    sku: "1234567890",
     price: "199.99",
     type: "Áudio",
     stock: 0,
@@ -36,6 +42,8 @@ const initialProducts = [
   {
     id: "PRD004",
     name: "Tablet 10 polegadas",
+    brand: "Samsung",
+    sku: "1234567890",
     price: "349.99",
     type: "Eletrónicos",
     stock: 28,
@@ -45,6 +53,8 @@ const initialProducts = [
   {
     id: "PRD005",
     name: "Smartwatch Sport",
+    brand: "Apple",
+    sku: "1234567890",
     price: "249.99",
     type: "Wearables",
     stock: 67,
