@@ -21,9 +21,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@/components/ui/context-menu"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FilterIcon, SearchIcon, UserIcon } from "lucide-react";
+import { FilterIcon, SearchIcon } from "lucide-react";
+import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
 
 interface Props {
   columns: ColumnDef<any>[];
@@ -102,7 +109,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="bg-muted/30 data-[state=selected]:bg-muted border-b transition-colors h-12">
+              <TableRow key={headerGroup.id} className="bg-muted/30 data-[state=selected]:bg-muted border-b transition-colors h-12 sticky top-0">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
@@ -122,23 +129,23 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
           <TableBody className="overflow-hidden">
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
-                <TableRow
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                  className="h-15"
-                >
-                  {row.getVisibleCells().map((cell) => {
-                    return (
-                      <TableCell
-                        key={cell.id}
-                        onClick={() => { }}
-                        className=""
-                      >
-                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                      </TableCell>
-                    );
-                  })}
-                </TableRow>
+                <ContextMenu key={row.id}>
+                  <ContextMenuTrigger asChild>
+                    <TableRow
+                      data-state={row.getIsSelected() && "selected"}
+                      className="h-15"
+                    >
+                      {row.getVisibleCells().map((cell) => (
+                        <TableCell key={cell.id}>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </TableCell>
+                      ))}
+                    </TableRow>
+                  </ContextMenuTrigger>
+                  <ContextMenuContent>
+                    <ProductRowActions id={row.original.id} MenuItem={ContextMenuItem} />
+                  </ContextMenuContent>
+                </ContextMenu>
               ))
             ) : (
               <TableRow>

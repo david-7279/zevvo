@@ -22,7 +22,7 @@ const FeatureHeaderCardComponent = ({ data = OverviewHeaderCard }: FeatureHeader
       {data.map((data, index) => {
         const Icon = data.icon
         return (
-          <Card key={index} className="w-full lg:w-xs gap-4.5">
+          <Card key={index} className="w-full md:w-xs gap-4.5">
             <CardHeader className="flex flex-row items-center justify-between">
               <Badge className="text-card-foreground rounded-xl py-1 bg-card border-border">
                 <div className="flex items-center space-x-2">

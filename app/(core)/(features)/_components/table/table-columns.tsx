@@ -8,8 +8,8 @@ import { cn } from "@/lib/utils";
 import { DataTableColumnHeaderNoSort } from "@/app/(core)/(features)/_components/table/table-header-no-sort";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { EditIcon, EyeIcon, MoreHorizontalIcon, Trash2Icon, XIcon } from "lucide-react";
-import Link from "next/link";
+import { MoreHorizontalIcon } from "lucide-react";
+import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
 
 interface ProductData {
   id: number
@@ -98,26 +98,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem className="gap-2" asChild>
-                <Link href={`/products/${row.row.original.id}`}>
-                  <EyeIcon className="h-4 w-4" />
-                  Ver Produto
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="gap-2" asChild>
-                <Link href={`/products/${row.row.original.id}/edit`}>
-                  <EditIcon className="h-4 w-4" />
-                  Editar
-                </Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem className="gap-2 text-red-600">
-                <Trash2Icon className="h-4 w-4 text-red-600" />
-                Eliminar
-              </DropdownMenuItem>
-              <DropdownMenuItem className="gap-2">
-                <XIcon className="h-4 w-4" />
-                Cancelar
-              </DropdownMenuItem>
+              <ProductRowActions id={row.row.original.id} MenuItem={DropdownMenuItem} />
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
