@@ -1,9 +1,8 @@
 import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
-import { Database, DollarSignIcon, Globe, PackageIcon, ScanBarcodeIcon, Shield } from "lucide-react"
+import { DollarSignIcon, PackageIcon, ScanBarcodeIcon } from "lucide-react"
 
 const ProductDetails = () => {
   return (
