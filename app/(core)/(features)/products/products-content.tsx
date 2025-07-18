@@ -3,7 +3,7 @@
 import React from 'react'
 import DataTable from "@/app/(core)/(features)/_components/table/table-data"
 import { columnsProduct } from "@/app/(core)/(features)/_components/table/table-columns"
-
+import ProductFilters from "@/app/(core)/(features)/products/product-filters"
 
 const initialProducts = [
   {
@@ -72,6 +72,7 @@ const ProductContent = () => {
         columns={columnsProduct}
         collectionType="produto"
         idSelector={row => row.id}
+        filtersContent={<ProductFilters />}
       />
 
       {/* Stock History Table */}

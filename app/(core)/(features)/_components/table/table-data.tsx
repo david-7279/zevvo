@@ -27,6 +27,16 @@ import {
   ContextMenuItem,
   ContextMenuTrigger,
 } from "@/components/ui/context-menu"
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from '@/components/ui/sheet'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FilterIcon, SearchIcon } from "lucide-react";
@@ -39,10 +49,11 @@ interface Props {
   idSelector: (row: any) => string | number;
   onUpdated?: () => void;
   onDeleted?: () => void;
+  filtersContent?: React.ReactNode;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDeleted }: Props) => {
+const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDeleted, filtersContent }: Props) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [globalFilter, setGlobalFilter] = useState("");
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -109,10 +120,28 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
           </div>
         </div>
         <div className="flex items-end justify-end text-right w-full lg:w-auto lg:justify-end">
-          <Button variant="outline" className="w-full lg:w-auto">
-            <FilterIcon className="mr-2 h-4 w-4" />
-            Filtrar
-          </Button>
+          <Sheet modal={false}>
+            <SheetTrigger asChild>
+              <Button variant="outline" className="w-full lg:w-auto">
+                <FilterIcon className="mr-2 h-4 w-4" />
+                Filtrar
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Filtros Avançados</SheetTitle>
+                <SheetDescription>Refine a sua pesquisa com filtros detalhados</SheetDescription>
+              </SheetHeader>
+              {/* Filters Content */}
+              {filtersContent}
+              <SheetFooter>
+                <Button type='submit'>Aplicar Filtros</Button>
+                <SheetClose asChild>
+                  <Button variant='outline'>Fechar</Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
 
