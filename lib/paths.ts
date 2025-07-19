@@ -2,6 +2,7 @@ export const Path = {
   // DEAFAULT
   root: "/",
   terms: "/terms",
+  pricing: "/pricing",
 
   // AUTH
   login: "/login",

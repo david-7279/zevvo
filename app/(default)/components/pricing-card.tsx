@@ -32,7 +32,7 @@ const PricingCard: React.FC<Props> = ({ index, title, description, price, featur
         <div className="flex flex-col gap-8 justify-between h-full">
           <div>
             <p className="flex flex-row items-center gap-2 text-xl mb-4">
-              <span className="text-4xl">${price}</span>
+              <span className="text-4xl">€{price}</span>
               <span className="text-sm text-muted-foreground">/ mês</span>
             </p>
             <div className="flex flex-col gap-4">
