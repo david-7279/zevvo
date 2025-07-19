@@ -37,9 +37,17 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+} from '@/components/ui/pagination'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FilterIcon, SearchIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, FilterIcon, SearchIcon } from "lucide-react";
 import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
 import Link from "next/link";
 
@@ -208,28 +216,47 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
         </Table>
       </div>
 
-      <div className="flex items-center justify-end space-x-2 py-4">
+      <div className="flex flex-wrap items-center justify-between gap-5 py-4">
         <div className="flex-1 flex flex-row gap-1 text-sm text-muted-foreground">
           <p className="text-foreground">Visualizando{" "} {table.getRowModel().rows.length}</p>
           <p>de {" "} {table.getFilteredRowModel().rows.length} {collectionType}(s)</p>
         </div>
         <div className="space-x-2">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Anterior
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Próxima
-          </Button>
+          <Pagination>
+            <PaginationContent className='rounded-md border shadow-xs'>
+              <PaginationItem>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => table.previousPage()}
+                  disabled={!table.getCanPreviousPage()}
+                >
+                  <ChevronLeftIcon className="size-4" />
+                  <span className="hidden sm:block">Anterior</span>
+                </Button>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href='#' isActive>1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href='#'>2</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href='#'>3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => table.nextPage()}
+                  disabled={!table.getCanNextPage()}
+                >
+                  <span className="hidden sm:block">Próxima</span>
+                  <ChevronRightIcon className="size-4" />
+                </Button>
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
       </div>
     </div>
