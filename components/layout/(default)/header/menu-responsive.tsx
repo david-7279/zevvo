@@ -39,9 +39,6 @@ const ResponsiveMenu = () => {
           <SheetTitle asChild>
             <div className="flex flex-row justify-between px-2">
               <Logo />
-              <SheetClose>
-                Fechar
-              </SheetClose>
             </div>
           </SheetTitle>
         </SheetHeader>
