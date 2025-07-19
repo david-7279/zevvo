@@ -1,7 +1,7 @@
-import Hero from "@/app/(default)/components/hero";
-import Features from "@/app/(default)/components/features";
-import Pricing from "@/app/(default)/components/pricing";
-import Faq from "@/app/(default)/components/faq";
+import Hero from "@/app/(default)/_components/hero";
+import Features from "@/app/(default)/_components/features";
+import Pricing from "@/app/(default)/_components/pricing";
+import Faq from "@/app/(default)/_components/faq";
 
 export default function Home() {
   return (

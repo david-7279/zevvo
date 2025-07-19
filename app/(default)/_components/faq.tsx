@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { MessageCircleQuestionIcon } from "lucide-react";
 
-import Heading from "@/app/(default)/components/heading";
+import Heading from "@/app/(default)/_components/heading";
 import Link from "next/link";
 
 const faqData = [

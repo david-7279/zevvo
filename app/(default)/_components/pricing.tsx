@@ -1,6 +1,6 @@
 import { CircleDollarSignIcon } from "lucide-react";
 
-import Heading from "@/app/(default)/components/heading";
+import Heading from "@/app/(default)/_components/heading";
 import PricingCard from "./pricing-card";
 import Link from "next/link";
 import { Path } from "@/lib/paths";

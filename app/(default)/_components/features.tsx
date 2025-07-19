@@ -1,5 +1,5 @@
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
-import Heading from "@/app/(default)/components/heading";
+import Heading from "@/app/(default)/_components/heading";
 import { BarChartIcon, BoxesIcon, FileTextIcon, PackageIcon, UserIcon } from "lucide-react";
 import { Path } from "@/lib/paths";
 
