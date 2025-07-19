@@ -1,38 +1,45 @@
-import React from "react";
-import {
-  BarChartIcon,
-  BoxesIcon,
-  FileTextIcon,
-  PackageIcon,
-  UsersIcon,
-} from "lucide-react";
-
+import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import Heading from "@/app/(default)/components/heading";
+import { BarChartIcon, BoxesIcon, FileTextIcon, PackageIcon, UserIcon } from "lucide-react";
+import { Path } from "@/lib/paths";
 
-const featuresData = [
+const features = [
   {
-    title: "Gestão de Clientes Simplificada",
-    description:
-      "Registe e organize seus clientes com filtros, etiquetas e pesquisa avançada. Acompanhe interações e impulsione suas vendas com facilidade.",
-    icon: UsersIcon,
+    Icon: PackageIcon,
+    name: "Gestão de Produtos Simplificada",
+    description: "Registe e organize seus produtos com filtros, etiquetas e pesquisa avançada. Acompanhe interações e impulsione suas vendas com facilidade.",
+    href: Path.dashboard,
+    cta: "Começar Agora",
+    className: "col-span-3 lg:col-span-1",
+    background: <img className="absolute -right-20 -top-20 opacity-60" alt="Gestão de Clientes" />,
+  },
+
+  {
+    Icon: FileTextIcon,
+    name: "Faturas Automáticas",
+    description: "Crie, personalize e envie faturas em PDF automaticamente. Receba alertas de vencimento e mantenha o controlo dos pagamentos.",
+    href: Path.dashboard,
+    cta: "Começar Agora",
+    className: "col-span-3 lg:col-span-2",
+    background: <img className="absolute -right-20 -top-20 opacity-60" alt="Faturas Automáticas" />,
   },
   {
-    title: "Faturas Automáticas",
-    description:
-      "Crie, personalize e envie faturas em PDF automaticamente. Receba alertas de vencimento e mantenha o controlo dos pagamentos.",
-    icon: FileTextIcon,
+    Icon: BarChartIcon,
+    name: "Relatórios Interativos",
+    description: "Acesse relatórios de vendas com gráficos dinâmicos e exporte dados em Excel. Tome decisões informadas para crescer seu negócio.",
+    href: Path.dashboard,
+    cta: "Começar Agora",
+    className: "col-span-3 lg:col-span-2",
+    background: <img className="absolute -right-20 -top-20 opacity-60" alt="Relatórios Interativos" />,
   },
   {
-    title: "Relatórios Interativos",
-    description:
-      "Acesse relatórios de vendas com gráficos dinâmicos e exporte dados em Excel. Tome decisões informadas para crescer seu negócio.",
-    icon: BarChartIcon,
-  },
-  {
-    title: "Gestão de Produtos Simplificada",
-    description:
-      "Registe e organize seus produtos com filtros, etiquetas e pesquisa avançada. Acompanhe interações e impulsione suas vendas com facilidade.",
-    icon: PackageIcon,
+    Icon: UserIcon,
+    name: "Gestão de Clientes Simplificada",
+    description: "Registe e organize seus clientes com filtros, etiquetas e pesquisa avançada. Acompanhe interações e impulsione suas vendas com facilidade.",
+    href: Path.dashboard,
+    cta: "Começar Agora",
+    className: "col-span-3 lg:col-span-1",
+    background: <img className="absolute -right-20 -top-20 opacity-60" alt="Gestão de Clientes" />,
   },
 ];
 
@@ -47,29 +54,15 @@ const Features = () => {
             heading="Construído para satisfazer as suas necessidades!"
             paragraph="Descubra como nossa plataforma simplifica a gestão do seu negócio local com ferramentas poderosas e fáceis de usar."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuresData.map((feature, index) => (
-              <div
-                key={index}
-                className={`bg-muted rounded-md p-6 flex justify-between flex-col ${index === 0 || index === 3
-                    ? "h-full lg:col-span-2 aspect-square lg:aspect-auto"
-                    : "aspect-square"
-                  }`}
-              >
-                <feature.icon className="w-8 h-8 stroke-1" />
-                <div className="flex flex-col">
-                  <h3 className="text-xl tracking-tight">{feature.title}</h3>
-                  <p className="text-muted-foreground max-w-xs text-base">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
+          <BentoGrid>
+            {features.map((feature) => (
+              <BentoCard key={feature.name} {...feature} />
             ))}
-          </div>
+          </BentoGrid>
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default Features;
+export default Features
