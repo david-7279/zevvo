@@ -217,9 +217,10 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-5 py-4">
-        <div className="flex-1 flex flex-row gap-1 text-sm text-muted-foreground">
-          <p className="text-foreground">Visualizando{" "} {table.getRowModel().rows.length}</p>
-          <p>de {" "} {table.getFilteredRowModel().rows.length} {collectionType}(s)</p>
+        <div className="flex-1 flex flex-row flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground whitespace-nowrap">
+          <p className="text-foreground">
+            Visualizando {table.getRowModel().rows.length} <span className="text-muted-foreground">de {table.getFilteredRowModel().rows.length} {collectionType}(s)</span>
+          </p>
         </div>
         <div className="space-x-2">
           <Pagination>
