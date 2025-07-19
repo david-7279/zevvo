@@ -148,7 +148,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
         </div>
       </div>
 
-      <div className="grid w-full [&>div]:h-[40vh]">
+      <div className="flex-1 w-full overflow-auto">
         <Table>
           <TableHeader className="sticky top-0 z-20 bg-background">
             {table.getHeaderGroups().map((headerGroup) => (
