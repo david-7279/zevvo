@@ -1,5 +1,5 @@
 import React from "react"
-import { BrainCogIcon, CheckIcon, PiggyBankIcon, ShieldQuestionIcon, XIcon } from "lucide-react"
+import { BlocksIcon, BrainCogIcon, CheckIcon, PiggyBankIcon, ShieldQuestionIcon, XIcon } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
@@ -19,6 +19,8 @@ const plans = [
     additional: [
       { label: "Faturas em PDF manualmente" },
       { label: "Pagamentos automáticos" },
+      { label: "Exporte dados para o seu ambiente de trabalho como precaução" },
+      { label: "Visualização gráfica para monitorizar o seu negócio" },
     ],
     security: [
       { label: "Apoio via e-mail com resposta até 48 horas úteis" },
@@ -37,6 +39,8 @@ const plans = [
     additional: [
       { label: "Envio automático de faturas por email" },
       { label: "Pagamentos automáticos" },
+      { label: "Exporte dados para o seu ambiente de trabalho como precaução" },
+      { label: "Visualização gráfica para monitorizar o seu negócio" },
     ],
     security: [
       { label: "Apoio via e-mail com resposta até 24 horas úteis" },
@@ -55,6 +59,8 @@ const plans = [
     additional: [
       { label: "Envio automático de faturas e alertas" },
       { label: "Pagamentos automáticos" },
+      { label: "Exporte dados para o seu ambiente de trabalho como precaução" },
+      { label: "Visualização gráfica para monitorizar o seu negócio" },
     ],
     security: [
       { label: "Apoio prioritário via e-mail" },
@@ -124,7 +130,7 @@ const PricingResponsive = () => (
               {/* Additional Features */}
               <div className="space-y-2">
                 <div className="inline-flex gap-1.5 items-center">
-                  <PiggyBankIcon className="size-4" />
+                  <BlocksIcon className="size-4" />
                   <p>Funcionalidades Adicionais</p>
                 </div>
                 <Separator />

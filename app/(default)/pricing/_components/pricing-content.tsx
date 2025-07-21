@@ -1,11 +1,10 @@
 import React from "react"
-import { BrainCogIcon, ChartAreaIcon, CheckIcon, ClipboardListIcon, Columns3CogIcon, LucideMessageCircleQuestion, PiggyBankIcon, ShieldQuestionIcon, XIcon } from "lucide-react"
+import { BlocksIcon, BrainCogIcon, ChartAreaIcon, CheckIcon, ClipboardListIcon, Columns3CogIcon, LucideMessageCircleQuestion, PiggyBankIcon, ShieldQuestionIcon, XIcon } from "lucide-react"
 import { Path } from "@/lib/paths";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Separator } from "@/components/ui/separator";
-
 
 const pricingHeader = [
   {
@@ -79,6 +78,20 @@ const pricingInformation = [
   {
     tooltipTitle: "Pagamentos",
     tooltipContent: "Pagamentos automáticos integrados com a plataforma.",
+    startupContent: <CheckIcon className="size-4" />,
+    standardContent: <CheckIcon className="size-4" />,
+    premiumContent: <CheckIcon className="size-4" />,
+  },
+  {
+    tooltipTitle: "Exportação",
+    tooltipContent: "Exporte dados para o seu ambiente de trabalho como precaução.",
+    startupContent: <CheckIcon className="size-4" />,
+    standardContent: <CheckIcon className="size-4" />,
+    premiumContent: <CheckIcon className="size-4" />,
+  },
+  {
+    tooltipTitle: "Dashboard",
+    tooltipContent: "Visualização gráfica para monitorizar o seu negócio.",
     startupContent: <CheckIcon className="size-4" />,
     standardContent: <CheckIcon className="size-4" />,
     premiumContent: <CheckIcon className="size-4" />,
@@ -205,7 +218,7 @@ const PricingContent = () => (
       {/* Funcionalidades Adicionais */}
       <div className="grid gap-y-2 px-4">
         <div className="inline-flex gap-1.5 items-center">
-          <PiggyBankIcon className="size-5" />
+          <BlocksIcon className="size-5" />
           <h3 className="scroll-m-20 text-xl tracking-tight">
             Funcionalidades adicionais
           </h3>
