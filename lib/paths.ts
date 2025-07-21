@@ -3,6 +3,7 @@ export const Path = {
   root: "/",
   terms: "/terms",
   pricing: "/pricing",
+  team: "/team",
 
   // AUTH
   login: "/login",
