@@ -1,5 +1,5 @@
 import React from "react"
-import { ChartAreaIcon, CheckIcon, ClipboardListIcon, Columns3CogIcon, LucideMessageCircleQuestion, XIcon } from "lucide-react"
+import { BrainCogIcon, ChartAreaIcon, CheckIcon, ClipboardListIcon, Columns3CogIcon, LucideMessageCircleQuestion, PiggyBankIcon, ShieldQuestionIcon, XIcon } from "lucide-react"
 import { Path } from "@/lib/paths";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Card, CardContent } from "@/components/ui/card";
@@ -149,9 +149,12 @@ const PricingContent = () => (
 
       {/* Características Principais */}
       <div className="grid gap-y-2 px-4">
-        <h3 className="scroll-m-20 text-xl tracking-tight">
-          Características principais
-        </h3>
+        <div className="inline-flex gap-1.5 items-center">
+          <BrainCogIcon className="size-5" />
+          <h3 className="scroll-m-20 text-xl tracking-tight">
+            Características principais
+          </h3>
+        </div>
         <Card>
           <CardContent>
             <div className="overflow-x-auto">
@@ -201,9 +204,12 @@ const PricingContent = () => (
 
       {/* Funcionalidades Adicionais */}
       <div className="grid gap-y-2 px-4">
-        <h3 className="scroll-m-20 text-xl tracking-tight">
-          Funcionalidades adicionais
-        </h3>
+        <div className="inline-flex gap-1.5 items-center">
+          <PiggyBankIcon className="size-5" />
+          <h3 className="scroll-m-20 text-xl tracking-tight">
+            Funcionalidades adicionais
+          </h3>
+        </div>
         <Card>
           <CardContent>
             <div className="overflow-x-auto">
@@ -253,9 +259,12 @@ const PricingContent = () => (
 
       {/* Segurança e Suporte */}
       <div className="grid gap-y-2 px-4">
-        <h3 className="scroll-m-20 text-xl tracking-tight">
-          Segurança e Suporte
-        </h3>
+        <div className="inline-flex gap-1.5 items-center">
+          <ShieldQuestionIcon className="size-5" />
+          <h3 className="scroll-m-20 text-xl tracking-tight">
+            Segurança e Suporte
+          </h3>
+        </div>
         <Card>
           <CardContent>
             <div className="overflow-x-auto">
