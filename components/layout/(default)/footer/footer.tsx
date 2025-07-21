@@ -8,6 +8,8 @@ const footerLinks = [
   { label: "Funcionalidades", link: `${Path.root}#features` },
   { label: "Preços", link: `${Path.root}#pricing` },
   { label: "FAQ", link: `${Path.root}#faq` },
+  { label: "Equipa", link: `${Path.team}` },
+
 ]
 
 const Footer = () => {
