@@ -1,5 +1,5 @@
 import React from "react"
-import { BrainCogIcon, ChartAreaIcon, CheckIcon, ClipboardListIcon, Columns3CogIcon, LucideMessageCircleQuestion, PiggyBankIcon, ShieldQuestionIcon, XIcon } from "lucide-react"
+import { ChartAreaIcon, CheckIcon, ClipboardListIcon, Columns3CogIcon, LucideMessageCircleQuestion, XIcon } from "lucide-react"
 import { Path } from "@/lib/paths";
 import { BentoCard, BentoGrid } from "@/components/magicui/bento-grid";
 import { Card, CardContent } from "@/components/ui/card";
@@ -124,7 +124,7 @@ function renderPricingCellContent(content: React.ReactNode) {
   return content;
 }
 
-const Pricing = () => (
+const PricingContent = () => (
   <section className="scroll-py-16 py-16 md:scroll-py-32 md:py-32 mt-5">
     <div className="mx-auto max-w-5xl px-6 space-y-16">
 
@@ -149,12 +149,9 @@ const Pricing = () => (
 
       {/* Características Principais */}
       <div className="grid gap-y-2 px-4">
-        <div className="inline-flex gap-1.5 items-center">
-          <BrainCogIcon className="size-5" />
-          <h3 className="scroll-m-20 text-xl tracking-tight">
-            Características principais
-          </h3>
-        </div>
+        <h3 className="scroll-m-20 text-xl tracking-tight">
+          Características principais
+        </h3>
         <Card>
           <CardContent>
             <div className="overflow-x-auto">
@@ -204,12 +201,9 @@ const Pricing = () => (
 
       {/* Funcionalidades Adicionais */}
       <div className="grid gap-y-2 px-4">
-        <div className="inline-flex gap-1.5 items-center">
-          <PiggyBankIcon className="size-5" />
-          <h3 className="scroll-m-20 text-xl tracking-tight">
-            Funcionalidades adicionais
-          </h3>
-        </div>
+        <h3 className="scroll-m-20 text-xl tracking-tight">
+          Funcionalidades adicionais
+        </h3>
         <Card>
           <CardContent>
             <div className="overflow-x-auto">
@@ -259,12 +253,9 @@ const Pricing = () => (
 
       {/* Segurança e Suporte */}
       <div className="grid gap-y-2 px-4">
-        <div className="inline-flex gap-1.5 items-center">
-          <ShieldQuestionIcon className="size-5" />
-          <h3 className="scroll-m-20 text-xl tracking-tight">
-            Segurança e Suporte
-          </h3>
-        </div>
+        <h3 className="scroll-m-20 text-xl tracking-tight">
+          Segurança e Suporte
+        </h3>
         <Card>
           <CardContent>
             <div className="overflow-x-auto">
@@ -315,4 +306,4 @@ const Pricing = () => (
   </section>
 )
 
-export default Pricing
+export default PricingContent
