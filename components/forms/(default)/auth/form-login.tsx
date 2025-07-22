@@ -28,9 +28,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
 import { LockKeyholeIcon, MailIcon, UserRoundPenIcon } from "lucide-react";
+import Link from "next/link";
+import { Path } from "@/lib/paths";
 
 const formSchema = z.object({
-  email: z.string().email("Email inválido"),
+  email: z.string().email("E-mail inválido"),
   password: z.string().min(8, "Palavra-passe deve ter pelo menos 8 caracteres"),
 });
 
@@ -52,14 +54,14 @@ const LoginForm = () => {
     try {
       // Toast Event
       toast("Conta autenticada com sucesso", {
-        description: `Bem vindo de volta!`,
+        description: `Bem-vindo de volta!`,
       });
       setTimeout(() => {
         form.reset();
       }, 600)
       console.log("Conta autenticada com sucesso: ", data);
     } catch (error) {
-      console.log(`Error login to the account: ${error}`);
+      console.log(`Erro ao iniciar sessão na conta: ${error}`);
     } finally {
       setIsLoading(false);
     }
@@ -73,14 +75,14 @@ const LoginForm = () => {
           name="email"
           render={({ field, fieldState }) => (
             <FormItem>
-              <FormLabel>Endereço de Email</FormLabel>
+              <FormLabel>Endereço de e-mail</FormLabel>
               <InputBase error={Boolean(fieldState.error)}>
                 <InputBaseAdornment>
                   <MailIcon />
                 </InputBaseAdornment>
                 <InputBaseControl>
                   <FormControl>
-                    <InputBaseInput placeholder="Email" {...field} />
+                    <InputBaseInput placeholder="E-mail" {...field} />
                   </FormControl>
                 </InputBaseControl>
               </InputBase>
@@ -93,7 +95,8 @@ const LoginForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Palavra Passe</FormLabel>
+              <FormLabel>Palavra-passe</FormLabel>
+
               <PasswordInput>
                 <PasswordInputAdornment>
                   <LockKeyholeIcon />
@@ -101,19 +104,29 @@ const LoginForm = () => {
                 <FormControl>
                   <PasswordInputInput
                     autoComplete="new-password"
-                    placeholder="Password"
+                    placeholder="Palavra-passe"
                     {...field}
                   />
                 </FormControl>
                 <PasswordInputAdornmentToggle />
               </PasswordInput>
+              <div className="flex justify-end items-center gap-1 max-w-full flex-wrap sm:text-xs">
+
+                <Link href={Path.recovery} target="_blank" className="group">
+                  <p className="relative text-sm text-muted-foreground transition-all duration-500
+                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
+                group-hover:after:w-full break-all">
+                    Esqueceu-se da sua palavra-passe?
+                  </p>
+                </Link>
+              </div>
               <FormMessage />
             </FormItem>
           )}
         />
 
         <Button type="submit" className="mt-4 w-full">
-          Iniciar Sessão
+          Iniciar sessão
         </Button>
       </form >
     </Form >

@@ -29,6 +29,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { toast } from "sonner";
 import { LockKeyholeIcon, MailIcon, UserRoundPenIcon } from "lucide-react";
+import Link from "next/link";
+import { Path } from "@/lib/paths";
 
 const formSchema = z.object({
   username: z.string().min(3, "Nome deve ter pelo menos 3 caracteres"),
@@ -124,7 +126,7 @@ const RegisterForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Palavra Passe</FormLabel>
+              <FormLabel>Palavra-passe</FormLabel>
               <PasswordInput>
                 <PasswordInputAdornment>
                   <LockKeyholeIcon />
@@ -146,6 +148,19 @@ const RegisterForm = () => {
         <Button type="submit" className="mt-4 w-full" disabled={isLoading}>
           Criar Conta
         </Button>
+
+        <div className="flex justify-center items-center gap-1 max-w-full flex-wrap sm:text-xs">
+          <p className="text-muted-foreground text-sm whitespace-normal break-words">
+            Ao criar uma conta, aceita os nossos
+          </p>
+          <Link href={Path.terms} target="_blank" className="group">
+            <p className="relative text-sm text-foreground transition-all duration-500
+                after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
+                group-hover:after:w-full break-all">
+              Termos e Condições
+            </p>
+          </Link>
+        </div>
       </form>
     </Form>
   );

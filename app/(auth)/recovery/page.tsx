@@ -35,7 +35,7 @@ const AccountRecovery = () => {
             <div className="mt-5">
               <div className="flex justify-center items-center gap-1">
                 <p className="text-muted-foreground text-sm">Lembra-se da sua palavra-passe?</p>
-                <Link href={Path.register} className="group">
+                <Link href={Path.login} className="group">
                   <p className="relative text-sm text-foreground transition-all duration-500
                   after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:bg-foreground after:transition-all after:duration-500
                   group-hover:after:w-full"
