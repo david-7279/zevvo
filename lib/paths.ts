@@ -8,6 +8,8 @@ export const Path = {
   // AUTH
   login: "/login",
   register: "/register",
+  recovery: "/recovery",
+
 
   // CORE
   dashboard: "/dashboard",
