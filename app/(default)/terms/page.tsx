@@ -52,6 +52,67 @@ const Terms = () => {
                 <p>Não utilizamos cookies de rastreamento ou ferramentas de análise de terceiros sem seu consentimento.</p>
               </div>
             </div>
+
+            <div className="py-6">
+              <h3 className="font-medium">Sobre os seus dados na plataforma</h3>
+              <div className="text-muted-foreground mt-4 space-y-2">
+                <p>
+                  Os dados referentes aos seus produtos, clientes, fornecedores, pagamentos e stock são armazenados na nossa plataforma para garantir o funcionamento dos serviços. No entanto, apesar de adotarmos medidas de segurança, existe sempre o risco de perda de dados devido a falhas técnicas, indisponibilidade do servidor ou outros imprevistos.
+                </p>
+                <p>
+                  Por esse motivo, disponibilizamos para todos os planos um botão de exportação e importação, permitindo que você faça backup de todos os seus dados em um ficheiro. Apenas você tem acesso a esse ficheiro, e é sua responsabilidade realizar exportações regulares para garantir a segurança das suas informações.
+                </p>
+                <p>
+                  Caso ocorra algum problema com a sua conta ou com a plataforma, não temos como recuperar os seus dados. Recomendamos que utilize a funcionalidade de exportação/importação para manter uma cópia de segurança atualizada dos seus dados.
+                </p>
+              </div>
+            </div>
+
+            {/* Adicionais recomendados para uma página de Termos e Condições */}
+            <div className="py-6">
+              <h3 className="font-medium">Responsabilidades do Utilizador</h3>
+              <div className="text-muted-foreground mt-4 space-y-2">
+                <p>
+                  O utilizador é responsável por manter a confidencialidade das suas credenciais de acesso e por todas as atividades realizadas na sua conta. Não é permitido utilizar a plataforma para fins ilegais ou não autorizados.
+                </p>
+              </div>
+            </div>
+
+            <div className="py-6">
+              <h3 className="font-medium">Limitação de Responsabilidade</h3>
+              <div className="text-muted-foreground mt-4 space-y-2">
+                <p>
+                  A plataforma é fornecida "tal como está". Não nos responsabilizamos por danos diretos, indiretos, incidentais ou consequenciais resultantes do uso ou da impossibilidade de uso da plataforma.
+                </p>
+              </div>
+            </div>
+
+            <div className="py-6">
+              <h3 className="font-medium">Alterações nos Termos</h3>
+              <div className="text-muted-foreground mt-4 space-y-2">
+                <p>
+                  Reservamo-nos o direito de alterar estes termos a qualquer momento. As alterações serão comunicadas através da plataforma ou por e-mail. O uso continuado da plataforma após as alterações implica aceitação dos novos termos.
+                </p>
+              </div>
+            </div>
+
+            <div className="py-6">
+              <h3 className="font-medium">Cancelamento e Encerramento de Conta</h3>
+              <div className="text-muted-foreground mt-4 space-y-2">
+                <p>
+                  O utilizador pode cancelar a sua conta a qualquer momento. Reservamo-nos o direito de suspender ou encerrar contas que violem estes termos ou que apresentem atividades suspeitas.
+                </p>
+              </div>
+            </div>
+
+            <div className="py-6">
+              <h3 className="font-medium">Contato</h3>
+              <div className="text-muted-foreground mt-4 space-y-2">
+                <p>
+                  Em caso de dúvidas sobre estes termos, entre em contato através do e-mail: <a href="mailto:zevvohelp@outlook.com" className="underline">zevvohelp@outlook.com</a>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
