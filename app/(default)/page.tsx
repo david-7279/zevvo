@@ -2,6 +2,7 @@ import Hero from "@/app/(default)/_components/hero";
 import Features from "@/app/(default)/_components/features";
 import Pricing from "@/app/(default)/_components/pricing";
 import Faq from "@/app/(default)/_components/faq";
+import CTA from "@/app/(default)/_components/cta";
 
 export default function Home() {
   return (
@@ -19,6 +20,10 @@ export default function Home() {
 
         <section id="faq">
           <Faq />
+        </section>
+
+        <section id="cta">
+          <CTA />
         </section>
       </div>
     </main>
