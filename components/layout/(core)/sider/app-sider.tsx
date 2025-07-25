@@ -24,6 +24,7 @@ import {
   LifeBuoyIcon,
   PackageIcon,
   ScrollTextIcon,
+  TruckIcon,
   UsersIcon,
 } from "lucide-react"
 import { Path } from "@/lib/paths"
@@ -69,6 +70,11 @@ const siderData = {
       label: "Faturas",
       url: Path.invoices,
       icon: ScrollTextIcon,
+    },
+    {
+      label: "Fornecedores",
+      url: Path.suppliers,
+      icon: TruckIcon,
     },
   ],
 

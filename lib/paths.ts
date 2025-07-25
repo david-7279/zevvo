@@ -24,6 +24,8 @@ export const Path = {
   payments: "/payments",
   invoices: "/invoices",
 
+  suppliers: "/suppliers",
+
   changelog: "/changelog",
   settings: "/settings",
   support: "/support",
