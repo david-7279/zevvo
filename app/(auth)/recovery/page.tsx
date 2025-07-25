@@ -1,3 +1,4 @@
+import RecoveryForm from '@/components/forms/(default)/auth/form-recovery'
 import { BorderBeam } from '@/components/magicui/border-beam'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -27,7 +28,7 @@ const AccountRecovery = () => {
 
             <Card className="relative w-full overflow-hidden">
               <CardContent>
-                Form for recovery account
+                <RecoveryForm />
               </CardContent>
               <BorderBeam duration={8} size={100} />
             </Card>
