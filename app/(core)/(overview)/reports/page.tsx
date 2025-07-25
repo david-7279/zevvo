@@ -63,7 +63,7 @@ const Reports = () => {
 
       <div className="space-y-16">
         {/* Header Cards Row */}
-        <div className="flex flex-row flex-wrap justify-between gap-5">
+        <div className="flex flex-row flex-wrap justify-baseline gap-5">
           <OverviewHeaderCardComponent data={customData} />
         </div >
 

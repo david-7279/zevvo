@@ -7,16 +7,16 @@ import { ArrowRightIcon, BoxesIcon, UserIcon } from "lucide-react"
 
 export const dashboardFooterCardsData = [
   {
-    title: "Gestão de clientes",
-    description: "Organize as informações dos clientes e acompanhe o histórico de compromissos num único local",
-    link: Path.clients,
-    icon: UserIcon,
-  },
-  {
     title: "Gestão de Produtos",
     description: "Organize as informações dos produtos e acompanhe o histórico de compromissos num único local",
     link: Path.products,
     icon: BoxesIcon,
+  },
+  {
+    title: "Gestão de clientes",
+    description: "Organize as informações dos clientes e acompanhe o histórico de compromissos num único local",
+    link: Path.clients,
+    icon: UserIcon,
   },
 ]
 
