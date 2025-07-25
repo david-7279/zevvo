@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 
-const NewProductForm = () => {
+const EditProductForm = () => {
   const router = useRouter()
 
   const [newProduct, setNewProduct] = useState({
@@ -130,8 +130,8 @@ const NewProductForm = () => {
           </Button>
         </Link>
         <div>
-          <h1 className="text-2xl font-bold">Criar Novo Produto</h1>
-          <p className="text-sm text-muted-foreground">Preencha os detalhes do novo produto</p>
+          <h1 className="text-2xl font-bold">Editar Produto</h1>
+          <p className="text-sm text-muted-foreground">Atualiza os detalhes do produto</p>
         </div>
       </div>
 
@@ -441,7 +441,7 @@ const NewProductForm = () => {
                 ) : (
                   <>
                     <Plus className="h-4 w-4 mr-2" />
-                    Criar Produto
+                    Editar Produto
                   </>
                 )}
               </Button>
@@ -453,4 +453,4 @@ const NewProductForm = () => {
   )
 }
 
-export default NewProductForm
+export default EditProductForm
