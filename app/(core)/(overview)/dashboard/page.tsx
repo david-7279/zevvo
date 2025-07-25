@@ -41,7 +41,7 @@ const Dashboard = () => {
       <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Dashboard</h3>
 
       {/* Header Cards Row */}
-      <div className="flex flex-row flex-wrap justify-between gap-5">
+      <div className="flex flex-row flex-wrap justify-baseline gap-5">
         <OverviewHeaderCardComponent data={customData} />
       </div >
 
