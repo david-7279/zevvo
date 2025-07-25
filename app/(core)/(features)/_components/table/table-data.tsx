@@ -99,7 +99,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
     },
   });
 
-  console.log("Data: ", data);
+  console.log("Dados: ", data);
 
   return (
     <div className="w-full space-y-5">
@@ -118,17 +118,16 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
             <div className="relative">
               <div className="text-muted-foreground pointer-events-none absolute inset-y-0 start-0 flex items-center justify-center ps-3 peer-disabled:opacity-50">
                 <SearchIcon className="size-4" />
-                <span className="sr-only">User</span>
+                <span className="sr-only">Utilizador</span>
               </div>
               <Input
-                placeholder={`Pesquisa por um ${collectionType} específico...`}
+                placeholder={`Pesquise por um ${collectionType} específico...`}
                 value={globalFilter}
                 onChange={e => setGlobalFilter(e.target.value)}
                 size={35}
                 className="w-full lg:w-[300px] peer ps-9"
               />
             </div>
-
           </div>
         </div>
         <div className="flex items-end justify-end text-right w-full lg:w-auto lg:justify-end">
@@ -211,53 +210,41 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
               </TableRow>
             )}
           </TableBody>
-
-
         </Table>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-5 py-4">
         <div className="flex-1 flex flex-row flex-wrap items-center gap-x-2 gap-y-1 text-sm text-muted-foreground whitespace-nowrap">
           <p className="text-foreground">
-            Visualizando {table.getRowModel().rows.length} <span className="text-muted-foreground">de {table.getFilteredRowModel().rows.length} {collectionType}(s)</span>
+            A visualizar {table.getRowModel().rows.length} <span className="text-muted-foreground">de {table.getFilteredRowModel().rows.length} {collectionType}(s)</span>
           </p>
         </div>
-        <div className="space-x-2">
-          <Pagination>
-            <PaginationContent className='rounded-md border shadow-xs'>
-              <PaginationItem>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => table.previousPage()}
-                  disabled={!table.getCanPreviousPage()}
-                >
-                  <ChevronLeftIcon className="size-4" />
-                  <span className="hidden sm:block">Anterior</span>
-                </Button>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href='#' isActive>1</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href='#'>2</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <PaginationLink href='#'>3</PaginationLink>
-              </PaginationItem>
-              <PaginationItem>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => table.nextPage()}
-                  disabled={!table.getCanNextPage()}
-                >
-                  <span className="hidden sm:block">Próxima</span>
-                  <ChevronRightIcon className="size-4" />
-                </Button>
-              </PaginationItem>
-            </PaginationContent>
-          </Pagination>
+        <div className="flex flex-row items-center gap-2">
+          <span className="text-sm text-muted-foreground">Página</span>
+          <Input
+            type="number"
+            size={3}
+          />
+          <span className="text-muted-foreground text-sm">de <span className="text-foreground">total</span></span>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            <ChevronLeftIcon className="size-4" />
+            <span className="hidden sm:block">Anterior</span>
+          </Button>
+
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            <span className="hidden sm:block">Próxima</span>
+            <ChevronRightIcon className="size-4" />
+          </Button>
         </div>
       </div>
     </div>
