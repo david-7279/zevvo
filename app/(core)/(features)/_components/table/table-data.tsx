@@ -224,6 +224,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
           <Input
             type="number"
             size={3}
+            placeholder="1"
           />
           <span className="text-muted-foreground text-sm">de <span className="text-foreground">total</span></span>
           <Button
