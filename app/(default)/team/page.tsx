@@ -1,4 +1,6 @@
 import { BentoCard, BentoGrid } from '@/components/magicui/bento-grid'
+import { ShimmerButton } from '@/components/magicui/shimmer-button'
+import { ShimmerButtonMinimalist } from '@/components/magicui/shimmer-button-minimalist'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { BriefcaseBusinessIcon, MailIcon, GithubIcon, LinkedinIcon, Columns3CogIcon, ClipboardListIcon, ChartAreaIcon, CodeIcon, FingerprintIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -93,25 +95,6 @@ const Page = () => {
           <p>
             Olá! Sou um Frontend Developer dedicado, sediado em Portugal, especializado na criação de experiências de produto intuitivas e visualmente refinadas. Com uma filosofia de design minimalista, concentro-me na construção de interfaces limpas, eficientes e centradas no utilizador, que dão prioridade à funcionalidade e à simplicidade estética.
           </p>
-          <p>
-            A minha experiência abrange frameworks JavaScript modernas, design responsivo e otimização de desempenho, o que me permite oferecer soluções digitais perfeitas, adaptadas às necessidades do utilizador. Sou apaixonado por misturar criatividade com precisão técnica.
-          </p>
-          <p>
-            Este projeto é desenvolvido e mantido por mim, com atenção ao detalhe e foco em entregar valor real para negócios locais. Estou sempre aberto a feedbacks, sugestões e colaborações!
-          </p>
-        </div>
-
-        {/* Skills */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <CodeIcon className="size-4 text-primary" />
-            <h3 className="text-base font-medium text-foreground">Competências principais</h3>
-          </div>
-          <ul className="flex flex-wrap gap-2 mt-1">
-            {skills.map(skill => (
-              <li key={skill} className="bg-muted px-2 py-1 rounded text-xs text-foreground/80">{skill}</li>
-            ))}
-          </ul>
         </div>
 
         {/* Values */}
@@ -127,6 +110,19 @@ const Page = () => {
             ))}
           </BentoGrid>
         </div>
+
+        {/* PORFOLIO */}
+        <div>
+          <Link href={"https://david7279.vercel.app/"} target="_blank" className="w-3/4">
+            <ShimmerButtonMinimalist
+              type="button"
+              className="w-full rounded-none  text-sm text-foreground">
+              <p>Visitar Porfolio</p>
+            </ShimmerButtonMinimalist>
+          </Link>
+        </div>
+
+
 
         {/* Call to Action */}
         <div className="flex justify-center items-center gap-1 max-w-full flex-wrap sm:text-xs">
