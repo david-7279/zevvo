@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Plus, Calculator, ArrowLeftIcon } from "lucide-react"
+import { Plus, Calculator, ArrowLeftIcon, EditIcon } from "lucide-react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
@@ -411,7 +411,7 @@ const EditProductForm = () => {
             <Separator />
 
             {/* Form Actions */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap gap-5 items-center justify-between">
               <div className="flex gap-3">
                 <Button type="button" variant="outline" onClick={resetForm} disabled={isSubmitting}>
                   Limpar Formulário
@@ -440,7 +440,7 @@ const EditProductForm = () => {
                   "Criando..."
                 ) : (
                   <>
-                    <Plus className="h-4 w-4 mr-2" />
+                    <EditIcon className="h-4 w-4 mr-2" />
                     Editar Produto
                   </>
                 )}

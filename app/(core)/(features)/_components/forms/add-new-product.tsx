@@ -411,7 +411,7 @@ const NewProductForm = () => {
             <Separator />
 
             {/* Form Actions */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap gap-5 items-center justify-between">
               <div className="flex gap-3">
                 <Button type="button" variant="outline" onClick={resetForm} disabled={isSubmitting}>
                   Limpar Formulário
