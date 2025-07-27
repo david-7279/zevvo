@@ -47,7 +47,7 @@ import {
 } from '@/components/ui/pagination'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { ChevronLeftIcon, ChevronRightIcon, FilterIcon, SearchIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
 import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
 import Link from "next/link";
 
@@ -111,6 +111,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
               size="default"
               className="w-full lg:w-auto"
             >
+              <PlusIcon className="size-4" />
               Adicionar {collectionType}
             </Button>
           </Link>
