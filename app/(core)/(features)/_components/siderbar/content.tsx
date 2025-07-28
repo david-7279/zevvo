@@ -5,7 +5,10 @@ import ProductStock from "@/app/(core)/(features)/products/[id]/_components/prod
 
 import ClientDetails from "@/app/(core)/(features)/clients/[id]/_components/client-details"
 import ClientAddress from "@/app/(core)/(features)/clients/[id]/_components/client-address"
-import NotFoundContent from "./not-found-content"
+
+import PaymentDetails from "@/app/(core)/(features)/payments/[id]/_components/payment-details"
+
+import NotFoundContent from "@/app/(core)/(features)/_components/siderbar/not-found-content"
 
 interface Props {
   activeId: string
@@ -27,6 +30,10 @@ const FeaturesContent: React.FC<Props> = ({ activeId }) => {
         return <ClientDetails />
       case "client-address":
         return <ClientAddress />
+
+      // PAYMENT
+      case "payment-details":
+        return <PaymentDetails />
 
       // NOT FOUND
       default:
