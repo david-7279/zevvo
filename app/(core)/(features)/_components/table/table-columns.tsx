@@ -10,6 +10,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Button } from "@/components/ui/button";
 import { MoreHorizontalIcon } from "lucide-react";
 import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
+import { ClientRowAction } from "@/app/(core)/(features)/_components/table/client-row-action";
 
 interface ProductData {
   id: number
@@ -165,7 +166,7 @@ export const columnsClients: ColumnDef<ClientsData>[] = [
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <ProductRowActions id={row.row.original.id} MenuItem={DropdownMenuItem} />
+              <ClientRowAction id={row.row.original.id} MenuItem={DropdownMenuItem} />
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

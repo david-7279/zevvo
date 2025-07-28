@@ -4,6 +4,7 @@ import React from 'react'
 import DataTable from "@/app/(core)/(features)/_components/table/table-data"
 import { columnsProduct } from "@/app/(core)/(features)/_components/table/table-columns"
 import ProductFilters from "@/app/(core)/(features)/products/product-filters"
+import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions"
 
 const initialProducts = [
   {
@@ -74,6 +75,7 @@ const ProductContent = () => {
         addNewLink="products"
         idSelector={row => row.id}
         filtersContent={<ProductFilters />}
+        RowActionsComponent={ProductRowActions}
       />
 
       {/* Stock History Table */}

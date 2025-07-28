@@ -16,10 +16,10 @@ export const Path = {
   reports: "/reports",
 
   products: "/products",
-  productsId: "/products/:id",
+  productsId: "/products/id/",
 
   clients: "/clients",
-  clientsId: "/clients/:id",
+  clientsId: "/clients/id/",
 
   payments: "/payments",
   invoices: "/invoices",

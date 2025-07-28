@@ -1,17 +1,17 @@
 import Link from "next/link";
 import { EyeIcon, EditIcon, Trash2Icon, XIcon } from "lucide-react";
 
-export function ProductRowActions({ id, MenuItem }: { id: string | number, MenuItem: React.ElementType }) {
+export function ClientRowAction({ id, MenuItem }: { id: string | number, MenuItem: React.ElementType }) {
   return (
     <>
       <MenuItem className="gap-2" asChild>
-        <Link href={`/products/${id}`}>
+        <Link href={`/clients/${id}`}>
           <EyeIcon className="h-4 w-4" />
-          Ver Produto
+          Ver Cliente
         </Link>
       </MenuItem>
       <MenuItem className="gap-2" asChild>
-        <Link href={`/products/edit/${id}`}>
+        <Link href={`/clients/edit/${id}`}>
           <EditIcon className="h-4 w-4 text-muted-foreground" />
           Editar
         </Link>

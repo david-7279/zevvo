@@ -37,19 +37,11 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet'
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious
-} from '@/components/ui/pagination'
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, ChevronRightIcon, FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
-import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
 import Link from "next/link";
+import { ClientRowAction } from "@/app/(core)/(features)/_components/table/client-row-action";
 
 interface Props {
   columns: ColumnDef<any>[];
@@ -60,10 +52,21 @@ interface Props {
   onUpdated?: () => void;
   onDeleted?: () => void;
   filtersContent?: React.ReactNode;
+  RowActionsComponent: React.ComponentType<{ id: string | number, MenuItem: React.ElementType }>;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDeleted, filtersContent, addNewLink }: Props) => {
+const DataTable = ({
+  data,
+  columns,
+  collectionType,
+  idSelector,
+  onUpdated,
+  onDeleted,
+  filtersContent,
+  addNewLink,
+  RowActionsComponent,
+}: Props) => {
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
   const [globalFilter, setGlobalFilter] = useState("");
   const [sorting, setSorting] = useState<SortingState>([]);
@@ -199,7 +202,7 @@ const DataTable = ({ data, columns, collectionType, idSelector, onUpdated, onDel
                     </TableRow>
                   </ContextMenuTrigger>
                   <ContextMenuContent>
-                    <ProductRowActions id={row.original.id} MenuItem={ContextMenuItem} />
+                    <RowActionsComponent id={row.original.id} MenuItem={ContextMenuItem} />
                   </ContextMenuContent>
                 </ContextMenu>
               ))

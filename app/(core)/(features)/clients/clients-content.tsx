@@ -4,6 +4,7 @@ import React from "react"
 import DataTable from "@/app/(core)/(features)/_components/table/table-data"
 import { columnsClients } from "@/app/(core)/(features)/_components/table/table-columns"
 import ProductFilters from "@/app/(core)/(features)/products/product-filters"
+import { ClientRowAction } from "@/app/(core)/(features)/_components/table/client-row-action"
 
 const initialClients = [
   {
@@ -41,9 +42,10 @@ const ClientsContent = () => {
         data={initialClients}
         columns={columnsClients}
         collectionType="cliente"
-        addNewLink="clientes"
+        addNewLink="clients"
         idSelector={row => row.id}
         filtersContent={<ProductFilters />}
+        RowActionsComponent={ClientRowAction}
       />
 
       {/* Paymentys History Table */}
