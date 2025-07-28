@@ -13,6 +13,7 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
+import { Path } from "@/lib/paths"
 
 const EditProductForm = () => {
   const router = useRouter()
@@ -123,7 +124,7 @@ const EditProductForm = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col items-start gap-4">
-        <Link href="/products">
+        <Link href={Path.products}>
           <Button variant='ghost' className='group'>
             <ArrowLeftIcon className='transition-transform duration-200 group-hover:-translate-x-0.5' />
             Voltar aos Produtos
