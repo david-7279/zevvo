@@ -23,16 +23,23 @@ const FeatureHeaderCardComponent = ({ data = OverviewHeaderCard }: FeatureHeader
         const Icon = data.icon
         return (
           <Card key={index} className="w-full md:w-xs gap-4.5">
-            <CardHeader className="flex flex-row items-center justify-between">
-              <Badge className="text-card-foreground rounded-xl py-1 bg-card border-border">
-                <div className="flex items-center space-x-2">
-                  <Icon className="h-4 w-4 text-muted-foreground" />
-                  <small className="text-sm text-muted-foreground leading-none font-medium">{data.title}</small>
+            <CardHeader
+              className="
+                flex flex-col gap-2 items-start justify-between
+                sm:flex-row sm:items-center sm:gap-3
+                "
+            >
+              <Badge className="text-card-foreground rounded-xl py-1 bg-card border-border max-w-full overflow-hidden">
+                <div className="flex items-center space-x-2 min-w-0">
+                  <Icon className="h-4 w-4 text-muted-foreground shrink-0" />
+                  <small className="text-sm text-muted-foreground leading-none font-medium truncate block max-w-[180px] sm:max-w-[140px]">
+                    {data.title}
+                  </small>
                 </div>
               </Badge>
 
               <Badge
-                className={`text-xs inline-flex items-center border-0 
+                className={`text-xs inline-flex items-center border-0 whitespace-nowrap
                   ${data.trend === "up"
                     ? "text-green-600 bg-green-50 border-green-200 dark:text-green-400 dark:bg-green-950"
                     : "text-red-600 bg-red-50 border-red-200 dark:text-red-400 dark:bg-red-950"}`}
