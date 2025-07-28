@@ -207,6 +207,13 @@ export const columnsPayments: ColumnDef<PaymentsData>[] = [
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
   },
   {
+    accessorKey: "price",
+    id: "Price",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Preco" tooltip="Valor do pagamento" />,
+    accessorFn: (row) => row.product,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
+  },
+  {
     accessorKey: "date",
     id: "date",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Data/Hora" tooltip="Data e hora do pagamento" />,
