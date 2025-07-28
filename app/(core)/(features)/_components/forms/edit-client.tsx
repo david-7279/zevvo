@@ -72,8 +72,8 @@ const EditClientForm = () => {
           </Button>
         </Link>
         <div>
-          <h1 className="text-2xl font-bold">Criar Novo Cliente</h1>
-          <p className="text-sm text-muted-foreground">Preencha os dados do novo cliente</p>
+          <h1 className="text-2xl font-bold">Editar Cliente</h1>
+          <p className="text-sm text-muted-foreground">Atualiza os dados do cliente</p>
         </div>
       </div>
 
