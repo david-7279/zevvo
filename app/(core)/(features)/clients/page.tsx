@@ -2,6 +2,7 @@ import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import FeatureHeaderCardComponent from "../_components/header-card"
 import { DollarSignIcon, PackageIcon, TriangleAlertIcon, UsersIcon } from "lucide-react"
+import ClientsContent from "@/app/(core)/(features)/clients/clients-content"
 
 
 const customData = [
@@ -50,6 +51,7 @@ const Clients = () => {
         </div >
 
         {/* CONTENT */}
+        <ClientsContent />
 
       </div>
     </CoreWrapper>
