@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react"
+import CoreWrapper from "@/app/(core)/_components/core-wrapper"
+import NewClientForm from "@/app/(core)/(features)/_components/forms/add-new-client"
 
-const NewClient = () => {
+const NewProduct = () => {
   return (
-    <div>NewClient</div>
+    <CoreWrapper>
+      <NewClientForm />
+    </CoreWrapper>
   )
 }
 
-export default NewClient
+export default NewProduct
