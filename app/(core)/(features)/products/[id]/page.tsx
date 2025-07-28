@@ -1,24 +1,24 @@
 "use client"
 
 import { useState } from "react"
-import ProductAside from "@/app/(core)/(features)/products/[id]/_components/aside";
-import ProductContent from "@/app/(core)/(features)/products/[id]/_components/content";
+import FeaturesAside from "@/app/(core)/(features)/_components/siderbar/aside";
+import FeaturesContent from "@/app/(core)/(features)/_components/siderbar/content";
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
 import { TrendingUpDownIcon, TagIcon, InfoIcon } from "lucide-react";
 
 const productData = [
   {
-    id: "details",
+    id: "product-details",
     title: "Detalhes",
     icon: InfoIcon,
   },
   {
-    id: "specifications",
+    id: "product-specifications",
     title: "Especificações",
     icon: TagIcon,
   },
   {
-    id: "stock",
+    id: "product-stock",
     title: "Stock",
     icon: TrendingUpDownIcon,
   },
@@ -31,10 +31,10 @@ const ProductPage = () => {
     <CoreWrapper>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          <ProductAside items={productData} activeId={activeId} onItemClick={setActiveId} />
+          <FeaturesAside items={productData} activeId={activeId} onItemClick={setActiveId} type="produto" />
 
           <main className="flex-1 min-w-0">
-            <ProductContent activeId={activeId} />
+            <FeaturesContent activeId={activeId} />
           </main>
         </div>
       </div>

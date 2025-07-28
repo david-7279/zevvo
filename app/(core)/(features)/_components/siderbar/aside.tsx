@@ -14,23 +14,24 @@ interface Props {
   items: asideItem[]
   activeId: string
   onItemClick: (id: string) => void
+  type: string
 }
 
-const FeaturesAside: React.FC<Props> = ({ items, activeId, onItemClick }) => {
+const FeaturesAside: React.FC<Props> = ({ items, activeId, onItemClick, type }) => {
   return (
     <aside className="w-full lg:w-80 shrink-0">
       <div className="lg:sticky lg:top-6">
         <div className="mb-8 space-y-5">
           <div className="space-y-2">
-            <h1 className="text-2xl font-semibold">Detalhes do Produto</h1>
+            <h1 className="text-2xl font-semibold">Detalhes do {type}</h1>
             <small className="text-muted-foreground text-sm">
-              Atualize informações do produto nesta página.
+              Atualize informações do {type} nesta página.
             </small>
           </div>
           <Separator />
         </div>
         <div className="mb-6">
-          <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Opções do Produto</h2>
+          <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-4 uppercase">Opções do {type}</h2>
 
           {/* RESPONSIVE */}
           <div className="flex flex-row flex-wrap gap-5 mb-4 lg:hidden">

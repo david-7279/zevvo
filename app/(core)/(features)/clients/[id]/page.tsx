@@ -26,7 +26,7 @@ const ClientPage = () => {
     <CoreWrapper>
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          <FeaturesAside items={clientData} activeId={activeId} onItemClick={setActiveId} />
+          <FeaturesAside items={clientData} activeId={activeId} onItemClick={setActiveId} type="cliente" />
 
           <main className="flex-1 min-w-0">
             <FeaturesContent activeId={activeId} />
