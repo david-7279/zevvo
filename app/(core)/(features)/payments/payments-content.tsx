@@ -23,6 +23,14 @@ const initialPayments = [
     date: "21-11-2024 11:31:22",
     paymentStatus: "Falhado",
   },
+  {
+    id: 2,
+    client: "Manuel Antonio",
+    product: "Livro",
+    price: 9.99,
+    date: "01-08-2024 09:30:22",
+    paymentStatus: "Pendente",
+  },
 ]
 
 

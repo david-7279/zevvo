@@ -2,7 +2,6 @@ import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
 import FeatureHeaderCardComponent from "../_components/header-card"
 import { CheckCircleIcon, ClockIcon, EuroIcon, TriangleAlertIcon } from "lucide-react"
-import ClientsContent from "@/app/(core)/(features)/clients/clients-content"
 import PaymentsContent from "@/app/(core)/(features)/payments/payments-content"
 
 const customData = [
