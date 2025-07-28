@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/animate-ui/radix/accordion';
 import { MessageCircleQuestionIcon } from "lucide-react";
 
 import Heading from "@/app/(default)/_components/heading";
