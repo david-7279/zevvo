@@ -140,21 +140,21 @@ export const columnsClients: ColumnDef<ClientsData>[] = [
   {
     accessorKey: "email",
     id: "Email",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Email" tooltip="Endereco de email do cliente" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Email" tooltip="Endereço de email do cliente" />,
     accessorFn: (row) => row.email,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
   },
   {
     accessorKey: "phone",
     id: "Phone",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="NUmero de telemovel" tooltip="NUmero de telemovel do cliente" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Número de telemóvel" tooltip="Número de telemóvel do cliente" />,
     accessorFn: (row) => row.phone,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
     accessorKey: "action",
     id: "Action",
-    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações do produto" />,
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações do cliente" />,
     cell: (row) => {
       return (
         <div className="flex justify-center items-center w-full h-full ">
