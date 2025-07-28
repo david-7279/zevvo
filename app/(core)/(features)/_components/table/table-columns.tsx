@@ -50,7 +50,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "name",
     id: "Name",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome, marca e sku do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome, marca e SKU do produto" />,
     accessorFn: (row) => row.name,
     cell: ({ row }) => (
       <div className="space-y-1">
@@ -70,7 +70,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "type",
     id: "Type",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Tipo" tooltip="Tipo do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Tipo" tooltip="Tipo de produto" />,
     accessorFn: (row) => row.type,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
@@ -84,7 +84,7 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: 'stockStatus',
     id: "Status",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Status" tooltip="Estado do stock do produto" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Estado" tooltip="Estado do stock do produto" />,
     accessorFn: (row) => row.stockStatus,
     cell: ({ row }) => {
       const status = row.getValue('Status') as string
@@ -157,7 +157,7 @@ export const columnsClients: ColumnDef<ClientsData>[] = [
   {
     accessorKey: "phone",
     id: "Phone",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Número de telemóvel" tooltip="Número de telemóvel do cliente" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Telemóvel" tooltip="Número de telemóvel do cliente" />,
     accessorFn: (row) => row.phone,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
@@ -202,15 +202,15 @@ export const columnsPayments: ColumnDef<PaymentsData>[] = [
   {
     accessorKey: "product",
     id: "Product",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Produto/Servico" tooltip="Produto ou servico" />,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Produto/Serviço" tooltip="Produto ou serviço" />,
     accessorFn: (row) => row.product,
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
   },
   {
     accessorKey: "price",
     id: "Price",
-    header: ({ column }) => <DataTableColumnHeader column={column} title="Preco" tooltip="Valor do pagamento" />,
-    accessorFn: (row) => row.product,
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Preço" tooltip="Valor do pagamento" />,
+    accessorFn: (row) => row.price,
     cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
   },
   {
@@ -232,9 +232,10 @@ export const columnsPayments: ColumnDef<PaymentsData>[] = [
         'Recebido':
           'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
         'Pendente':
-          'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+          'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5',
         'Falhado':
-          'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5'
+          'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+
       }[status]
 
       return (

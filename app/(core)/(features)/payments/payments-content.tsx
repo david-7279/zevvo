@@ -1,49 +1,46 @@
+"use client"
+
 import React from 'react'
-import {
-  Tabs,
-  TabsList,
-  TabsTrigger,
-  TabsContent,
-  TabsContents,
-} from '@/components/animate-ui/components/tabs';
-import { PlusIcon, SearchIcon } from 'lucide-react';
-import { Button } from '@/button';
-import Link from 'next/link';
+import ProductFilters from '../products/product-filters';
+import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/payment-row-action";
+import PaymentTable from './_components/payment-table';
+import { columnsPayments } from '../_components/table/table-columns';
+
+const initialPayments = [
+  {
+    id: 1,
+    client: "João Silva",
+    product: "Smartphone Pro",
+    price: 4999.99,
+    date: "21-12-2024 14:32:30",
+    paymentStatus: "Recebido",
+  },
+  {
+    id: 2,
+    client: "David Silva",
+    product: "Tablet",
+    price: 999.99,
+    date: "21-11-2024 11:31:22",
+    paymentStatus: "Falhado",
+  },
+]
+
+
 
 const PaymentsContent = () => {
   return (
     <div>
 
-      <div className="space-y-5">
-        <div className="flex flex-col gap-3 w-full lg:flex-row lg:w-auto lg:items-center">
-          <Link href={`/payment/new`}>
-            <Button
-              variant="default"
-              size="default"
-              className="w-full lg:w-auto"
-            >
-              <PlusIcon className="size-4" />
-              Adicionar pagamento
-            </Button>
-          </Link>
-        </div>
+      {/* Payments Table */}
+      <PaymentTable
+        data={initialPayments}
+        columns={columnsPayments}
+        idSelector={row => row.id}
+        addNewLink="payments"
+        RowActionsComponent={PaymentRowAction}
+        filtersContent={<ProductFilters />}
 
-        <Tabs defaultValue="all">
-          <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="all">Todos (5)</TabsTrigger>
-            <TabsTrigger value="received">Recebidos (2)</TabsTrigger>
-            <TabsTrigger value="pending">Pendentes (2)</TabsTrigger>
-            <TabsTrigger value="failed">Falhados (1)</TabsTrigger>
-          </TabsList>
-
-          <TabsContents>
-            <TabsContent value="all">Content 1</TabsContent>
-            <TabsContent value="received">Content 2</TabsContent>
-            <TabsContent value="pending">Content 2</TabsContent>
-            <TabsContent value="failed">Content 2</TabsContent>
-          </TabsContents>
-        </Tabs>
-      </div>
+      />
     </div>
   )
 }
