@@ -22,6 +22,13 @@ interface ProductData {
   stockStatus: string
 }
 
+interface ClientsData {
+  id: number
+  name: string
+  email: string
+  phone: string
+}
+
 export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "id",
@@ -91,6 +98,58 @@ export const columnsProduct: ColumnDef<ProductData>[] = [
     meta: {
       filterVariant: 'select'
     }
+  },
+  {
+    accessorKey: "action",
+    id: "Action",
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações do produto" />,
+    cell: (row) => {
+      return (
+        <div className="flex justify-center items-center w-full h-full ">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0 cursor-pointer">
+                <MoreHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <ProductRowActions id={row.row.original.id} MenuItem={DropdownMenuItem} />
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      );
+    }
+  }
+]
+
+export const columnsClients: ColumnDef<ClientsData>[] = [
+  {
+    accessorKey: "id",
+    id: "Identifier",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="ID" tooltip="Identificador único do cliente" />,
+    accessorFn: row => row.id,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "name",
+    id: "Name",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Nome" tooltip="Nome do cliente" />,
+    accessorFn: (row) => row.name,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "email",
+    id: "Email",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Email" tooltip="Endereco de email do cliente" />,
+    accessorFn: (row) => row.email,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "phone",
+    id: "Phone",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="NUmero de telemovel" tooltip="NUmero de telemovel do cliente" />,
+    accessorFn: (row) => row.phone,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
   },
   {
     accessorKey: "action",
