@@ -2,7 +2,7 @@ import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { EuroIcon, PackageIcon, ScanBarcodeIcon } from "lucide-react"
+import { EuroIcon, HouseIcon, PackageIcon, ScanBarcodeIcon, UserIcon } from "lucide-react"
 
 const ClientAddress = () => {
   return (
@@ -19,7 +19,7 @@ const ClientAddress = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <PackageIcon className="h-5 w-5" />
+            <UserIcon className="h-5 w-5" />
             Nome do Cliente Aqui
           </CardTitle>
           <CardDescription>
@@ -40,7 +40,7 @@ const ClientAddress = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ScanBarcodeIcon className="h-5 w-5" />
+            <HouseIcon className="h-5 w-5" />
             Morada
           </CardTitle>
           <CardDescription>
