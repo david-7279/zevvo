@@ -41,7 +41,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt" className={`${geistSans.variable} ${geistMono.variable} scroll-smooth`} suppressHydrationWarning>
-      <body suppressHydrationWarning>
+      <body suppressHydrationWarning className="min-h-screen flex flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -49,7 +49,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          {children}
+          <main className="flex-1 ">
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
       </body>
