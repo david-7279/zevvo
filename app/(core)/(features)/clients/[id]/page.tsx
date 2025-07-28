@@ -4,7 +4,7 @@ import { useState } from "react"
 import FeaturesAside from "@/app/(core)/(features)/_components/siderbar/aside";
 import FeaturesContent from "@/app/(core)/(features)/_components/siderbar/content";
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
-import { TagIcon, InfoIcon } from "lucide-react";
+import { InfoIcon, MapPinHouseIcon } from "lucide-react";
 
 const clientData = [
   {
@@ -15,7 +15,7 @@ const clientData = [
   {
     id: "client-address",
     title: "Morada",
-    icon: TagIcon,
+    icon: MapPinHouseIcon,
   },
 ]
 
