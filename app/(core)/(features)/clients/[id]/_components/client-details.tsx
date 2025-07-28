@@ -15,7 +15,7 @@ const ClientDetails = () => {
         </p>
       </div>
 
-      {/* Product Status */}
+      {/* Client Status */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
