@@ -1,9 +1,40 @@
-import React from 'react'
+"use client"
 
-const Client = () => {
+import { useState } from "react"
+import FeaturesAside from "@/app/(core)/(features)/_components/siderbar/aside";
+import FeaturesContent from "@/app/(core)/(features)/_components/siderbar/content";
+import CoreWrapper from "@/app/(core)/_components/core-wrapper";
+import { TagIcon, InfoIcon } from "lucide-react";
+
+const clientData = [
+  {
+    id: "client-details",
+    title: "Detalhes",
+    icon: InfoIcon,
+  },
+  {
+    id: "client-address",
+    title: "Morada",
+    icon: TagIcon,
+  },
+]
+
+const ClientPage = () => {
+  const [activeId, setActiveId] = useState(clientData[0].id)
+
   return (
-    <div>Client</div>
+    <CoreWrapper>
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <FeaturesAside items={clientData} activeId={activeId} onItemClick={setActiveId} />
+
+          <main className="flex-1 min-w-0">
+            <FeaturesContent activeId={activeId} />
+          </main>
+        </div>
+      </div>
+    </CoreWrapper>
   )
 }
 
-export default Client
+export default ClientPage
