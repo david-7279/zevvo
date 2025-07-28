@@ -34,12 +34,12 @@ export default function CoreLayout({
         >
           <SidebarProvider>
             <AppSidebar />
-            
-            <SidebarInset>
+
+            <SidebarInset className="px-2">
               <Toaster />
 
               <AppSiderHeader />
-              <div className="flex flex-1 flex-col gap-4 p-4 pt-0 max-w-screen-2xl">
+              <div className="flex flex-1 flex-col gap-4 p-4 pt-0 max-w-screen-2xl mt-2">
                 {children}
               </div>
             </SidebarInset>

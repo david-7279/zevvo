@@ -12,9 +12,11 @@ export const Path = {
 
 
   // CORE
+  // OVERVIEW
   dashboard: "/dashboard",
   reports: "/reports",
 
+  // FEATURES
   products: "/products",
   productsId: "/products/id/",
 
@@ -26,6 +28,7 @@ export const Path = {
 
   suppliers: "/suppliers",
 
+  // SYSTEM
   changelog: "/changelog",
   settings: "/settings",
   support: "/support",
