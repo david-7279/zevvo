@@ -24,7 +24,6 @@ const pathNameMap: Record<string, string> = {
   changelog: "Atualizações",
   settings: "Definições",
   support: "Suporte",
-
 };
 
 function getBreadcrumbSegments(pathname: string) {
@@ -61,8 +60,6 @@ function getBreadcrumbSegments(pathname: string) {
     ];
   }
 
-
-
   // Otherwise, just map normally
   return segments.map((seg, idx) => ({
     name: pathNameMap[seg] || seg,
@@ -74,27 +71,50 @@ const AppSiderBreadcrumb = () => {
   const pathname = usePathname();
   const segments = getBreadcrumbSegments(pathname);
 
+  // For mobile: only show Zevvo > current page
+  const currentSegment = segments.length > 0 ? segments[segments.length - 1] : null;
+
   return (
     <Breadcrumb>
       <BreadcrumbList>
+        {/* Desktop: full breadcrumb */}
         <BreadcrumbItem className="hidden md:block">
           <BreadcrumbLink href={Path.dashboard}>
             Zevvo
           </BreadcrumbLink>
         </BreadcrumbItem>
-        {segments.length > 0 && <BreadcrumbSeparator className="hidden md:block" />}
+        {segments.length > 0 && (
+          <BreadcrumbSeparator className="hidden md:block" />
+        )}
         {segments.map((seg, idx) => (
           <React.Fragment key={seg.href}>
-            <BreadcrumbItem>
+            <BreadcrumbItem className="hidden md:block">
               {idx === segments.length - 1 ? (
                 <BreadcrumbPage>{seg.name}</BreadcrumbPage>
               ) : (
                 <BreadcrumbLink href={seg.href}>{seg.name}</BreadcrumbLink>
               )}
             </BreadcrumbItem>
-            {idx < segments.length - 1 && <BreadcrumbSeparator />}
+            {idx < segments.length - 1 && (
+              <BreadcrumbSeparator className="hidden md:block" />
+            )}
           </React.Fragment>
         ))}
+
+        {/* Mobile: only Zevvo > current page */}
+        <BreadcrumbItem className="md:hidden">
+          <BreadcrumbLink href={Path.dashboard}>
+            Zevvo
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        {currentSegment && (
+          <>
+            <BreadcrumbSeparator className="md:hidden" />
+            <BreadcrumbItem className="md:hidden">
+              <BreadcrumbPage>{currentSegment.name}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </>
+        )}
       </BreadcrumbList>
     </Breadcrumb>
   );
