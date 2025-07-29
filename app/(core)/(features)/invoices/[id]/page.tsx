@@ -8,7 +8,7 @@ import { TrendingUpDownIcon, TagIcon, InfoIcon } from "lucide-react";
 
 const invoiceData = [
   {
-    id: "payment-details",
+    id: "invoice-details",
     title: "Detalhes",
     icon: InfoIcon,
   },

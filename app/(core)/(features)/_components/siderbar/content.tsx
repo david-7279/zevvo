@@ -8,6 +8,8 @@ import ClientAddress from "@/app/(core)/(features)/clients/[id]/_components/clie
 
 import PaymentDetails from "@/app/(core)/(features)/payments/[id]/_components/payment-details"
 
+import InvoiceDetails from "@/app/(core)/(features)/invoices/[id]/_components/invoice-details"
+
 import NotFoundContent from "@/app/(core)/(features)/_components/siderbar/not-found-content"
 
 interface Props {
@@ -34,6 +36,10 @@ const FeaturesContent: React.FC<Props> = ({ activeId }) => {
       // PAYMENT
       case "payment-details":
         return <PaymentDetails />
+
+      // INVOICE
+      case "invoice-details":
+        return <InvoiceDetails />
 
       // NOT FOUND
       default:
