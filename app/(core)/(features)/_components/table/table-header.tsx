@@ -7,7 +7,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from '@/components/ui/tooltip';
 
 interface DataTableColumnHeaderProps<TData, TValue>
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -34,7 +34,7 @@ export function DataTableColumnHeader<TData, TValue>({
         onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
       >
         <Tooltip>
-          <TooltipTrigger asChild>
+          <TooltipTrigger>
             <span>{title}</span>
           </TooltipTrigger>
           <TooltipContent>
@@ -43,6 +43,6 @@ export function DataTableColumnHeader<TData, TValue>({
         </Tooltip>
         <ArrowUpDownIcon className="h-4 w-4" />
       </Button>
-    </div>
+    </div >
   )
 }
