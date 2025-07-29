@@ -4,13 +4,18 @@ import { useState } from "react"
 import FeaturesAside from "@/app/(core)/(features)/_components/siderbar/aside";
 import FeaturesContent from "@/app/(core)/(features)/_components/siderbar/content";
 import CoreWrapper from "@/app/(core)/_components/core-wrapper";
-import { TrendingUpDownIcon, TagIcon, InfoIcon } from "lucide-react";
+import { TrendingUpDownIcon, TagIcon, InfoIcon, BoxesIcon } from "lucide-react";
 
 const invoiceData = [
   {
     id: "invoice-details",
     title: "Detalhes",
     icon: InfoIcon,
+  },
+  {
+    id: "invoice-products",
+    title: "Produtos",
+    icon: BoxesIcon,
   },
 ]
 
