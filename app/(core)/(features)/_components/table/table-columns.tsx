@@ -40,6 +40,20 @@ interface PaymentsData {
   paymentStatus: string
 }
 
+interface InvoicesData {
+  id: number
+  client: string
+  clientId: number
+  paymentPrice: number
+  paymentStatus: string
+  products: string
+  timestamp: string
+  dueDate: string
+  createAt: string
+  description: string
+  invoiceNumer: number
+}
+
 export const columnsProduct: ColumnDef<ProductData>[] = [
   {
     accessorKey: "id",
@@ -254,6 +268,121 @@ export const columnsPayments: ColumnDef<PaymentsData>[] = [
     accessorKey: "action",
     id: "Action",
     header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações do cliente" />,
+    cell: (row) => {
+      return (
+        <div className="flex justify-center items-center w-full h-full ">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0 cursor-pointer">
+                <MoreHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <PaymentRowAction id={row.row.original.id} MenuItem={DropdownMenuItem} />
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      );
+    }
+  }
+]
+
+export const columnsInvoices: ColumnDef<InvoicesData>[] = [
+  {
+    accessorKey: "id",
+    id: "Identifier",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="ID" tooltip="Identificador único da fatura" />,
+    accessorFn: row => row.id,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "invoiceNumer",
+    id: "InvoiceNumber",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Nº Fatura" tooltip="Número da fatura" />,
+    accessorFn: row => row.invoiceNumer,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-mono" />,
+  },
+  {
+    accessorKey: "client",
+    id: "Client",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Cliente" tooltip="Nome do cliente" />,
+    accessorFn: row => row.client,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "clientId",
+    id: "ClientId",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="ID do Cliente" tooltip="Identificador do cliente" />,
+    accessorFn: row => row.clientId,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-mono" />,
+  },
+  {
+    accessorKey: "products",
+    id: "Products",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Produtos" tooltip="Produtos/Serviços incluídos" />,
+    accessorFn: row => row.products,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
+  },
+  {
+    accessorKey: "paymentPrice",
+    id: "PaymentPrice",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Valor" tooltip="Valor total da fatura" />,
+    accessorFn: row => row.paymentPrice,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "paymentStatus",
+    id: "Status",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Estado" tooltip="Estado do pagamento" />,
+    accessorFn: row => row.paymentStatus,
+    cell: ({ row }) => {
+      const status = row.getValue('Status') as string
+
+      const styles = {
+        'Recebido':
+          'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
+        'Pendente':
+          'bg-amber-600/10 text-amber-600 focus-visible:ring-amber-600/20 dark:bg-amber-400/10 dark:text-amber-400 dark:focus-visible:ring-amber-400/40 [a&]:hover:bg-amber-600/5 dark:[a&]:hover:bg-amber-400/5',
+        'Falhado':
+          'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+      }[status]
+
+      return (
+        <Badge className={(cn('rounded-full border-none focus-visible:outline-none'), styles)}>
+          {row.getValue('Status')}
+        </Badge>
+      )
+    },
+    enableSorting: true,
+    meta: {
+      filterVariant: 'select'
+    }
+  },
+  {
+    accessorKey: "timestamp",
+    id: "Timestamp",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Criada em" tooltip="Data/hora de criação da fatura" />,
+    accessorFn: row => row.timestamp,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-mono" />,
+  },
+  {
+    accessorKey: "dueDate",
+    id: "DueDate",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Vencimento" tooltip="Data de vencimento da fatura" />,
+    accessorFn: row => row.dueDate,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-mono" />,
+  },
+  {
+    accessorKey: "description",
+    id: "Description",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Descrição" tooltip="Descrição da fatura" />,
+    accessorFn: row => row.description,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
+  },
+  {
+    accessorKey: "action",
+    id: "Action",
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações da fatura" />,
     cell: (row) => {
       return (
         <div className="flex justify-center items-center w-full h-full ">

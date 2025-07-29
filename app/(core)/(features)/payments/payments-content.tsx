@@ -33,12 +33,9 @@ const initialPayments = [
   },
 ]
 
-
-
 const PaymentsContent = () => {
   return (
     <div>
-
       {/* Payments Table */}
       <PaymentTable
         data={initialPayments}
