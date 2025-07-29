@@ -4,32 +4,47 @@ import React from "react"
 import ProductFilters from "../products/product-filters";
 import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/payment-row-action";
 import InvoiceTable from "@/app/(core)/(features)/invoices/_components/invoice-table";
-import { columnsPayments } from "@/app/(core)/(features)/_components/table/table-columns";
+import { columnsInvoices } from "@/app/(core)/(features)/_components/table/table-columns";
 
-const initialInvoice = [
+const initialInvoices = [
   {
     id: 1,
     client: "João Silva",
-    product: "Smartphone Pro",
-    price: 4999.99,
-    date: "21-12-2024 14:32:30",
+    clientId: 101,
+    paymentPrice: 4999.99,
     paymentStatus: "Recebido",
+    products: "Smartphone Pro, Capa Protetora",
+    timestamp: "2024-12-21 14:32:30",
+    dueDate: "2025-01-21",
+    createAt: "2024-12-21 14:32:30",
+    description: "Compra de smartphone e capa protetora.",
+    invoiceNumer: 2024001,
   },
   {
     id: 2,
     client: "David Silva",
-    product: "Tablet",
-    price: 999.99,
-    date: "21-11-2024 11:31:22",
+    clientId: 102,
+    paymentPrice: 999.99,
     paymentStatus: "Falhado",
+    products: "Tablet",
+    timestamp: "2024-11-21 11:31:22",
+    dueDate: "2024-12-21",
+    createAt: "2024-11-21 11:31:22",
+    description: "Compra de tablet.",
+    invoiceNumer: 2024002,
   },
   {
-    id: 2,
+    id: 3,
     client: "Manuel Antonio",
-    product: "Livro",
-    price: 9.99,
-    date: "01-08-2024 09:30:22",
+    clientId: 103,
+    paymentPrice: 9.99,
     paymentStatus: "Pendente",
+    products: "Livro",
+    timestamp: "2024-08-01 09:30:22",
+    dueDate: "2024-09-01",
+    createAt: "2024-08-01 09:30:22",
+    description: "Compra de livro.",
+    invoiceNumer: 2024003,
   },
 ]
 
@@ -37,14 +52,14 @@ const InvoicesContent = () => {
   return (
     <div>
       {/* Invoice Table */}
-      {/* <InvoiceTable
-        data={initialInvoice}
-        columns={columnsPayments}
-        idSelector={row => row.id}
-        addNewLink="payments"
+      <InvoiceTable
+        data={initialInvoices}
+        columns={columnsInvoices}
+        idSelector={(row: any) => row.id}
+        addNewLink="invoices"
         RowActionsComponent={PaymentRowAction}
         filtersContent={<ProductFilters />}
-      /> */}
+      />
     </div>
   )
 }
