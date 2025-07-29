@@ -42,7 +42,7 @@ const customData = [
 const Invoices = () => {
   return (
     <CoreWrapper>
-      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Pagamentos</h3>
+      <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">Faturas</h3>
       <div className="space-y-16">
         {/* Header Cards Row */}
         <div className="flex flex-row flex-wrap gap-5">

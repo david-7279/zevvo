@@ -5,19 +5,19 @@ export function InvoiceRowAction({ id, MenuItem }: { id: string | number, MenuIt
   return (
     <>
       <MenuItem className="gap-2" asChild>
-        <Link href={`/clients/${id}`}>
-          <EyeIcon className="h-4 w-4" />
-          Ver Fatura
-        </Link>
-      </MenuItem>
-      <MenuItem className="gap-2" asChild>
-        <Link href={`/clients/edit/${id}`}>
+        <Link href={"#"}>
           <DownloadIcon className="h-4 w-4 text-muted-foreground" />
           Descarregar Fatura
         </Link>
       </MenuItem>
       <MenuItem className="gap-2" asChild>
-        <Link href={`/clients/edit/${id}`}>
+        <Link href={`/invoices/${id}`}>
+          <EyeIcon className="h-4 w-4" />
+          Ver Fatura
+        </Link>
+      </MenuItem>
+      <MenuItem className="gap-2" asChild>
+        <Link href={`/invoices/edit/${id}`}>
           <EditIcon className="h-4 w-4 text-muted-foreground" />
           Editar
         </Link>

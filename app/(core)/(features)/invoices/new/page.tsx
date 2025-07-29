@@ -1,6 +1,6 @@
 import React from "react"
 import CoreWrapper from "@/app/(core)/_components/core-wrapper"
-import NewInvoiceForm from "@/app/(core)/(features)/_components/forms/add-new-payment"
+import NewInvoiceForm from "@/app/(core)/(features)/_components/forms/add-new-invoice"
 
 const NewInvoice = () => {
   return (

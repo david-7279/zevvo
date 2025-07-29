@@ -109,10 +109,10 @@ const NewInvoiceForm = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="flex flex-col items-start gap-4">
-        <Link href={Path.payments}>
+        <Link href={Path.invoices}>
           <Button variant='ghost' className='group'>
             <ArrowLeftIcon className='transition-transform duration-200 group-hover:-translate-x-0.5' />
-            Voltar aos Pagamentos
+            Voltar as faturas
           </Button>
         </Link>
         <div>
