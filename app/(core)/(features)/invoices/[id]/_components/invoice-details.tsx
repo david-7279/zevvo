@@ -2,7 +2,7 @@ import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { EuroIcon, HandCoinsIcon, PackageIcon, UserIcon } from "lucide-react"
+import { EuroIcon, FileTextIcon, HandCoinsIcon, PackageIcon, UserIcon } from "lucide-react"
 import Link from "next/link"
 import { Path } from "@/lib/paths"
 import { Button } from "@/components/ui/button"
@@ -22,7 +22,7 @@ const InvoiceDetails = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <HandCoinsIcon className="h-5 w-5" />
+            <FileTextIcon className="h-5 w-5" />
             Nome do Cliente AQUI
           </CardTitle>
           <CardDescription>
