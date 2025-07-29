@@ -13,6 +13,7 @@ import { ProductRowActions } from "@/app/(core)/(features)/_components/table/row
 import { ClientRowAction } from "@/app/(core)/(features)/_components/table/row-action/client";
 import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/row-action/payment";
 import { InvoiceRowAction } from "@/app/(core)/(features)/_components/table/row-action/invoice";
+import { SupplierRowAction } from "@/app/(core)/(features)/_components/table/row-action/supplier";
 
 import { MoreHorizontalIcon } from "lucide-react";
 
@@ -55,6 +56,17 @@ interface InvoicesData {
   createAt: string
   description: string
   invoiceNumer: number
+}
+
+interface SuppliersData {
+  id: number
+  name: string
+  contact: string
+  email: string
+  phone: string
+  category: string
+  conditions: string
+  supplierStatus: string
 }
 
 export const columnsProduct: ColumnDef<ProductData>[] = [
@@ -397,6 +409,96 @@ export const columnsInvoices: ColumnDef<InvoicesData>[] = [
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <InvoiceRowAction id={row.row.original.id} MenuItem={DropdownMenuItem} />
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+      );
+    }
+  }
+]
+
+export const columnsSuppliers: ColumnDef<SuppliersData>[] = [
+  {
+    accessorKey: "id",
+    id: "Identifier",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="ID" tooltip="Identificador único do fornecedor" />,
+    accessorFn: row => row.id,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "name",
+    id: "name",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Empresa" tooltip="Nome do fornecedor" />,
+    accessorFn: row => row.name,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-mono" />,
+  },
+  {
+    accessorKey: "contact",
+    id: "Contact",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Contacto" tooltip="Contacto do Fornecedor" />,
+    accessorFn: row => row.email,
+    cell: ({ row }) => (
+      <div className="space-y-1">
+        <div className="font-medium text-gray-900">{row.original.email}</div>
+        <div className="text-xs text-muted-foreground">{row.original.phone}</div>
+      </div>
+    ),
+  },
+  {
+    accessorKey: "category",
+    id: "Category",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Categoria" tooltip="Categoria dos Produtos/Serviços" />,
+    accessorFn: row => row.category,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="" />,
+  },
+  {
+    accessorKey: "conditions",
+    id: "Conditions",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Condicoes" tooltip="Condicoes do fornecedor" />,
+    accessorFn: row => row.conditions,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
+  },
+  {
+    accessorKey: "supplierStatus",
+    id: "Status",
+    header: ({ column }) => <DataTableColumnHeader column={column} title="Estado" tooltip="Estado do fornecedor" />,
+    accessorFn: row => row.supplierStatus,
+    cell: ({ row }) => {
+      const status = row.getValue('Status') as string
+
+      const styles = {
+        'Ativo':
+          'bg-green-600/10 text-green-600 focus-visible:ring-green-600/20 dark:bg-green-400/10 dark:text-green-400 dark:focus-visible:ring-green-400/40 [a&]:hover:bg-green-600/5 dark:[a&]:hover:bg-green-400/5',
+        'Inativo':
+          'bg-destructive/10 [a&]:hover:bg-destructive/5 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive',
+      }[status]
+
+      return (
+        <Badge className={(cn('rounded-full border-none focus-visible:outline-none'), styles)}>
+          {row.getValue('Status')}
+        </Badge>
+      )
+    },
+    enableSorting: true,
+    meta: {
+      filterVariant: 'select'
+    }
+  },
+  {
+    accessorKey: "action",
+    id: "Action",
+    header: ({ column }) => <DataTableColumnHeaderNoSort column={column} className="flex justify-center items-center w-full h-full" title="Ações" tooltip="Ações da fatura" />,
+    cell: (row) => {
+      return (
+        <div className="flex justify-center items-center w-full h-full ">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" className="h-8 w-8 p-0 cursor-pointer">
+                <MoreHorizontalIcon className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <SupplierRowAction id={row.row.original.id} MenuItem={DropdownMenuItem} />
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
