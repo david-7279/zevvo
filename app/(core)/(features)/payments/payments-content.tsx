@@ -2,7 +2,7 @@
 
 import React from 'react'
 import ProductFilters from '../products/product-filters';
-import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/payment-row-action";
+import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/row-action/payment";
 import PaymentTable from './_components/payment-table';
 import { columnsPayments } from '../_components/table/table-columns';
 

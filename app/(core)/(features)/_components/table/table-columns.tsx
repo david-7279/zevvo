@@ -8,10 +8,13 @@ import { cn } from "@/lib/utils";
 import { DataTableColumnHeaderNoSort } from "@/app/(core)/(features)/_components/table/table-header-no-sort";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
+
+import { ProductRowActions } from "@/app/(core)/(features)/_components/table/row-action/product";
+import { ClientRowAction } from "@/app/(core)/(features)/_components/table/row-action/client";
+import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/row-action/payment";
+import { InvoiceRowAction } from "@/app/(core)/(features)/_components/table/row-action/invoice";
+
 import { MoreHorizontalIcon } from "lucide-react";
-import { ProductRowActions } from "@/app/(core)/(features)/_components/table/product-row-actions";
-import { ClientRowAction } from "@/app/(core)/(features)/_components/table/client-row-action";
-import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/payment-row-action";
 
 interface ProductData {
   id: number
@@ -393,7 +396,7 @@ export const columnsInvoices: ColumnDef<InvoicesData>[] = [
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <PaymentRowAction id={row.row.original.id} MenuItem={DropdownMenuItem} />
+              <InvoiceRowAction id={row.row.original.id} MenuItem={DropdownMenuItem} />
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

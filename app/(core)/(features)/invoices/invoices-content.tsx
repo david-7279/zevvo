@@ -2,9 +2,9 @@
 
 import React from "react"
 import ProductFilters from "../products/product-filters";
-import { PaymentRowAction } from "@/app/(core)/(features)/_components/table/payment-row-action";
 import InvoiceTable from "@/app/(core)/(features)/invoices/_components/invoice-table";
 import { columnsInvoices } from "@/app/(core)/(features)/_components/table/table-columns";
+import { InvoiceRowAction } from "@/app/(core)/(features)/_components/table/row-action/invoice";
 
 const initialInvoices = [
   {
@@ -57,7 +57,7 @@ const InvoicesContent = () => {
         columns={columnsInvoices}
         idSelector={(row: any) => row.id}
         addNewLink="invoices"
-        RowActionsComponent={PaymentRowAction}
+        RowActionsComponent={InvoiceRowAction}
         filtersContent={<ProductFilters />}
       />
     </div>

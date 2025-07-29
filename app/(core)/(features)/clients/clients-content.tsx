@@ -4,7 +4,7 @@ import React from "react"
 import DataTable from "@/app/(core)/(features)/_components/table/table-data"
 import { columnsClients } from "@/app/(core)/(features)/_components/table/table-columns"
 import ProductFilters from "@/app/(core)/(features)/products/product-filters"
-import { ClientRowAction } from "@/app/(core)/(features)/_components/table/client-row-action"
+import { ClientRowAction } from "@/app/(core)/(features)/_components/table/row-action/client"
 
 const initialClients = [
   {
