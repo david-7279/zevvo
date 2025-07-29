@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { CountingNumber } from '@/components/animate-ui/text/counting-number';
 import { Path } from "@/lib/paths";
 import { CheckIcon } from "lucide-react";
 import Link from "next/link";
@@ -32,7 +33,8 @@ const PricingCard: React.FC<Props> = ({ index, title, description, price, featur
         <div className="flex flex-col gap-8 justify-between h-full">
           <div>
             <p className="flex flex-row items-center gap-2 text-xl mb-4">
-              <span className="text-4xl">€{price}</span>
+              <span className="text-4xl">€</span>
+              <CountingNumber number={price} className="text-4xl" />
               <span className="text-sm text-muted-foreground">/ mês</span>
             </p>
             <div className="flex flex-col gap-4">
