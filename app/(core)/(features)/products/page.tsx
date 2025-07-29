@@ -16,7 +16,7 @@ const customData = [
   {
     title: "Mais Vendido",
     value: "Smartphone Pro",
-    description: "Total do produto mais vendido deste mês",
+    description: "Produto mais vendido deste mês",
     percentage: "-2.1%",
     trend: "down" as const,
     icon: DollarSignIcon,
