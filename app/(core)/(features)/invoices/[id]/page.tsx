@@ -1,9 +1,35 @@
-import React from 'react'
+"use client"
 
-const Invoice = () => {
+import { useState } from "react"
+import FeaturesAside from "@/app/(core)/(features)/_components/siderbar/aside";
+import FeaturesContent from "@/app/(core)/(features)/_components/siderbar/content";
+import CoreWrapper from "@/app/(core)/_components/core-wrapper";
+import { TrendingUpDownIcon, TagIcon, InfoIcon } from "lucide-react";
+
+const invoiceData = [
+  {
+    id: "payment-details",
+    title: "Detalhes",
+    icon: InfoIcon,
+  },
+]
+
+const InvoicePage = () => {
+  const [activeId, setActiveId] = useState(invoiceData[0].id)
+
   return (
-    <div>Invoice</div>
+    <CoreWrapper>
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <FeaturesAside items={invoiceData} activeId={activeId} onItemClick={setActiveId} type="da fatura" />
+
+          <main className="flex-1 min-w-0">
+            <FeaturesContent activeId={activeId} />
+          </main>
+        </div>
+      </div>
+    </CoreWrapper>
   )
 }
 
-export default Invoice
+export default InvoicePage
