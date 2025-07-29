@@ -61,7 +61,6 @@ interface InvoicesData {
 interface SuppliersData {
   id: number
   name: string
-  contact: string
   email: string
   phone: string
   category: string
@@ -433,7 +432,7 @@ export const columnsSuppliers: ColumnDef<SuppliersData>[] = [
     cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-mono" />,
   },
   {
-    accessorKey: "contact",
+    accessorKey: "email",
     id: "Contact",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Contacto" tooltip="Contacto do Fornecedor" />,
     accessorFn: row => row.email,
@@ -456,7 +455,7 @@ export const columnsSuppliers: ColumnDef<SuppliersData>[] = [
     id: "Conditions",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Condicoes" tooltip="Condicoes do fornecedor" />,
     accessorFn: row => row.conditions,
-    cell: ({ getValue }) => <DataTableColumnRow getValue={"€ " + String(getValue())} className="font-medium" />,
+    cell: ({ getValue }) => <DataTableColumnRow getValue={String(getValue())} className="font-medium" />,
   },
   {
     accessorKey: "supplierStatus",

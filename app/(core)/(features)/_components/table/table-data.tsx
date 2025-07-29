@@ -73,12 +73,17 @@ const DataTable = ({
   const [rowSelection, setRowSelection] = useState({});
 
   const customGlobalFilter = (row: any, columnId: string, filterValue: string) => {
-    const { name, brand, sku } = row.original;
+    const { name, brand, sku, email, phone, category, conditions, supplierStatus } = row.original;
     const search = filterValue.toLowerCase();
     return (
       (name && name.toLowerCase().includes(search)) ||
       (brand && brand.toLowerCase().includes(search)) ||
-      (sku && sku.toLowerCase().includes(search))
+      (sku && sku.toLowerCase().includes(search)) ||
+      (email && email.toLowerCase().includes(search)) ||
+      (phone && phone.toLowerCase().includes(search)) ||
+      (category && category.toLowerCase().includes(search)) ||
+      (conditions && conditions.toLowerCase().includes(search)) ||
+      (supplierStatus && supplierStatus.toLowerCase().includes(search))
     );
   }
 
@@ -128,8 +133,8 @@ const DataTable = ({
                 placeholder={`Pesquise por um ${collectionType} específico...`}
                 value={globalFilter}
                 onChange={e => setGlobalFilter(e.target.value)}
-                size={35}
-                className="w-full lg:w-[300px] peer ps-9"
+                size={100}
+                className="w-full lg:w-[350px] peer ps-9"
               />
             </div>
           </div>
