@@ -2,7 +2,7 @@ import React from "react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { EuroIcon, FileUserIcon, TruckIcon } from "lucide-react"
+import { BadgeIcon, BadgeInfoIcon, ClipboardListIcon, EuroIcon, FileUserIcon, TruckIcon } from "lucide-react"
 
 const SupplierDetails = () => {
   return (
@@ -40,7 +40,7 @@ const SupplierDetails = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <FileUserIcon className="h-5 w-5" />
+            <ClipboardListIcon className="h-5 w-5" />
             Informação Básica
           </CardTitle>
           <CardDescription>
@@ -67,7 +67,7 @@ const SupplierDetails = () => {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <EuroIcon className="h-5 w-5" />
+            <BadgeInfoIcon className="h-5 w-5" />
             Detalhes do Fornecedor
           </CardTitle>
           <CardDescription>
@@ -79,7 +79,6 @@ const SupplierDetails = () => {
             <span className="text-sm font-medium">Categoria dos produtos</span>
             <span className="text-sm text-muted-foreground">Tecnologia</span>
           </div>
-          <Separator />
           <div className="flex items-center justify-between">
             <span className="text-sm font-medium">Condições</span>
             <span className="text-sm text-muted-foreground">Pagamento a pronto</span>
