@@ -1,7 +1,7 @@
 "use client"
 
 import React from "react"
-import ProductFilters from "../products/product-filters";
+import ProductFilters from "@/app/(core)/(features)/invoices/_components/invoice-filter";
 import InvoiceTable from "@/app/(core)/(features)/invoices/_components/invoice-table";
 import { columnsInvoices } from "@/app/(core)/(features)/_components/table/table-columns";
 import { InvoiceRowAction } from "@/app/(core)/(features)/_components/table/row-action/invoice";
