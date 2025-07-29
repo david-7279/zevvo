@@ -11,6 +11,8 @@ import PaymentDetails from "@/app/(core)/(features)/payments/[id]/_components/pa
 import InvoiceDetails from "@/app/(core)/(features)/invoices/[id]/_components/invoice-details"
 import InvoiceProducts from "@/app/(core)/(features)/invoices/[id]/_components/invoice-products"
 
+import SupplierDetails from "@/app/(core)/(features)/suppliers/[id]/_components/supplier-details"
+
 import NotFoundContent from "@/app/(core)/(features)/_components/siderbar/not-found-content"
 
 interface Props {
@@ -43,6 +45,10 @@ const FeaturesContent: React.FC<Props> = ({ activeId }) => {
         return <InvoiceDetails />
       case "invoice-products":
         return <InvoiceProducts />
+
+      // SUPPLIER
+      case "supplier-details":
+        return <SupplierDetails />
 
       // NOT FOUND
       default:
