@@ -41,7 +41,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ChevronLeftIcon, ChevronRightIcon, FilterIcon, PlusIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
-import { ClientRowAction } from "@/app/(core)/(features)/_components/table/client-row-action";
 
 interface Props {
   columns: ColumnDef<any>[];
